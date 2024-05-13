@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Aditya Mahajan</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./bio.html"> 
+<span class="menu-text">Bio</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-publications" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Publications</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-publications">    
+        <li>
+    <a class="dropdown-item" href="./journals.html">
+ <span class="dropdown-text">Journal</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./journals.html">
+ <span class="dropdown-text">Conference</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./students.html" aria-current="page"> 
+<span class="menu-text">Students</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./courses.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./activities.html"> 
+<span class="menu-text">Activities</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<h2>
+Current PhD Students
+</h2>
+<div class="tight">
+<ul>
+<li>
+Tao Zhang
+</li>
+<li>
+Samin Nili-Ahmadabadi
+</li>
+<li>
+Amit Sinha
+</li>
+<li>
+Borna Sayedana (co-supervised with Prof.&nbsp;Peter Caines)
+</li>
+<li>
+Raihan Seraj (co-supervised with Prof.&nbsp;Jerome Le Ny)
+</li>
+</ul>
+</div>
+<h2>
+Current Master’s Students
+</h2>
+<div class="tight">
+<ul>
+<li>
+Edwin Meriaux
+</li>
+<li>
+Reihaneh Ghoroghchian
+</li>
+</ul>
+</div>
+<div class="figure">
+<img src="images/2021-group-photo.png" width="100%" alt="group photo 2017">
+<p align="middle">
+Group photo (2021). Top Row (L to R): Aditya, Chenyu, Mohammad, Berk. Middle Row: Jayakumar, Cheng, Borna, Fatih. Bottom Row: Nima, Amit, Raihan.
+</p>
+</div>
+<div class="figure">
+<img src="images/2017-group-photo.jpg" width="100%" alt="group photo 2017">
+<p align="middle">
+Group photo (2017). From L to R: Borna, Nima, Jhelum, Raihan, Aditya, Jayakumar, Mohammad.
+</p>
+</div>
+<h2>
+Graduated PhD Students
+</h2>
+<ul>
+<li>
+Nima Akbarzadeh, Aug 2022. <em>Restless multi-armed bandits: Indexability, Whittle Index Computation, and Learning</em>.
+</li>
+<li>
+Mohammad Afshari, March 2021. <em>Team optimal decentralized estimation and control of networked linear quadratic systems</em>.
+</li>
+<li>
+Jayakumar Subramanian, April 2020. <em>Reinforcement learning in partially observed and multi-agent systems</em>.
+</li>
+<li>
+Jhelum Chakravorty, Aug 2017. <em>Fundamental limits of remote estimation</em>.
+</li>
+<li>
+Jalal Arabneydi, Dec 2016. <em>New Concepts in Team Theory: Mean Field Teams and Reinforcement Learning</em>.
+</li>
+<li>
+Chuangshen Dong, Apr 2016. <em>Greener Cyber Physical Systems—Data Analysis and Algorithm Design</em>.
+</li>
+</ul>
+<h2>
+Graduated Master’s Students
+</h2>
+<div class="tight">
+<ul>
+<li>
+Annavaleria Ardito, March 2024. <em>Study and implementation of multiple mobile robots control</em>.
+</li>
+<li>
+Berk Bozkurt, Apr 2024. <em>Weighted-norm bounds on model approximation in MDPs with unbounded per-step cost</em>.
+</li>
+<li>
+Erfan SeyedSalehi, Apr 2023. <em>Approximate information state for model based recurrent Q-learning</em>.
+</li>
+<li>
+Sharareh Younesian (co-supervised with Prof.&nbsp;Peter Caines), Dec 2022. <em>Structure-aware reinforcement learning for searching optimal monotone policies</em>.
+</li>
+<li>
+Chenyu Liu, June 2022. <em>Optimism in <span class="math inline">\(Q\)</span>-learning: Unified overview and comparison</em>.
+</li>
+<li>
+Alper Öker (co-supervised with Prof.&nbsp;Peter Caines), April 2021. <em>Distributed Kalman Filtering and Estimation</em>.
+</li>
+<li>
+Anirudha Jitani (co-supervised with Prof.&nbsp;Doina Precup), April 2021. <em>Intelligent node-overload protection in mobile edge computing using reinforcement learning</em>.
+</li>
+<li>
+Amit Sinha, Dec 2020. <em>Reinforcement learning in POMDPs</em>.
+</li>
+<li>
+Samin Yeasar Arnob, May 2020. <em>Improving Robustness in Inverse Reinforcement Learning</em>.
+</li>
+<li>
+Borna Sayedana, Aug 2019. <em>Monotonicity of value function and optimal policy in cross-layer design of communication systems</em>.
+</li>
+<li>
+Raihan Seraj, April 2019. <em>Learning in the presence of partial observability and concept drifts</em>.
+</li>
+<li>
+Romina Hassani, Dec 2018. <em>Social learning and distributed hypothesis testing</em>.
+</li>
+<li>
+Sebin Mathew, Aug 2018. <em>Dual decomposition algorithms for sensor scheduling</em>.
+</li>
+<li>
+Ming Lei, Aug 2017. <em>Optimal policies for energy storage in microgrids</em>.
+</li>
+<li>
+Aide Zhou, Apr 2017. <em>Monte Carlo simulations for remote state estimation</em>.
+</li>
+<li>
+Calvin Ma, Aug 2016. <em>Multi-armed bandits for MPSoC design space exploration</em>.
+</li>
+<li>
+Can Cui, Aug 2015. <em>On computing optimal thresholds for sequential hypothesis testing</em>.
+</li>
+<li>
+Mehnaz Mannan, Apr 2015. <em>Finite-state approximation for a class of POMDPs and comparison of reinforcement learning algorithms for managing energy storage in renewable generation</em>.
+</li>
+<li>
+Prokopis Prokopiou, Aug 2014. <em>An estimation based allocation rule with super-linear regret and finite lock-on time for dependent multi-armed bandits</em>.
+</li>
+</ul>
+</div>
+
+
+
+</main> <!-- /main -->
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Aditya Mahajan</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-preprints .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-index','listing-title','listing-authors','listing-status','listing-date','listing-arxiv','listing-pdf',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      
+      searchColumns: ["listing-index","listing-title","listing-authors","listing-status","listing-date","listing-arxiv","listing-pdf"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-preprints'] = new List('listing-preprints', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-journals .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-index','listing-title','listing-authors','listing-journal','listing-date','listing-pdf','listing-doi','listing-location','listing-arxiv','listing-code','listing-pages','listing-volume','listing-number','listing-url','listing-slides','listing-poster','listing-acmid','listing-status','listing-award','listing-note',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-index","listing-title","listing-authors","listing-journal","listing-date","listing-pdf","listing-doi","listing-location","listing-arxiv","listing-code","listing-pages","listing-volume","listing-number","listing-url","listing-slides","listing-poster","listing-acmid","listing-status","listing-award","listing-note"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-journals'] = new List('listing-journals', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-unpublished .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-index','listing-title','listing-authors','listing-date','listing-arxiv','listing-pdf',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      
+      searchColumns: ["listing-index","listing-title","listing-authors","listing-date","listing-arxiv","listing-pdf"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-unpublished'] = new List('listing-unpublished', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-book-chapters .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-index','listing-title','listing-authors','listing-booktitle','listing-publisher','listing-date','listing-pages','listing-pdf','listing-doi',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      
+      searchColumns: ["listing-index","listing-title","listing-authors","listing-booktitle","listing-publisher","listing-date","listing-pages","listing-pdf","listing-doi"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-book-chapters'] = new List('listing-book-chapters', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./bio.html"> 
+<span class="menu-text">Bio</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-publications" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Publications</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-publications">    
+        <li>
+    <a class="dropdown-item" href="./journals.html">
+ <span class="dropdown-text">Journal</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./journals.html">
+ <span class="dropdown-text">Conference</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./students.html"> 
+<span class="menu-text">Students</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./courses.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./activities.html"> 
+<span class="menu-text">Activities</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#preprints" id="toc-preprints" class="nav-link active" data-scroll-target="#preprints">Preprints</a></li>
+  <li><a href="#journal-and-selective-conference-publications" id="toc-journal-and-selective-conference-publications" class="nav-link" data-scroll-target="#journal-and-selective-conference-publications">Journal and Selective Conference Publications</a></li>
+  <li><a href="#book-chapters" id="toc-book-chapters" class="nav-link" data-scroll-target="#book-chapters">Book Chapters</a></li>
+  <li><a href="#thesis" id="toc-thesis" class="nav-link" data-scroll-target="#thesis">Thesis</a></li>
+  <li><a href="#unpublished-drafts" id="toc-unpublished-drafts" class="nav-link" data-scroll-target="#unpublished-drafts">Unpublished Drafts</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="preprints" class="level2">
+<h2 data-anchor-id="preprints">Preprints</h2>
+<div id="listing-preprints" class="quarto-listing quarto-listing-container-custom">
+<ol>
+
+    <li value="41"><p>
+      <strong>Model approximation in MDPs with unbounded per-step cost  </strong>
+      
+        (<a href="http://arxiv.org/abs/">arxiv</a>)
+      
+      
+      
+      <br>
+      Berk Bozkurt, Aditya Mahajan, Ashutosh Nayyar, and Yi Ouyang
+      <br>
+      
+      
+      
+      
+      Feb 2024.
+      <br>
+      
+      
+    </p></li>
+
+    <li value="40"><p>
+      <strong>Mean-field games among teams</strong>
+      
+        (<a href="http://arxiv.org/abs/">arxiv</a>)
+      
+      
+      
+      <br>
+      Jayakumar Subramanian, Akshat Kumar, and Aditya Mahajan
+      <br>
+      
+      
+      
+      
+      Oct 2023.
+      <br>
+      
+      
+    </p></li>
+
+    <li value="39"><p>
+      <strong>On the sensitivity of restless bandit solutions to model mismatch</strong>
+      
+      
+        (<a href="projects/projects/bandits/preprint/approx-Whittle.pdf">pdf</a>)
+      
+      
+      <br>
+      Amit Sinha and Aditya Mahajan
+      <br>
+      
+      
+      
+      
+      Mar 2022.
+      <br>
+      
+      
+    </p></li>
+
+</ol>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="journal-and-selective-conference-publications" class="level2">
+<h2 data-anchor-id="journal-and-selective-conference-publications">Journal and Selective Conference Publications</h2>
+<div id="listing-journals" class="quarto-listing quarto-listing-container-custom">
+<ol>
+
+    <li value="38"><p>
+      <strong>Strong consistency and rate of convergence of switched least squares system identification for autonomous switched Markov jump linear systems</strong>
+      
+      
+        (<a href="projects/projects/switched-systems/preprint/estimating-MJLS.pdf">pdf</a>)
+      
+      
+      <br>
+      Borna Sayedana, Mohammad Afshari, Peter E. Caines, and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transcations on Automatic Control</em>, 
+      
+      
+      
+      
+      Jul 2024.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TAC.2024.3351806">10.1109/TAC.2024.3351806</a>)
+      
+      
+    </p></li>
+
+    <li value="37"><p>
+      <strong>On learning Whittle index policy for restless bandits with scalable regret</strong>
+      
+      
+        (<a href="projects/projects/bandits/preprint/rb-tsde.pdf">pdf</a>)
+      
+      
+      <br>
+      Nima Akbarzadeh and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transactions on Control of Networked Systems</em>, 
+      
+      
+      
+      
+      Jul 2023.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TCNS.2023.3333402">10.1109/TCNS.2023.3333402</a>)
+      
+      
+    </p></li>
+
+    <li value="36"><p>
+      <strong>Briding State and History Representations: Understanding self-predictive RL</strong>
+      
+        (<a href="http://arxiv.org/abs/">arxiv</a>)
+      
+      
+      
+        (<a href="https://github.com/twni2016/self-predictive-rl">code</a>)
+      
+      <br>
+      Tianwei Ni, Benjamin Eysenbach, Erfan SeyedSalehi, Michel Ma, Clement Gehring, Aditya Mahajan, and Pierre-Luc Bacon
+      <br>
+       
+        <em>International Confernece on Learning Representations (ICLR)</em>, 
+      
+      
+      
+      
+      May 2024.
+      <br>
+      
+      
+    </p></li>
+
+    <li value="35"><p>
+      <strong>On learning history-based policies for controlling Markov decision processes</strong>
+      
+        (<a href="http://arxiv.org/abs/">arxiv</a>)
+      
+      
+      
+      <br>
+      Gandharv Patil, Aditya Mahajan, and Doina Precup
+      <br>
+       
+        <em>International Conference on Artificial Intelligence and Statistics (AISTATS)</em>, 
+      
+      
+      
+      
+      May 2024.
+      <br>
+      
+      
+    </p></li>
+
+    <li value="34"><p>
+      <strong>Two families of indexable partially observable restless bandits and Whittle index computation</strong>
+      
+      
+        (<a href="projects/projects/bandits/journal/pomdp-bandits.pdf">pdf</a>)
+      
+      
+      <br>
+      Nima Akbarzadeh and Aditya Mahajan
+      <br>
+       
+        <em>Performance Evaluation</em>, 
+      
+      
+      
+       
+        pp.&nbsp;102394,
+      
+      Jan 2024.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1016/j.peva.2023.102394">10.1016/j.peva.2023.102394</a>)
+      
+      
+    </p></li>
+
+    <li value="33"><p>
+      <strong>Dealing With Non-stationarity in Decentralized Cooperative Multi-Agent Deep Reinforcement Learning via Multi-Timescale Learning</strong>
+      
+      
+        (<a href="projects/projects/reinforcement-learning/conference/2023-colla.pdf">pdf</a>)
+      
+      
+      <br>
+      Hadi Nekoei, Akilesh Badrinaaraayanan, Amit Sinha, Mohammad Amini, Janarthanan Rajendran, Aditya Mahajan, and Sarath Chandar
+      <br>
+       
+        <em>Conference on Lifelong Learning Agents (CoLLA)</em>, 
+      
+      
+      
+      
+      Aug 2023.
+      <br>
+      
+      
+    </p></li>
+
+    <li value="32"><p>
+      <strong>Decentralized linear quadratic systems with major and minor agents and non-Gaussian noise</strong>
+      
+      
+        (<a href="projects/projects/info-structures/journal/major-minor.pdf">pdf</a>)
+      
+      
+      <br>
+      Mohammad Afshari and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transcations on Automatic Control</em>, 
+      
+       
+        vol.&nbsp;68,
+      
+       
+        no.&nbsp;8,
+      
+       
+        pp.&nbsp;4666–4681,
+      
+      Aug 2023.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TAC.2022.3210049">10.1109/TAC.2022.3210049</a>)
+      
+      
+    </p></li>
+
+    <li value="31"><p>
+      <strong>Scalable regret for learning to control network-coupled subsystems with unknown dynamics</strong>
+      
+      
+        (<a href="projects/projects/reinforcement-learning/journal/network-tsde.pdf">pdf</a>)
+      
+      
+      <br>
+      Sagar Sudhakara, Aditya Mahajan, Ashutosh Nayyar, and Ouyang Yi
+      <br>
+       
+        <em>IEEE Transactions on Control of Networked Systems</em>, 
+      
+       
+        vol.&nbsp;10,
+      
+       
+        no.&nbsp;1,
+      
+       
+        pp.&nbsp;2-14,
+      
+      Mar 2023.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TCNS.2022.3184107">10.1109/TCNS.2022.3184107</a>)
+      
+      
+    </p></li>
+
+    <li value="30"><p>
+      <strong>Robustness and sample complexity of model-based MARL for general-sum Markov games</strong>
+      
+      
+        (<a href="projects/projects/game-theory/journal/model-based-MARL.pdf">pdf</a>)
+      
+      
+      <br>
+      Jayakumar Subramanian, Amit Sinha, and Aditya Mahajan
+      <br>
+       
+        <em>Dynamic Games and Application</em>, 
+      
+      
+      
+       
+        pp.&nbsp;56-88,
+      
+      Mar 2023.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1007/s13235-023-00490-2">10.1007/s13235-023-00490-2</a>)
+      
+      
+    </p></li>
+
+    <li value="29"><p>
+      <strong>Structure-aware reinforcement learning for node overload protection in mobile edge computing</strong>
+      
+      
+        (<a href="projects/projects/communication/journal/node-overload-protection.pdf">pdf</a>)
+      
+      
+      <br>
+      Anirudha Jitani, Aditya Mahajan, Zhongwen Zhu, Hatem Abou-zeid, Emannuel T. Fapi, and Hakimeh Purmehdi
+      <br>
+       
+        <em>IEEE Transactions on Cognitive Communications and Networking</em>, 
+      
+       
+        vol.&nbsp;8,
+      
+       
+        no.&nbsp;4,
+      
+       
+        pp.&nbsp;1881-1897,
+      
+      Dec 2022.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TCCN.2022.3195503">10.1109/TCCN.2022.3195503</a>)
+      
+      
+    </p></li>
+
+    <li value="28"><p>
+      <strong>Conditions for indexability of restless bandits and an O(K&lt;sup&gt;3&lt;/sup&gt;) algorithm to compute Whittle index</strong>
+      
+      
+        (<a href="projects/projects/bandits/journal/restless-bandits-corrected.pdf">pdf</a>)
+      
+      
+        (<a href="https://doi.org/10.24433/CO.8624544.v1">code</a>)
+      
+      <br>
+      Nima Akbarzadeh and Aditya Mahajan
+      <br>
+       
+        <em>Journal of Applied Probability</em>, 
+      
+       
+        vol.&nbsp;54,
+      
+       
+        no.&nbsp;4,
+      
+       
+        pp.&nbsp;1164-1192,
+      
+      Dec 2022.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1017/apr.2021.61">10.1017/apr.2021.61</a>)
+      
+      
+    </p></li>
+
+    <li value="27"><p>
+      <strong>Scalable operator allocation for multi-robot assistance: A restless bandit approach</strong>
+      
+      
+        (<a href="projects/projects/bandits/journal/multi-robot-assistance.pdf">pdf</a>)
+      
+      
+        (<a href="https://codeocean.com/capsule/9390571/tree/v1">code</a>)
+      
+      <br>
+      Abhinav Dahiya, Nima Akbarzadeh, Aditya Mahajan, and Stephen L. Smith
+      <br>
+       
+        <em>IEEE Transactions on Control of Networked Systems</em>, 
+      
+       
+        vol.&nbsp;9,
+      
+       
+        no.&nbsp;3,
+      
+       
+        pp.&nbsp;1397-1408,
+      
+      Sep 2022.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TCNS.2022.3153872">10.1109/TCNS.2022.3153872</a>)
+      
+      
+    </p></li>
+
+    <li value="26"><p>
+      <strong>Optimal control of network-coupled subsystems: Spectral decomposition and low-dimensional solutions</strong>
+      
+      
+        (<a href="projects/projects/linear-systems/journal/network-spectral-decomposition.pdf">pdf</a>)
+      
+      
+      <br>
+      Shuang Gao and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transactions on Control of Networked Systems</em>, 
+      
+       
+        vol.&nbsp;9,
+      
+       
+        no.&nbsp;2,
+      
+       
+        pp.&nbsp;657-669,
+      
+      Jun 2022.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TCNS.2021.3124259">10.1109/TCNS.2021.3124259</a>)
+      
+      
+    </p></li>
+
+    <li value="25"><p>
+      <strong>Approximate information state for approximate planning and reinforcement learning in partially observed systems</strong>
+      
+      
+        (<a href="projects/projects/reinforcement-learning/journal/ais.pdf">pdf</a>)
+      
+      
+        (<a href="https://github.com/info-structures/ais">code</a>)
+      
+      <br>
+      Jayakumar Subramanian, Amit Sinha, Raihan Seraj, and Aditya Mahajan
+      <br>
+       
+        <em>Journal of Machine Learning Research</em>, 
+      
+       
+        vol.&nbsp;23,
+      
+       
+        no.&nbsp;12,
+      
+       
+        pp.&nbsp;1-83,
+      
+      Feb 2022.
+      <br>
+      
+      
+        URL: <a href="">https://www.jmlr.org/papers/v23/20-1165.html</a>)
+      
+    </p></li>
+
+    <li value="24"><p>
+      <strong>Multi-agent estimation and filtering for minimizing team mean-squared error</strong>
+      
+      
+        (<a href="projects/projects/linear-systems/journal/team-mmse.pdf">pdf</a>)
+      
+      
+      <br>
+      Mohammad Afshari and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transactions on Signal Processing</em>, 
+      
+       
+        vol.&nbsp;69,
+      
+      
+       
+        pp.&nbsp;5206-5221,
+      
+      Aug 2021.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TSP.2021.3104981">10.1109/TSP.2021.3104981</a>)
+      
+      
+    </p></li>
+
+    <li value="23"><p>
+      <strong>Optimal local and remote controllers with unreliable uplink channels: An elementary proof</strong>
+      
+      
+        (<a href="projects/projects/info-structures/journal/2020-local-and-remote.pdf">pdf</a>)
+      
+      
+      <br>
+      Mohammad Afshari and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transcations on Automatic Control</em>, 
+      
+       
+        vol.&nbsp;65,
+      
+       
+        no.&nbsp;8,
+      
+       
+        pp.&nbsp;3616–3622,
+      
+      Aug 2020.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TAC.2019.2951658">10.1109/TAC.2019.2951658</a>)
+      
+      
+    </p></li>
+
+    <li value="22"><p>
+      <strong>Renewal Monte Carlo: Renewal theory based reinforcement learning</strong>
+      
+      
+        (<a href="projects/projects/reinforcement-learning/journal/2020-renewal-monte-carlo.pdf">pdf</a>)
+      
+      
+        (<a href="https://codeocean.com/capsule/027c3bab-27cf-4f47-8153-6533c2bfc1e5">code</a>)
+      
+      <br>
+      Jayakumar Subramanian and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transcations on Automatic Control</em>, 
+      
+       
+        vol.&nbsp;65,
+      
+       
+        no.&nbsp;8,
+      
+       
+        pp.&nbsp;3663–3670,
+      
+      Aug 2020.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TAC.2019.2953089">10.1109/TAC.2019.2953089</a>)
+      
+      
+    </p></li>
+
+    <li value="21"><p>
+      <strong>Counterexamples on the monotonicity of delay optimal strategies for energy harvesting transmitters</strong>
+      
+      
+        (<a href="projects/projects/communication/journal/counterexamples.pdf">pdf</a>)
+      
+      
+        (<a href="https://doi.org/10.24433/CO.9177397.v3">code</a>)
+      
+      <br>
+      Borna Sayedana and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Wireless Communication Letters</em>, 
+      
+       
+        vol.&nbsp;9,
+      
+       
+        no.&nbsp;7,
+      
+       
+        pp.&nbsp;1070-1074,
+      
+      Jul 2020.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/LWC.2020.2981066">10.1109/LWC.2020.2981066</a>)
+      
+      
+    </p></li>
+
+    <li value="20"><p>
+      <strong>Remote estimation over a packet-drop channel with Markovian state</strong>
+      
+      
+        (<a href="projects/projects/real-time/journal/2020-markov-remote-estimation.pdf">pdf</a>)
+      
+      
+        (<a href="https://doi.org/10.24433/CO.8529792.v1">code</a>)
+      
+      <br>
+      Jhelum Chakravorty and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transcations on Automatic Control</em>, 
+      
+       
+        vol.&nbsp;65,
+      
+       
+        no.&nbsp;5,
+      
+       
+        pp.&nbsp;2016-2031,
+      
+      May 2020.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TAC.2019.2926160">10.1109/TAC.2019.2926160</a>)
+      
+      
+    </p></li>
+
+    <li value="19"><p>
+      <strong>Reinforcement learning in stationary mean-field games</strong>
+      
+      
+        (<a href="projects/projects/reinforcement-learning/conference/2019-aamas.pdf">pdf</a>)
+      
+      
+      <br>
+      Jayakumar Subramanian and Aditya Mahajan
+      <br>
+       
+        <em>International Conference on Autonomous Agents and Multiagent Systems (AAMAS)</em>, 
+      
+      
+      
+      
+      May 2019.
+      <br>
+      
+      
+    </p></li>
+
+    <li value="18"><p>
+      <strong>Sufficient conditions for the value function and optimal strategy to be even and quasi-convex</strong>
+      
+      
+        (<a href="projects/projects/mdp/journal/even-and-quasi-convex.pdf">pdf</a>)
+      
+      
+        (<a href="https://codeocean.com/2017/12/11/remote-estimation-of-first-order-autoregressive-processes-over-i-i-d-packet-drop-channel-over-a-finite-horizon/interface">code</a>)
+      
+      <br>
+      Jhelum Chakravorty and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transcations on Automatic Control</em>, 
+      
+       
+        vol.&nbsp;63,
+      
+       
+        no.&nbsp;11,
+      
+      
+      Nov 2018.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TAC.2018.2800796">10.1109/TAC.2018.2800796</a>)
+      
+      
+    </p></li>
+
+    <li value="17"><p>
+      <strong>Information-Theoretic Privacy for Smart Metering Systems with a Rechargeable Battery</strong>
+      
+      
+        (<a href="projects/projects/privacy/journal/smart-meter-privacy.pdf">pdf</a>)
+      
+      
+      <br>
+      Simon Li, Ashish Khisti, and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transcations on Information Theory</em>, 
+      
+       
+        vol.&nbsp;64,
+      
+       
+        no.&nbsp;5,
+      
+       
+        pp.&nbsp;3679–3695,
+      
+      May 2018.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TIT.2018.2809005">10.1109/TIT.2018.2809005</a>)
+      
+      
+    </p></li>
+
+    <li value="16"><p>
+      <strong>Fundamental limits of remote estimation of autoregressive Markov processes under communication constraints</strong>
+      
+      
+        (<a href="projects/projects/real-time/journal/2017-remote-estimation.pdf">pdf</a>)
+      
+      
+      <br>
+      Jhelum Chakravorty and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transactions on Automatic Control</em>, 
+      
+      
+      
+      
+      Mar 2017.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TAC.2016.2580589">10.1109/TAC.2016.2580589</a>)
+      
+      
+    </p></li>
+
+    <li value="15"><p>
+      <strong>Decentralized stochastic control</strong>
+      
+      
+        (<a href="projects/projects/info-structures/journal/decentralized-control.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Mehnaz Mannan
+      <br>
+       
+        <em>Annals of Operations Research</em>, 
+      
+       
+        vol.&nbsp;241,
+      
+       
+        no.&nbsp;1,
+      
+       
+        pp.&nbsp;109–126,
+      
+      Jun 2016.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1007/s10479-014-1652-0">10.1007/s10479-014-1652-0</a>)
+      
+      
+    </p></li>
+
+    <li value="14"><p>
+      <strong>An algorithmic approach to identify irrelevant information in sequential teams</strong>
+      
+      
+        (<a href="projects/projects/graphical-models/journal/graph-irrelevant.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Sekhar Tatikonda
+      <br>
+       
+        <em>Automatica</em>, 
+      
+      
+      
+       
+        pp.&nbsp;178–191,
+      
+      Nov 2015.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1016/j.automatica.2015.08.002">10.1016/j.automatica.2015.08.002</a>)
+      
+      
+    </p></li>
+
+    <li value="13"><p>
+      <strong>Sufficient statistics for linear control strategies in decentralized systems with partial history sharing</strong>
+      
+      
+        (<a href="projects/projects/info-structures/journal/linear-sufficient-statistics.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Ashutosh Nayyar
+      <br>
+       
+        <em>IEEE Transactions on Automatic Control</em>, 
+      
+       
+        vol.&nbsp;60,
+      
+       
+        no.&nbsp;8,
+      
+       
+        pp.&nbsp;2046–2056,
+      
+      Aug 2015.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TAC.2015.2398884">10.1109/TAC.2015.2398884</a>)
+      
+      
+    </p></li>
+
+    <li value="12"><p>
+      <strong>Optimal decentralized control of coupled subsystems with control sharing</strong>
+      
+      
+        (<a href="projects/projects/info-structures/journal/control-sharing.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transactions on Automatic Control</em>, 
+      
+       
+        vol.&nbsp;58,
+      
+       
+        no.&nbsp;9,
+      
+       
+        pp.&nbsp;2377-2382,
+      
+      Sep 2013.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TAC.2013.2251807">10.1109/TAC.2013.2251807</a>)
+      
+      
+    </p></li>
+
+    <li value="11"><p>
+      <strong>Decentralized stochastic control with partial history sharing: A common information approach</strong>
+      
+      
+        (<a href="projects/projects/info-structures/journal/partial-sharing.pdf">pdf</a>)
+      
+      
+      <br>
+      Ashutosh Nayyar, Aditya Mahajan, and Demosthenis Teneketzis
+      <br>
+       
+        <em>IEEE Transactions on Automatic Control</em>, 
+      
+       
+        vol.&nbsp;58,
+      
+       
+        no.&nbsp;7,
+      
+       
+        pp.&nbsp;1644-1658,
+      
+      Jul 2013.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TAC.2013.2239000">10.1109/TAC.2013.2239000</a>)
+      
+      
+    </p></li>
+
+    <li value="10"><p>
+      <strong>Information structures in optimal decentralized control</strong>
+      
+      
+        (<a href="projects/projects/info-structures/conference/2012-cdc.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan, Nuno C. Martins, Michael C. Rotkowitz, and Serdar Yüksel
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+      
+      
+       
+        pp.&nbsp;1291–1306,
+      
+      Dec 2012.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/CDC.2012.6425819">10.1109/CDC.2012.6425819</a>)
+      
+      
+    </p></li>
+
+    <li value="9"><p>
+      <strong>Opportunistic capacity and error exponent region for the compound channel with feedback</strong>
+      
+      
+        (<a href="projects/projects/compound-channel/journal/compound.pdf">pdf</a>)
+      
+      
+        (<a href="https://github.com/adityam/compound-channel">code</a>)
+      
+      <br>
+      Aditya Mahajan and Sekhar Tatikonda
+      <br>
+       
+        <em>IEEE Transactions on Information Theory</em>, 
+      
+       
+        vol.&nbsp;58,
+      
+       
+        no.&nbsp;7,
+      
+       
+        pp.&nbsp;4331-4341,
+      
+      Jul 2012.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TIT.2012.2191689">10.1109/TIT.2012.2191689</a>)
+      
+      
+    </p></li>
+
+    <li value="8"><p>
+      <strong>Optimal control strategies in delayed sharing information structures</strong>
+      
+      
+        (<a href="projects/projects/info-structures/journal/delay-sharing.pdf">pdf</a>)
+      
+      
+      <br>
+      Ashutosh Nayyar, Aditya Mahajan, and Demosthenis Teneketzis
+      <br>
+       
+        <em>IEEE Transactions on Automatic Control</em>, 
+      
+       
+        vol.&nbsp;56,
+      
+       
+        no.&nbsp;7,
+      
+       
+        pp.&nbsp;1606-1620,
+      
+      Jul 2011.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TAC.2010.2089381">10.1109/TAC.2010.2089381</a>)
+      
+      
+    </p></li>
+
+    <li value="7"><p>
+      <strong>A wireless soil moisture smart sensor web using physics-based optimal
+ control: Concept and initial demonstrations</strong>
+      
+      
+        (<a href="projects/projects/soil-moisture/journal/models.pdf">pdf</a>)
+      
+      
+      <br>
+      Mahta Moghaddam, Dara Entekhabi, Yuriy Goykhman, Ke Li, Mingyan Liu, Aditya Mahajan, Ashutosh Nayyar, David I Shuman, and Demosthenis Teneketzis
+      <br>
+       
+        <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 
+      
+       
+        vol.&nbsp;3,
+      
+       
+        no.&nbsp;4,
+      
+       
+        pp.&nbsp;522-535,
+      
+      Dec 2010.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/JSTARS.2010.2052918">10.1109/JSTARS.2010.2052918</a>)
+      
+      
+    </p></li>
+
+    <li value="6"><p>
+      <strong>Measurement scheduling for soil moisture sensing: From physical models to optimal control</strong>
+      
+      
+        (<a href="projects/projects/soil-moisture/journal/scheduling.pdf">pdf</a>)
+      
+      
+      <br>
+      David Shuman, Ashutosh Nayyar, Aditya Mahajan, Yuriy Goykhman, Ke Li, Mingyan Liu, Demosthenis Teneketzis, Mahta Moghaddam, and Dara Entekhabi
+      <br>
+       
+        <em>Proceedings of the IEEE</em>, 
+      
+       
+        vol.&nbsp;98,
+      
+       
+        no.&nbsp;11,
+      
+       
+        pp.&nbsp;1918-1934,
+      
+      Nov 2010.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/JPROC.2010.2052532">10.1109/JPROC.2010.2052532</a>)
+      
+      
+    </p></li>
+
+    <li value="5"><p>
+      <strong>Optimal design of sequential real-time communication systems</strong>
+      
+      
+        (<a href="projects/projects/real-time/journal/2009-real-time.pdf">pdf</a>)
+      
+      
+        (<a href="https://github.com/adityam/real-time-example">code</a>)
+      
+      <br>
+      Aditya Mahajan and Demosthenis Teneketzis
+      <br>
+       
+        <em>IEEE Transactions on Information Theory</em>, 
+      
+       
+        vol.&nbsp;55,
+      
+       
+        no.&nbsp;11,
+      
+       
+        pp.&nbsp;5317-5337,
+      
+      Nov 2009.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TIT.2009.2030462">10.1109/TIT.2009.2030462</a>)
+      
+      
+    </p></li>
+
+    <li value="4"><p>
+      <strong>Optimal performance of networked control systems with non-classical information structures</strong>
+      
+      
+        (<a href="projects/projects/networked-control/journal/2009-networked-control.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Demosthenis Teneketzis
+      <br>
+       
+        <em>SIAM Journal of Control and Optimization</em>, 
+      
+       
+        vol.&nbsp;48,
+      
+       
+        no.&nbsp;3,
+      
+       
+        pp.&nbsp;1377-1404,
+      
+      May 2009.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1137/060678130">10.1137/060678130</a>)
+      
+      
+    </p></li>
+
+    <li value="3"><p>
+      <strong>On the design of globally optimal communication strategies for real-time noisy communication with noisy feedback</strong>
+      
+      
+        (<a href="projects/projects/real-time/journal/2008-noisy-feedback.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Demosthenis Teneketzis
+      <br>
+       
+        <em>IEEE Journal on Selected Areas in Communication</em>, 
+      
+       
+        vol.&nbsp;28,
+      
+       
+        no.&nbsp;4,
+      
+       
+        pp.&nbsp;580-595,
+      
+      May 2008.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/JSAC.2008.080502">10.1109/JSAC.2008.080502</a>)
+      
+      
+    </p></li>
+
+    <li value="2"><p>
+      <strong>A novel method of down conversion for multiple bandpass signals</strong>
+      
+      
+        (<a href="projects/projects/sampling/journal/2006-downconversion.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan, Manu Agarwal, and Ajit K. Chaturvedi
+      <br>
+       
+        <em>IEEE Transactions on Wireless Communication</em>, 
+      
+       
+        vol.&nbsp;5,
+      
+       
+        no.&nbsp;2,
+      
+       
+        pp.&nbsp;427-434,
+      
+      Feb 2006.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TWC.2006.1611066">10.1109/TWC.2006.1611066</a>)
+      
+      
+    </p></li>
+
+    <li value="1"><p>
+      <strong>An improved interpretation of depletion approximation in  p-n junctions</strong>
+      
+      
+        (<a href="projects/projects/devices/journal/2005-depletion-approximation.pdf">pdf</a>)
+      
+      
+      <br>
+      Baquer Mazhari and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Transactions on Education</em>, 
+      
+       
+        vol.&nbsp;48,
+      
+       
+        no.&nbsp;1,
+      
+       
+        pp.&nbsp;60-62,
+      
+      Feb 2005.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1109/TE.2004.832876">10.1109/TE.2004.832876</a>)
+      
+      
+    </p></li>
+
+</ol>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="journals-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div>
+</section>
+<section id="book-chapters" class="level2">
+<h2 data-anchor-id="book-chapters">Book Chapters</h2>
+<div id="listing-book-chapters" class="quarto-listing quarto-listing-container-custom">
+<ol>
+
+    <li value="3"><p>
+      <strong>Multi-armed bandits, Gittins index, and its calculation</strong>
+      
+      
+        (<a href="projects/projects/bandits/book/2013-bandit-computations.pdf">pdf</a>)
+      
+      
+      <br>
+      Jhelum Chakravorty and Aditya Mahajan
+      <br>
+       
+        <em>Methods and Applications of Statistics in Clinical Trials, Volume 2:  Planning, Analysis, and Inferential Methods</em>, 
+      
+       
+        pp.&nbsp;416-435,
+      
+       
+        John Wiley &amp; Sons,
+      
+      Jan 1970.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1002/9781118596333.ch24">10.1002/9781118596333.ch24</a>)
+      
+      
+    </p></li>
+
+    <li value="2"><p>
+      <strong>The common-information approach to decentralized stochastic control</strong>
+      
+      
+        (<a href="projects/projects/info-structures/book/2014-common-information.pdf">pdf</a>)
+      
+      
+      <br>
+      Ashutosh Nayyar, Aditya Mahajan, and Demosthenis Teneketzis
+      <br>
+       
+        <em>Information and Control in Networks</em>, 
+      
+       
+        pp.&nbsp;123-156,
+      
+       
+        Springer-Verlag,
+      
+      Jan 1970.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1007/978-3-319-02150-8_4">10.1007/978-3-319-02150-8_4</a>)
+      
+      
+    </p></li>
+
+    <li value="1"><p>
+      <strong>Multi-armed bandit problems</strong>
+      
+      
+        (<a href="projects/projects/bandits/book/2008-mab.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Demosthenis Teneketzis
+      <br>
+       
+        <em>Foundations and Applications of Sensor Management</em>, 
+      
+       
+        pp.&nbsp;121-151,
+      
+       
+        Springer-Verlag,
+      
+      Jan 1970.
+      <br>
+      
+        DOI: <a href="http://doi.org/10.1007/978-0-387-49819-5_6">10.1007/978-0-387-49819-5_6</a>)
+      
+      
+    </p></li>
+
+</ol>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="thesis" class="level2">
+<h2 data-anchor-id="thesis">Thesis</h2>
+<ul>
+<li><strong>Sequential decomposition of sequential teams: applications to real-time communication and networked control systems</strong> (<a href="projects/thesis/mahajan-thesis.pdf">pdf</a>) <br> Aditya Mahajan <br> <em>University of Michigan</em>, Sep 2008.</li>
+</ul>
+</section>
+<section id="unpublished-drafts" class="level2">
+<h2 data-anchor-id="unpublished-drafts">Unpublished Drafts</h2>
+<div id="listing-unpublished" class="quarto-listing quarto-listing-container-custom">
+<ol>
+
+    <li value="6"><p>
+      <strong>Approximate information state based convergence analysis of recurrent Q-learning</strong>
+      
+        (<a href="http://arxiv.org/abs/">arxiv</a>)
+      
+      
+      
+      <br>
+      Erfan Seyedsalehi, Nima Akbarzadeh, Amit Sinha, and Aditya Mahajan
+      <br>
+      
+      
+      
+      
+      Jun 2023.
+      <br>
+      
+      
+    </p></li>
+
+    <li value="5"><p>
+      <strong>Linear Quadratic Mean Field Teams: Optimal and Approximately Optimal Decentralized Solutions</strong>
+      
+      
+        (<a href="projects/projects/info-structures/preprint/mean-field-teams.pdf">pdf</a>)
+      
+      
+      <br>
+      Jalal Arabneydi and Aditya Mahajan
+      <br>
+      
+      
+      
+      
+      Aug 2016.
+      <br>
+      
+      
+    </p></li>
+
+    <li value="4"><p>
+      <strong>On computing optimal thresholds in decentralized sequential hypothesis testing</strong>
+      
+      
+        (<a href="projects/projects/decentralized-detection/preprint/computing-thresholds.pdf">pdf</a>)
+      
+      
+      <br>
+      Can Cui and Aditya Mahajan
+      <br>
+      
+      
+      
+      
+      Jan 2016.
+      <br>
+      
+      
+    </p></li>
+
+    <li value="3"><p>
+      <strong>Question about measurability of optimal control strategies in static teams</strong>
+      
+      
+        (<a href="projects/projects/info-structures/preprint/quesiton.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan, Ashutosh Nayyar, and Demosthenis Teneketzis
+      <br>
+      
+      
+      
+      
+      Oct 2015.
+      <br>
+      
+      
+    </p></li>
+
+    <li value="2"><p>
+      <strong>On the relationship between maximin information and common knowledge</strong>
+      
+      
+        (<a href="projects/projects/information/preprint/maximin-information.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan
+      <br>
+      
+      
+      
+      
+      Jan 2014.
+      <br>
+      
+      
+    </p></li>
+
+    <li value="1"><p>
+      <strong>Structural results for MDP: A direct proof</strong>
+      
+      
+        (<a href="projects/projects/mdp/preprint/mdp-structure.pdf">pdf</a>)
+      
+      
+      <br>
+      Aditya Mahajan
+      <br>
+      
+      
+      
+      
+      Jun 2010.
+      <br>
+      
+      
+    </p></li>
+
+</ol>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+<section id="disclaimer" class="level3 fs-10">
+<h3 data-anchor-id="disclaimer">Disclaimer</h3>
+<p>This material is presented to ensure timely dissemination of scholarly and technical work. Copyright and all rights therein are retained by authors or by other copyright holders. All person copying this information are expected to adhere to the terms and constraints invoked by each author’s copyright. In most cases, these works may not be reposted without the explicit permission of the copyright holder.</p>
+</section>
+
+
+
+</section>
+
+</main> <!-- /main -->
+</div> <!-- /content -->
+
+
+
+
+</body></html>
