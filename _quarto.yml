@@ -25,7 +25,7 @@ website:
           href: journals.qmd
 
         - text: Conference
-          href: journals.qmd
+          href: conferences.qmd
 
       - text: Students
         href: students.qmd
