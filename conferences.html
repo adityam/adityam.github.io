@@ -25,6 +25,8 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -45,7 +47,66 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-conferences .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-index','listing-title','listing-authors','listing-conference','listing-location','listing-date','listing-pdf','listing-slides','listing-video','listing-code','listing-poster','listing-award','listing-pages','listing-number','listing-id','listing-note',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-index","listing-title","listing-authors","listing-conference","listing-location","listing-date","listing-pdf","listing-slides","listing-video","listing-code","listing-poster","listing-award","listing-pages","listing-number","listing-id","listing-note"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-conferences'] = new List('listing-conferences', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -119,11 +180,1527 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="conference-publications" class="level2">
 <h2 data-anchor-id="conference-publications">Conference Publications</h2>
+<div class="{conferences}">
+
+</div>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-custom" id="listing-conferences">
+<ol>
+
+    <li value="70"><p>
+      <strong>Relative almost sure regret bounds for certainty equivalence control of Markov Jump Systems</strong>
+      
+        (<a href="files/projects/switched-systems/conference/2023-cdc-extended.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Borna Sayedana, Mohammad Afshari, Aditya Mahajan, and Peter Caines
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Singapore,
+      
+      Dec 2023.
+      
+    </p></li>
+
+    <li value="69"><p>
+      <strong>Asymmetric Actor Critic with Approximate Information State</strong>
+      
+        (<a href="files/projects/mdp/conference/2023-cdc.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Amit Sinha and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Singapore,
+      
+      Dec 2023.
+      
+    </p></li>
+
+    <li value="68"><p>
+      <strong>Weighted norm bounds on model approximation in MDPs with unbounded per-step cost</strong>
+      
+        (<a href="files/projects/mdp/conference/2023-cdc-extended.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Berk Bozkurt, Aditya Mahajan, Ashutosh Nayyar, and Yi Ouyang
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Singapore,
+      
+      Dec 2023.
+      
+    </p></li>
+
+    <li value="67"><p>
+      <strong>A modified Thompson sampling-based learning algorithm for unknown linear systems</strong>
+      
+        (<a href="files/projects/reinforcement-learning/conference/2022-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/reinforcement-learning/slides/2022-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Mukul Gagrani, Sagar Sudhakara, Aditya Mahajan, Ashutosh Nayyar, and Yi Ouyang
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Cancun, Mexico,
+      
+      Dec 2022.
+      
+    </p></li>
+
+    <li value="66"><p>
+      <strong>Consistency and rate of convergence of switched least square estimators for autonomous Markov Jump Linear Systems</strong>
+      
+        (<a href="files/projects/switched-systems/conference/2022-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/switched-systems/slides/2022-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Borna Sayedana, Mohammad Afshari, Peter E. Caines, and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Cancun, Mexico,
+      
+      Dec 2022.
+      
+    </p></li>
+
+    <li value="65"><p>
+      <strong>Thompson-sampling based reinforcement learning for networked control of unknown linear systems</strong>
+      
+        (<a href="files/projects/networked-control/conference/2022-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/networked-control/slides/2022-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Borna Sayedana, Mohammad Afshari, Peter E. Caines, and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Cancun, Mexico,
+      
+      Dec 2022.
+      
+    </p></li>
+
+    <li value="64"><p>
+      <strong>Partially observable restless bandits with restarts: indexability and computation of Whittle index</strong>
+      
+        (<a href="files/projects/bandits/conference/2022-cdc.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Nima Akbarzadeh and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Cancun, Mexico,
+      
+      Dec 2022.
+      
+    </p></li>
+
+    <li value="63"><p>
+      <strong>On learning history-based policies for controlling Markov decision processes</strong>
+      
+      
+      
+      <br>
+      Gandharv Patil, Aditya Mahajan, and Doina Precup
+      <br>
+       
+        <em>Reinforcement Learning and Decision Making (RLDM)</em>, 
+      
+       
+        Providence, RI,
+      
+      Jun 2022.
+      
+    </p></li>
+
+    <li value="62"><p>
+      <strong>Consistency and rate of convergence of switched least squares estimator for autonomous switched linear systems</strong>
+      
+      
+      
+      <br>
+      Borna Sayedana, Mohammad Afshari, Peter E. Caines, and Aditya Mahajan
+      <br>
+       
+        <em>Reinforcement Learning and Decision Making (RLDM)</em>, 
+      
+       
+        Providence, RI,
+      
+      Jun 2022.
+      
+    </p></li>
+
+    <li value="61"><p>
+      <strong>Robustness of Markov perfect equilibrium to model approximations in general-sum dynamic games</strong>
+      
+        (<a href="files/projects/game-theory/conference/2021-icc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/game-theory/slides/2021-icc.pdf">slides</a>)
+      
+      
+      <br>
+      Jayakumar Subramanian, Amit Sinha, and Aditya Mahajan
+      <br>
+       
+        <em>Indian Control Conference</em>, 
+      
+       
+        Virtual,
+      
+      Dec 2021.
+      
+    </p></li>
+
+    <li value="60"><p>
+      <strong>Thompson Sampling for linear quadratic mean-field teams</strong>
+      
+        (<a href="files/projects/reinforcement-learning/conference/2021-cdc.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Mukul Gagrani, Sagar Sudhakara, Aditya Mahajan, Ashutosh Nayyar, and Yi Ouyang
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Virtual,
+      
+      Dec 2021.
+      
+    </p></li>
+
+    <li value="59"><p>
+      <strong>Mean-field approximation for large-population beauty-contest games</strong>
+      
+        (<a href="files/projects/game-theory/conference/2021-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/game-theory/slides/2021-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Raihan Seraj, Aditya Mahajan, and Jerome Le Ny
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Virtual,
+      
+      Dec 2021.
+      
+    </p></li>
+
+    <li value="58"><p>
+      <strong>Decision referrals in Human-Automation teams</strong>
+      
+        (<a href="files/projects/human-automation/conference/2021-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/human-automation/slides/2021-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Kesav Kaza, Aditya Mahajan, and Jerome Le Ny
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Virtual,
+      
+      Dec 2021.
+      
+    </p></li>
+
+    <li value="57"><p>
+      <strong>Structure-aware reinforcement learning for node overload protection in mobile edge computing</strong>
+      
+        (<a href="files/projects/communication/conference/2021-icc.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Anirudha Jitani, Aditya Mahajan, Zhongwen Zhu, Hatem Abou-zeid, Emannuel T. Fapi, and Hakimeh Purmehdi
+      <br>
+       
+        <em>IEEE International Conference on Communications (ICC)</em>, 
+      
+       
+        Montreal, Canada,
+      
+      Jun 2021.
+      
+    </p></li>
+
+    <li value="56"><p>
+      <strong>Cross-layer communication over fading channels with adaptive decision feedback</strong>
+      
+        (<a href="files/projects/communication/conference/2020-wiopt.pdf">pdf</a>)
+      
+      
+      
+        (<a href="https://doi.org/10.24433/CO.8504008.v1">code</a>)
+      
+      <br>
+      Borna Sayedana, Aditya Mahajan, and Edmund Yeh
+      <br>
+       
+        <em>International Symposium on Modeling and Optimization in Mobile, Ad Hoc and Wireless Networks (WiOpt)</em>, 
+      
+       
+        Volos, Greece,
+      
+      Jun 2020.
+      
+    </p></li>
+
+    <li value="55"><p>
+      <strong>Restless bandits with controlled restarts: Indexability and computation of Whittle index</strong>
+      
+        (<a href="files/projects/bandits/conference/2019-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/bandits/slides/2019-cdc.pdf">slides</a>)
+      
+      
+        (<a href="https://codeocean.com/capsule/2ef7d3c2-8e3f-49b1-a61e-fd948e07bf47/tree/v1">code</a>)
+      
+      <br>
+      Nima Akbarzadeh and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Nice, France,
+      
+      Dec 2019.
+      
+    </p></li>
+
+    <li value="54"><p>
+      <strong>Approximate information state for partially observed systems</strong>
+      
+        (<a href="files/projects/mdp/conference/2019-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/mdp/slides/2019-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Jayakumar Subramanian and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Nice, France,
+      
+      Dec 2019.
+      
+    </p></li>
+
+    <li value="53"><p>
+      <strong>Networked control of coupled subsystems: Spectral decomposition and low-dimensional solutions</strong>
+      
+        (<a href="files/projects/linear-systems/conference/2019-cdc.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Shuang Gao and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Nice, France,
+      
+      Dec 2019.
+      
+    </p></li>
+
+    <li value="52"><p>
+      <strong>Dynamic spectrum access under partial observations: A restless bandit approach</strong>
+      
+        (<a href="files/projects/bandits/conference/2019-cwit.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/bandits/slides/2019-cwit.pdf">slides</a>)
+      
+      
+      <br>
+      Nima Akbarzadeh and Aditya Mahajan
+      <br>
+       
+        <em>Canadian Workshop on Information Theory</em>, 
+      
+       
+        Hamilton, Ontario, Canada,
+      
+      Jun 2019.
+      
+    </p></li>
+
+    <li value="51"><p>
+      <strong>Approximate information state for partially observed systems</strong>
+      
+        (<a href="files/projects/mdp/conference/2019-rldm.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Jayakumar Subramanian and Aditya Mahajan
+      <br>
+       
+        <em>Reinforcement Learning and Decision Making (RLDM)</em>, 
+      
+       
+        Montreal, Canada,
+      
+      Jul 2019.
+      
+    </p></li>
+
+    <li value="50"><p>
+      <strong>Reinforcement learning in mean-field teams</strong>
+      
+        (<a href="files/projects/reinforcement-learning/conference/2019-rldm.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Jayakumar Subramanian, Raihan Seraj, and Aditya Mahajan
+      <br>
+       
+        <em>Reinforcement Learning and Decision Making (RLDM)</em>, 
+      
+       
+        Montreal, Canada,
+      
+      Jul 2019.
+      
+    </p></li>
+
+    <li value="49"><p>
+      <strong>Reinforcement learning in mean-field teams</strong>
+      
+        (<a href="files/projects/reinforcement-learning/conference/2019-ala.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Jayakumar Subramanian, Raihan Seraj, and Aditya Mahajan
+      <br>
+       
+        <em>AAMAS Workshop on Adaptive and Learning Agents</em>, 
+      
+       
+        Montreal, Canada,
+      
+      May 2019.
+      
+    </p></li>
+
+    <li value="48"><p>
+      <strong>Team optimal decentralized state estimation</strong>
+      
+        (<a href="files/projects/info-structures/conference/2018-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/info-structures/slides/2018-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Mohammad Afshari and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Miami, Florida,
+      
+      Dec 2018.
+      
+    </p></li>
+
+    <li value="47"><p>
+      <strong>Optimal sampling of multiple linear processes over a shared medium</strong>
+      
+        (<a href="files/projects/real-time/conference/2018-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2018-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Sebin Mathew, Karl H. Johannson, and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Miami, Florida,
+      
+      Dec 2018.
+      
+    </p></li>
+
+    <li value="46"><p>
+      <strong>On controllability of leader-follower dynamics over a directed graph</strong>
+      
+        (<a href="files/projects/linear-systems/conference/2018-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/linear-systems/slides/2018-cdc.pptx">slides</a>)
+      
+      
+      <br>
+      Jayakumar Subramanian, Aditya Mahajan, and Aditya A. Paranjape
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Miami, Florida,
+      
+      Dec 2018.
+      
+    </p></li>
+
+    <li value="45"><p>
+      <strong>Renewal Monte Carlo: Renewal theory based reinforcement learning</strong>
+      
+        (<a href="files/projects/reinforcement-learning/conference/2018-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/reinforcement-learning/slides/2018-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Jayakumar Subramanian and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Miami, Florida,
+      
+      Dec 2018.
+      
+    </p></li>
+
+    <li value="44"><p>
+      <strong>Optimal decentralized control of two agent linear system with partial output feedback: certainty equivalence and optimality of linear strategies</strong>
+      
+        (<a href="files/projects/info-structures/conference/2018-necsys.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Mohammad Afshari and Aditya Mahajan
+      <br>
+       
+        <em>IFAC Workshop on Distributed Estimation and Control in Networked Systems</em>, 
+      
+       
+        Groningen, Netherlands,
+      
+      Aug 2018.
+      
+    </p></li>
+
+    <li value="43"><p>
+      <strong>A policy gradient algorithm to compute boundedly rational stationary mean field equilibria</strong>
+      
+        (<a href="files/projects/reinforcement-learning/conference/2018-pal.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Jayakumar Subramanian and Aditya Mahajan
+      <br>
+       
+        <em>ICML/IJCAI/AAMAS Workshop on Planning and Learning (PAL-18)</em>, 
+      
+       
+        Stockholm, Sweden,
+      
+      Jul 2018.
+      
+    </p></li>
+
+    <li value="42"><p>
+      <strong>On privacy in smart metering systems with periodically time-varying input distribution</strong>
+      
+        (<a href="files/projects/privacy/conference/2017-globalsip.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/privacy/slides/2017-globalsip.pdf">slides</a>)
+      
+      
+      <br>
+      Yu Liu, Ashish Khisti, and Aditya Mahajan
+      <br>
+       
+        <em>IEEE GlobalSIP Symposium on Control and Information Theoretic Approaches to Privacy and Security</em>, 
+      
+       
+        Montreal, Canada,
+      
+      Nov 2017.
+      
+    </p></li>
+
+    <li value="41"><p>
+      <strong>Remote estimation over control area networks</strong>
+      
+        (<a href="files/projects/real-time/conference/2017-vtc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2017-vtc.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan
+      <br>
+       
+        <em>IEEE Vehicular Technology Conference (VTC), Networked Vehicles for Intelligent Transportation and Smart Grids (NetV) Workshop</em>, 
+      
+       
+        Toronto, Canada,
+      
+      Sep 2017.
+      
+    </p></li>
+
+    <li value="40"><p>
+      <strong>Static teams with common information</strong>
+      
+        (<a href="files/projects/info-structures/conference/2017-ifac.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/info-structures/slides/2017-ifac.pdf">slides</a>)
+      
+      
+      <br>
+      Mohammad Afshari and Aditya Mahajan
+      <br>
+       
+        <em>IFAC World Congress</em>, 
+      
+       
+        Toulouse, France,
+      
+      Jul 2017.
+      
+    </p></li>
+
+    <li value="39"><p>
+      <strong>Structure of optimal strategies for remote estimation over Gilbert-Elliott channel with feedback</strong>
+      
+        (<a href="files/projects/real-time/conference/2017-isit.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2017-isit.pdf">slides</a>)
+      
+      
+      <br>
+      Jhelum Chakravorty and Aditya Mahajan
+      <br>
+       
+        <em>IEEE International Symposium on Information Theory (ISIT)</em>, 
+      
+       
+        Aachen, Germany,
+      
+      Jun 2017.
+      
+    </p></li>
+
+    <li value="38"><p>
+      <strong>Stochastic approximation based methods for computing the optimal thresholds in remote-state estimation with packet drops</strong>
+      
+        (<a href="files/projects/real-time/conference/2017-acc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2017-acc.pdf">slides</a>)
+      
+      
+      <br>
+      Jhelum Chakravorty, Jayakumar Subramanian, and Aditya Mahajan
+      <br>
+       
+        <em>American Control Conference (ACC)</em>, 
+      
+       
+        Seattle, WA,
+      
+      May 2017.
+      
+    </p></li>
+
+    <li value="37"><p>
+      <strong>Multi-Armed Bandits for Efficient Lifetime Estimation in MPSoC design</strong>
+      
+        (<a href="files/projects/bandits/conference/2017-date.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/bandits/slides/2017-date.pdf">slides</a>)
+      
+      
+      <br>
+      Calvin Ma, Aditya Mahajan, and Brett Meyer
+      <br>
+       
+        <em>Design, Automation and Test in Europe (DATE)</em>, 
+      
+       
+        Laussane, Switzerland,
+      
+      Mar 2017.
+      
+    </p></li>
+
+    <li value="36"><p>
+      <strong>Remote-state estimation with packet drop</strong>
+      
+        (<a href="files/projects/real-time/conference/2016-ifac.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Jhelum Chakravorty and Aditya Mahajan
+      <br>
+       
+        <em>IFAC Workshop on Distributed Estimation and Control in Networked Systems</em>, 
+      
+       
+        Tokyo, Japan,
+      
+      Sep 2016.
+      
+      Receipient of <strong>Best Student Paper Award</strong>
+      <br>
+      
+    </p></li>
+
+    <li value="35"><p>
+      <strong>Structural results for two-user interactive communication</strong>
+      
+        (<a href="files/projects/real-time/conference/2016-isit.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2016-isit.pdf">slides</a>)
+      
+      
+      <br>
+      Jhelum Chakravorty and Aditya Mahajan
+      <br>
+       
+        <em>IEEE International Symposium on Information Theory (ISIT)</em>, 
+      
+       
+        Barcelona, Spain,
+      
+      Jul 2016.
+      
+    </p></li>
+
+    <li value="34"><p>
+      <strong>Privacy-optimal strategies for smart metering systems with a rechargeable battery</strong>
+      
+        (<a href="files/projects/privacy/conference/2016-acc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/privacy/slides/2016-acc.pdf">slides</a>)
+      
+      
+      <br>
+      Simon Li, Ashish Khisti, and Aditya Mahajan
+      <br>
+       
+        <em>American Control Conference (ACC)</em>, 
+      
+       
+        Boston, MA,
+      
+      Jul 2016.
+      
+    </p></li>
+
+    <li value="33"><p>
+      <strong>Privacy preserving rechargeable battery policies for smart metering systems</strong>
+      
+        (<a href="files/projects/privacy/conference/2016-izs.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/privacy/slides/2016-izs.pdf">slides</a>)
+      
+      
+      <br>
+      Simon Li, Ashish Khisti, and Aditya Mahajan
+      <br>
+       
+        <em>International Zurich Seminar on Communications</em>, 
+      
+       
+        Zurich, Switzerland,
+      
+      Mar 2016.
+      
+    </p></li>
+
+    <li value="32"><p>
+      <strong>Team-optimal solution of finite number of mean-field coupled LQG subsystems</strong>
+      
+        (<a href="files/projects/info-structures/conference/2015-cdc.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Jalal Arabneydi and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Osaka, Japan,
+      
+      Dec 2015.
+      
+    </p></li>
+
+    <li value="31"><p>
+      <strong>On computing optimal thresholds in decentralized sequential hypothesis testing</strong>
+      
+        (<a href="files/projects/decentralized-detection/conference/2015-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/decentralized-detection/slides/2015-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Can Cui and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Osaka, Japan,
+      
+      Dec 2015.
+      
+    </p></li>
+
+    <li value="30"><p>
+      <strong>Reinforcement learning in decentralized stochastic control systems with partial history sharing</strong>
+      
+        (<a href="files/projects/reinforcement-learning/conference/2015-acc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/reinforcement-learning/slides/2015-acc.pdf">slides</a>)
+      
+      
+      <br>
+      Jalal Arabneydi and Aditya Mahajan
+      <br>
+       
+        <em>American Control Conference (ACC)</em>, 
+      
+       
+        Chicago, IL,
+      
+      Jul 2015.
+      
+    </p></li>
+
+    <li value="29"><p>
+      <strong>Structure of optimal privacy-preserving policies in smart-metered systems with a rechargeable battery</strong>
+      
+        (<a href="files/projects/privacy/conference/2015-spawc.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Simon Li, Ashish Khisti, and Aditya Mahajan
+      <br>
+       
+        <em>IEEE International Workshop on Signal Processing Advances in Wireless Communications (SPAWC)</em>, 
+      
+       
+        Stockholm, Sweden,
+      
+      Jun 2015.
+      
+    </p></li>
+
+    <li value="28"><p>
+      <strong>Distortion-transmission trade-off in real-time transmission of Gauss-Markov sources</strong>
+      
+        (<a href="files/projects/real-time/conference/2015-isit.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2015-isit.pdf">slides</a>)
+      
+      
+      <br>
+      Jhelum Chakravorty and Aditya Mahajan
+      <br>
+       
+        <em>IEEE International Symposium on Information Theory (ISIT)</em>, 
+      
+       
+        Hong Kong, China,
+      
+      Jun 2015.
+      
+    </p></li>
+
+    <li value="27"><p>
+      <strong>Reinforcement Learning in Multi-Agent Systems with Partial History Sharing</strong>
+      
+        (<a href="files/projects/reinforcement-learning/conference/2015-rldm.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Jalal Arabneydi and Aditya Mahajan
+      <br>
+       
+        <em>Reinforcement Learning and Decision Making (RLDM)</em>, 
+      
+       
+        Edmonton, AL,
+      
+      Jun 2015.
+      
+    </p></li>
+
+    <li value="26"><p>
+      <strong>An estimation based allocation rule with super-linear regret and finite lock-on time for time-dependent multi-armed bandit processes</strong>
+      
+        (<a href="files/projects/bandits/conference/2015-ccece.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/bandits/slides/2015-ccece.pdf">slides</a>)
+      
+      
+      <br>
+      Prokopis Prokopiou, Peter Caines, and Aditya Mahajan
+      <br>
+       
+        <em>Canadian Conference on Elecrtical and Computer Engineering (CCECE)</em>, 
+      
+       
+        Halifax, NS,
+      
+      May 2015.
+      
+    </p></li>
+
+    <li value="25"><p>
+      <strong>Distortion-transmission trade-off in real-time transmission of Markov sources</strong>
+      
+        (<a href="files/projects/real-time/conference/2015-itw.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2015-itw.pdf">slides</a>)
+      
+      
+      <br>
+      Jhelum Chakravorty and Aditya Mahajan
+      <br>
+       
+        <em>Information Theory Workshop (ITW)</em>, 
+      
+       
+        Jerusleum, Israel,
+      
+      Apr 2015.
+      
+    </p></li>
+
+    <li value="24"><p>
+      <strong>Team optimal control of coupled major-minor subsystems with mean field sharing</strong>
+      
+        (<a href="files/projects/info-structures/conference/2015-icc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/info-structures/slides/2015-icc.pdf">slides</a>)
+      
+      
+      <br>
+      Jalal Arabneydi and Aditya Mahajan
+      <br>
+       
+        <em>Indian Control Conference</em>, 
+      
+       
+        Chennai, India,
+      
+      Jan 2015.
+      
+    </p></li>
+
+    <li value="23"><p>
+      <strong>On the optimal thresholds in remote state estimation with communication costs</strong>
+      
+        (<a href="files/projects/real-time/conference/2014-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2014-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Jhelum Chakravorty and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Los Angeles, CA,
+      
+      Dec 2014.
+      
+    </p></li>
+
+    <li value="22"><p>
+      <strong>Team optimal control of coupled subsystems with mean field sharing</strong>
+      
+        (<a href="files/projects/info-structures/conference/2014-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/info-structures/slides/2014-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Jalal Arabneydi and Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Los Angeles, CA,
+      
+      Dec 2014.
+      
+      Receipient of <strong>Best Student Paper Award</strong>
+      <br>
+      
+    </p></li>
+
+    <li value="21"><p>
+      <strong>Average cost optimal threshold strategies for remote state estimation with communication costs</strong>
+      
+        (<a href="files/projects/real-time/conference/2014-allerton.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2014-allerton.pdf">slides</a>)
+      
+      
+      <br>
+      Jhelum Chakravorty and Aditya Mahajan
+      <br>
+       
+        <em>Allerton conference on communication, control, and computing</em>, 
+      
+       
+        Monticello, IL,
+      
+      Oct 2014.
+      
+    </p></li>
+
+    <li value="20"><p>
+      <strong>Simultaneous real-time communication of multiple Markov sources over a shared channel</strong>
+      
+        (<a href="files/projects/real-time/conference/2014-isit.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2014-isit.pdf">slides</a>)
+      
+      
+      <br>
+      Mehnaz Mannan and Aditya Mahajan
+      <br>
+       
+        <em>IEEE International Symposium on Information Theory (ISIT)</em>, 
+      
+       
+        Honolulu, HI,
+      
+      Jul 2004.
+      
+    </p></li>
+
+    <li value="19"><p>
+      <strong>Static LQG teams with countably infinite players</strong>
+      
+        (<a href="files/projects/info-structures/conference/2013-cdc.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Aditya Mahajan, Nuno C. Martins, and Serdar Yüksel
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Florence, Italy,
+      
+      Dec 2013.
+      
+    </p></li>
+
+    <li value="18"><p>
+      <strong>Structure of optimal policies in active sensing</strong>
+      
+        (<a href="files/projects/active-sensing/conference/2012-icassp.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/active-sensing/slides/2012-icassp.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan
+      <br>
+       
+        <em>IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)</em>, 
+      
+       
+        Kyoto, Japan,
+      
+      Mar 2012.
+      
+    </p></li>
+
+    <li value="17"><p>
+      <strong>Optimal decentralized control of coupled subsystems with control sharing</strong>
+      
+        (<a href="files/projects/info-structures/conference/2011-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/info-structures/slides/2011-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        Orlando, FL,
+      
+      Dec 2011.
+      
+    </p></li>
+
+    <li value="16"><p>
+      <strong>Optimal transmission policies for two-user multiple access broadcast using dynamic team theory</strong>
+      
+        (<a href="files/projects/info-structures/conference/2010-allerton.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/info-structures/slides/2010-allerton.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan
+      <br>
+       
+        <em>Allerton conference on communication, control, and computing</em>, 
+      
+       
+        Monticello, IL,
+      
+      Oct 2001.
+      
+    </p></li>
+
+    <li value="15"><p>
+      <strong>Measure and cost dependent properties of information structures</strong>
+      
+        (<a href="files/projects/info-structures/conference/2010-acc-2.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/info-structures/slides/2010-acc-2.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Serdar Yüksel
+      <br>
+       
+        <em>American Control Conference (ACC)</em>, 
+      
+       
+        Baltimore, MD,
+      
+      Jul 2002.
+      
+    </p></li>
+
+    <li value="14"><p>
+      <strong>A structural result for delayed sharing information structures </strong>
+      
+        (<a href="files/projects/info-structures/conference/2010-acc-1.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Ashutosh Nayyar, Aditya Mahajan, and Demosthenis Teneketzis
+      <br>
+       
+        <em>American Control Conference (ACC)</em>, 
+      
+       
+        Baltimore, MD,
+      
+      Jul 2002.
+      
+    </p></li>
+
+    <li value="13"><p>
+      <strong>Opportunistic capacity and error exponent regions for compound channel with feedback</strong>
+      
+        (<a href="files/projects/compound-channel/conference/2010-isit.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/compound-channel/slides/2010-isit.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Sekhar Tatikonda
+      <br>
+       
+        <em>IEEE International Symposium on Information Theory (ISIT)</em>, 
+      
+       
+        Austin, TX,
+      
+      Jun 2010.
+      
+    </p></li>
+
+    <li value="12"><p>
+      <strong>Opportunistic capacity and error exponent regions for variable length communication over compound channel with feedback </strong>
+      
+        (<a href="files/projects/compound-channel/conference/2010-ciss.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/compound-channel/slides/2010-ciss.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Sekhar Tatikonda
+      <br>
+       
+        <em>Conference on Information Sciences and Systems (CISS)</em>, 
+      
+       
+        Princeton, NJ,
+      
+      Mar 2010.
+      
+    </p></li>
+
+    <li value="11"><p>
+      <strong>Optimal sequential transmission over degraded broadcast channels with nested feedback</strong>
+      
+        (<a href="files/projects/real-time/conference/2009-allerton.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2009-allerton.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan
+      <br>
+       
+        <em>Allerton conference on communication, control, and computing</em>, 
+      
+       
+        Monticello, IL,
+      
+      Oct 2002.
+      
+    </p></li>
+
+    <li value="10"><p>
+      <strong>Sequential team form and its simplification using graphical models</strong>
+      
+        (<a href="files/projects/graphical-models/conference/2009-allerton.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/graphical-models/slides/2009-allerton.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Sekhar Tatikonda
+      <br>
+       
+        <em>Allerton conference on communication, control, and computing</em>, 
+      
+       
+        Monticello, IL,
+      
+      Oct 2002.
+      
+    </p></li>
+
+    <li value="9"><p>
+      <strong>A training based scheme for communicating over unknown channels with feedback</strong>
+      
+        (<a href="files/projects/compound-channel/conference/2009-allerton.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/compound-channel/slides/2009-allerton.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Sekhar Tatikonda
+      <br>
+       
+        <em>Allerton conference on communication, control, and computing</em>, 
+      
+       
+        Monticello, IL,
+      
+      Oct 2002.
+      
+    </p></li>
+
+    <li value="8"><p>
+      <strong>A graphical modeling approach to simplifying sequential teams</strong>
+      
+        (<a href="files/projects/graphical-models/conference/2009-concom.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/graphical-models/slides/2009-concom.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Sekhar Tatikonda
+      <br>
+       
+        <em>International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt)</em>, 
+      
+       
+        Seoul, South Korea,
+      
+      Jun 2009.
+      
+    </p></li>
+
+    <li value="7"><p>
+      <strong>Identifying tractable decentralized problems on the basis of information structures </strong>
+      
+        (<a href="files/projects/info-structures/conference/2008-allerton.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/info-structures/slides/2008-allerton.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan, Ashutosh Nayyar, and Demosthenis Teneketzis
+      <br>
+       
+        <em>Allerton conference on communication, control, and computing</em>, 
+      
+       
+        Monticello, IL,
+      
+      Sep 2008.
+      
+    </p></li>
+
+    <li value="6"><p>
+      <strong>Initial analyses and demonstration of soil moisture smart sensor web</strong>
+      
+        (<a href="files/projects/soil-moisture/conference/2008-estc.pdf">pdf</a>)
+      
+      
+      
+      <br>
+      Mahta Moghaddam, Dara Entekhabi, Leila Farhadi, Yuriy Goykhman, Mingyan Liu, Aditya Mahajan, Ashutosh Nayyar, David Shuman, and Demosthenis Teneketzis
+      <br>
+       
+        <em>Earth Science Technology Conference (ESTC)</em>, 
+      
+       
+        East Alephi, MD,
+      
+      Jun 2008.
+      
+    </p></li>
+
+    <li value="5"><p>
+      <strong>On time diagnosis of discrete event systems</strong>
+      
+        (<a href="files/projects/diagnostics/conference/2008-wodes.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/diagnostics/slides/2008-wodes.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Demosthenis Teneketzis
+      <br>
+       
+        <em>International Workshop on Discrete Event Systems (WODES)</em>, 
+      
+       
+        Gothenburg, Sweden,
+      
+      May 2008.
+      
+    </p></li>
+
+    <li value="4"><p>
+      <strong>Real-time communication systems with noisy feedback</strong>
+      
+        (<a href="files/projects/real-time/conference/2007-itw.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2007-itw.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Demosthenis Teneketzis
+      <br>
+       
+        <em>IEEE Information Theory Workshop (ITW)</em>, 
+      
+       
+        Lake Tahoe, CA,
+      
+      Sep 2007.
+      
+    </p></li>
+
+    <li value="3"><p>
+      <strong>Optimal performance of feedback control systems with limited communication over noisy channels</strong>
+      
+        (<a href="files/projects/networked-control/conference/2006-cdc.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/networked-control/slides/2006-cdc.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Demosthenis Teneketzis
+      <br>
+       
+        <em>IEEE Conference on Decision and Control (CDC)</em>, 
+      
+       
+        San Diego, CA,
+      
+      Dec 2006.
+      
+    </p></li>
+
+    <li value="2"><p>
+      <strong>Fixed delay optimal joint source-channel coding for finite-memory systems</strong>
+      
+        (<a href="files/projects/real-time/conference/2006-isit.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2006-isit.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Demosthenis Teneketzis
+      <br>
+       
+        <em>IEEE International Symposium on Information Theory (ISIT)</em>, 
+      
+       
+        Seattle, WA,
+      
+      Jul 2006.
+      
+    </p></li>
+
+    <li value="1"><p>
+      <strong>A decision theoretic approach to real-time communication</strong>
+      
+        (<a href="files/projects/real-time/conference/2005-allerton.pdf">pdf</a>)
+      
+      
+        (<a href="files/projects/real-time/slides/2005-allerton.pdf">slides</a>)
+      
+      
+      <br>
+      Aditya Mahajan and Demosthenis Teneketzis
+      <br>
+       
+        <em>Allerton conference on communication, control, and computing</em>, 
+      
+       
+        Monticello, IL,
+      
+      Sep 2005.
+      
+    </p></li>
+
+</ol>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="conferences-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div></main> <!-- /main -->
 </div> <!-- /content -->
 
 
