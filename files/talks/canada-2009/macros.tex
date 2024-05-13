@@ -1,0 +1,174 @@
+\startenvironment macros
+
+%D This is a temporary hack until we figure out how to do this correctly.
+
+\unexpanded\def\implies    {\mathrel{\;\Rightarrow\;}}
+\unexpanded\def\impliedby  {\mathrel{\;\Leftarrow\;}}
+\unexpanded\def\And        {\mathrel{\;\internalAnd\;}}
+\unexpanded\def\iff        {\;\Leftrightarrow\;}
+
+%%
+
+\def\COST{{\cal J}}
+
+\def\ALPHABET#1{{\cal  #1}}
+\def\FSPACE  #1{{\scr  #1}}
+\def\FIELD   #1{{\frak #1}}
+
+\def\ALPHABETS[#1]%
+  {\def\doALPHABETS{\redoALPHABETS}
+   (\processcommalist [#1] \doALPHABETS)}
+
+\def\redoALPHABETS#1%
+  {\ALPHABET #1
+   \def\doALPHABETS{\dodoALPHABETS}}
+
+
+\def\dodoALPHABETS#1%
+  {, \ALPHABET #1} 
+
+\def\PRSPACE{\math{(Ω,\FIELD F, P)}}
+
+\def\ABS#1{\lvert#1\rvert}
+\def\SIZE#1{\ABS{\ALPHABET #1}}
+
+\let\DEFINED=\colonequals
+\let\BYDEFINITION=\equalscolon
+\let\REALIZATION=\tilde
+\let\BOLD=\boldsymbol
+
+
+\unexpanded\def\VAR#1%
+  {\def\currentVAR{#1}
+   \dosingleargument\doVAR}
+
+\def\doVAR[#1]#2(#3)% #2 = space
+ {\doifelsenothing{#1}
+  {\currentVAR}
+  {\currentVAR_{\NOfAgents#1::\@nil}}%
+  \doifsomething{#3}{\TIME#3::\@nil}}
+
+\def\NOfAgents#1:#2:#3\@nil%
+  {\doifelsenothing{#2}
+   {\doNOfAgents#1,,\@nil}
+   {[#1\COLON#2]}}
+
+\def\doNOfAgents#1,#2,#3\@nil%
+  {\doifelsenothing{#2}
+    {#1}
+    {[#1,#2]}}
+
+\def\TIME#1:#2:#3\@nil%
+  {(\doifelsenothing{#2}
+   {#1}
+   {#1\COLON#2})}
+
+\def\COLON{\hskip0.1em{:}\hskip0.1em}
+
+\startMPinclusions[+]
+  input rboxes ;
+  defaultdx := 2bp;
+  defaultdy := 2bp;
+  numeric u ; u := 1cm ;
+  tertiarydef a -+ b =
+    a -- (xpart b, ypart a) -- b
+  enddef ;
+
+  tertiarydef a +- b =
+    a -- (xpart a, ypart b) -- b
+  enddef ;
+
+\stopMPinclusions
+
+\unprotected\definetextext[parbox]
+  {\framed
+    [     frame=off,
+          width=2cm,
+         height=.85cm,
+      autowidth=no,
+          align={middle,middle},
+    background=color,
+    backgroundcolor=white]}
+
+\startuseMPgraphic{mpos:par:cancel} 
+  for i=1 upto nofmultipars : 
+  draw 
+  .2[llcorner multipars[i],ulcorner multipars[i]] -- 
+  .2[urcorner multipars[i],lrcorner multipars[i]] ; 
+  endfor ; 
+\stopuseMPgraphic 
+
+\definetextbackground[cancel][location=text,mp=mpos:par:cancel] 
+
+\def\startcancel{\starttextbackground[cancel]} 
+\def\stopcancel {\stoptextbackground} 
+\def\cancel {\groupedcommand\startcancel\stopcancel}
+
+\startuseMPgraphic{mpos:par:cross} 
+  for i=1 upto nofmultipars : 
+  draw 
+  .2[llcorner multipars[i],ulcorner multipars[i]] -- 
+  .2[urcorner multipars[i],lrcorner multipars[i]] 
+  withcolor \MPcolor{simpleslides:altcontrastcolor}; 
+  draw 
+  .8[llcorner multipars[i],ulcorner multipars[i]] -- 
+  .8[urcorner multipars[i],lrcorner multipars[i]] 
+  withcolor \MPcolor{simpleslides:altcontrastcolor}; 
+  endfor ; 
+\stopuseMPgraphic 
+
+\definetextbackground[cross][location=text,mp=mpos:par:cross] 
+
+\def\startcross{\starttextbackground[cross]} 
+\def\stopcross {\stoptextbackground} 
+\def\cross {\groupedcommand\startcross\stopcross}
+
+
+\def\from{\leftarrow}
+\def\CONNECTED      {\mapsto}
+% \def\CONNECTED      {\mapstochar\rightarrow}
+\def\PATH           {\rightsquigarrow}
+\def\TRAIL          {\sim}
+\def\LESS           {\prec}
+\def\DEFINED        {\colonequals}
+\def\BYDEFINITION   {\equalscolon}
+\def\INDEPENDENT    {\mathpalette\doINDEPENDENT\perp}
+
+\unexpanded\def\doINDEPENDENT#1#2%
+  {\mathrel{\rlap{#1#2}\mkern4mu{#1#2}}}
+
+\def\PARENTS    #1{\mathop{\mfunction{parents}}(#1)}
+\def\CHILDREN   #1{\mathop{\mfunction{childred}}(#1)}
+\def\NEIGHBOURS #1{\mathop{\mfunction{neighbors}}(#1)}
+\def\ANCESTORS  #1{\mathop{\mfunction{ancestors}}(#1)}
+\def\DESCENDANTS#1{\mathop{\mfunction{descendants}}(#1)}
+\def\IRRELEVANT #1{\mathop{\mfunction{irrelevant}}(#1)}
+
+\def\startshowresult#1#2#3\stopshowresult%
+  {\SlideTitle{#1}
+    \placefigure[here,none]{}
+      {\externalfigure[fig-mdp][page=#2, width=0.8\textwidth]}
+   \SlideTitle{#1}
+    \placefigure[here,none]{}
+      {\externalfigure[fig-mdp][page=#2, width=0.8\textwidth]}
+      #3
+   \SlideTitle{#1}
+    \placefigure[here,none]{}
+      {\externalfigure[fig-mdp-solve][page=#2, width=0.8\textwidth]}
+      #3}
+
+\def\startshowresultA#1#2#3\stopshowresult%
+  {\SlideTitle{#1}
+    \placefigure[here,none]{}
+      {\externalfigure[fig-dec-mdp-step][page=#2, width=0.8\textwidth]}
+   \SlideTitle{#1}
+    \placefigure[here,none]{}
+      {\externalfigure[fig-dec-mdp][page=#2, width=0.8\textwidth]}
+      #3
+   \SlideTitle{#1}
+    \placefigure[here,none]{}
+      {\externalfigure[fig-dec-mdp-solve][page=#2, width=0.8\textwidth]}
+      #3}
+
+
+\stopenvironment

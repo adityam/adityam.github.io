@@ -1,0 +1,1729 @@
+\environment t-presentation
+
+\doifmode{mkii}{\enableregime[utf-8]}
+
+\usemodule  [tikz]
+\usetikzlibrary [arrows]
+
+\tikzstyle{normal}  =[style=draw,shape=circle]
+\tikzstyle{dynamics}=[style=draw,shape=rectangle]
+\tikzstyle{reward}  =[style=fill,shape=circle, fill=darkred]
+\tikzstyle{rewarded}  =[style=fill,shape=circle, fill=orange]
+\tikzstyle{control} =[style=fill,shape=rectangle, fill=darkblue]
+\tikzstyle{cond} =[style=draw,shape=circle, draw=orange, thick]
+\tikzstyle{data} =[style=fill,shape=circle, fill=gray]
+\tikzstyle{obs} =[style=fill,shape=circle, fill=green]
+\tikzstyle{obs1} =[style=draw,shape=circle, draw=green, thick]
+\tikzstyle{choice} =[style=fill,shape=rectangle, fill=orange]
+\tikzstyle{action} =[style=fill,shape=circle, fill=orange!50]
+
+
+\setupbodyfont[12pt]
+
+\starttext
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[reward]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[reward]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[normal] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[normal] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[normal] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[normal] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[normal] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[normal] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[normal] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[normal] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[normal] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[normal] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[control] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[control] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   \path (x1) edge (c2) ;
+   \path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   \path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   \path (y1) edge (c3) ;
+
+   \path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[reward]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[cond] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[cond] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[normal] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[normal] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[cond] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[cond] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[normal] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[normal] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[cond] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[action] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[control] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[choice] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   \path (x1) edge (c2) ;
+   \path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   \path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   \path (y1) edge (c3) ;
+
+   \path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[reward]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[data] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[cond] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[obs1] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[obs] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[data] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[cond] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[obs1] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[obs] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[cond] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[action] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[control] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[choice] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   \path (x1) edge (c2) ;
+   \path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   \path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   \path (y1) edge (c3) ;
+
+   \path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[reward]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[data] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[cond] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[obs1] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[obs] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[data] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[cond] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[obs1] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[obs] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[cond] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[action] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[control] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[choice] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   \path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   \path (y1) edge (c3) ;
+
+   \path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[reward]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[normal] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[cond] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[obs1] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[obs] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[normal] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[cond] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[obs1] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[obs] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[cond] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[action] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[control] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[choice] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   \path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   \path (y1) edge (c3) ;
+
+   \path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   \path[color=darkgreen, thick] (m1) edge (c3) ;
+   \path[color=darkgreen, thick] (m2) edge (c3) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[normal] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[normal] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[normal] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[normal] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[normal] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[normal] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[normal] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[normal] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[normal] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[normal] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[choice] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[control] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   \path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   \path (y1) edge (c3) ;
+
+   \path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   \path (m1) edge (c3) ;
+   \path (m2) edge (c3) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[data] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[cond] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[obs1] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[obs] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[cond] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[action] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[normal] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[normal] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[normal] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[normal] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[choice] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[control] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   \path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   \path (y1) edge (c3) ;
+
+   \path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   \path (m1) edge (c3) ;
+   \path (m2) edge (c3) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[data] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[cond] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[obs1] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[obs] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[cond] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[action] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[normal] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[normal] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[normal] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[normal] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[choice] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[control] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   %\path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   \path (y1) edge (c3) ;
+
+   \path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   \path (m1) edge (c3) ;
+   \path (m2) edge (c3) ;
+   \path[color=darkgreen, thick] (m1) edge (c2) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[reward]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[normal] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[normal] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[normal] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[normal] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[normal] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[normal] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[normal] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[normal] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[normal] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[normal] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[control] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[choice] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   %\path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   \path (y1) edge (c3) ;
+
+   \path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   \path (m1) edge (c3) ;
+   \path (m2) edge (c3) ;
+   \path (m1) edge (c2) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[reward]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[normal] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[data] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[obs1] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[data] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[normal] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[data] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[obs1] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[cond] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[cond] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[action] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[control] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[choice] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   %\path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   \path (y1) edge (c3) ;
+
+   \path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   \path (m1) edge (c3) ;
+   \path (m2) edge (c3) ;
+   \path (m1) edge (c2) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[reward]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[normal] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[data] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[obs1] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[data] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[normal] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[data] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[obs1] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[cond] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[cond] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[action] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[control] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[choice] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   %\path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   %\path (y1) edge (c3) ;
+
+   %\path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   %\path (m1) edge (c3) ;
+   \path (m2) edge (c3) ;
+   \path (m1) edge (c2) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[normal] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[normal] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[normal] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[normal] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[normal] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[normal] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[normal] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[normal] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[normal] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[normal] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[choice] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[control] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   %\path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   %\path (y1) edge (c3) ;
+
+   %\path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   %\path (m1) edge (c3) ;
+   \path (m2) edge (c3) ;
+   \path (m1) edge (c2) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[normal] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[data] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[obs1] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[cond] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[cond] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[action] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[normal] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[normal] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[normal] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[normal] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[choice] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[control] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   %\path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   \path (y1) edge (c2) ;
+   %\path (y1) edge (c3) ;
+
+   %\path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   %\path (m1) edge (c3) ;
+   \path (m2) edge (c3) ;
+   \path (m1) edge (c2) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[rewarded]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[normal] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[data] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[obs1] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[cond] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[cond] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[action] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[normal] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[normal] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[normal] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[normal] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[choice] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[control] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   %\path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   %\path (y1) edge (c2) ;
+   %\path (y1) edge (c3) ;
+
+   %\path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   %\path (m1) edge (c3) ;
+   \path (m2) edge (c3) ;
+   \path (m1) edge (c2) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                       &
+                                                       &
+      \node[reward]   (d1)   [label=left:{$d_1$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[reward]   (d2)   [label=left:{$d_2$}] {} ; &
+                                                       &
+                                                       &
+                                                       &
+      \node[reward]   (d3)   [label=left:{$d_3$}] {} ; \\
+      % Second row
+      \node[dynamics] (f1)   [label=right:{$f_1$}] {} ; &
+                                                        &
+      \node[dynamics] (rho1) [label=right:{$ρ_1$}] {} ; &
+                                                        &
+      \node[dynamics] (f2)   [label=right:{$f_2$}] {} ; &
+                                                        &
+      \node[dynamics] (rho2) [label=right:{$ρ_2$}] {} ; &
+                                                        &
+      \node[dynamics] (f3)   [label=right:{$f_3$}] {} ; &
+                                                        &
+      \node[dynamics] (rho3) [label=right:{$ρ_3$}] {} ; \\
+      % Third row
+      \node[normal] (x1)    [label=left:{$x_1$}] {} ;       & 
+      \node[normal] (y1)    [label=left:{$y_1$}] {} ;       &
+      \node[normal] (hatx1) [label=left:{$\hat x_1$}] {} ;  &
+      \node[normal] (m1)    [label=left:{$m_1$}] {} ;       &
+      \node[normal] (x2)    [label=left:{$x_2$}] {} ;       &
+      \node[normal] (y2)    [label=left:{$y_2$}] {} ;       &
+      \node[normal] (hatx2) [label=left:{$\hat x_2$}] {} ;  &
+      \node[normal] (m2)    [label=left:{$m_2$}] {} ;       &
+      \node[normal] (x3)    [label=left:{$x_3$}] {} ;       &
+      \node[normal] (y3)    [label=left:{$y_3$}] {} ;       &
+      \node[normal] (hatx3) [label=left:{$\hat x_3$}] {} ;  \\[9mm]
+      % Fourth row
+                                                       &
+      \node[control] (c1)   [label=right:{$c_1$}] {} ; &
+      \node[control] (g1)   [label=right:{$g_1$}] {} ; &
+      \node[control] (l1)   [label=right:{$l_1$}] {} ; &
+                                                       &
+      \node[control] (c2)   [label=right:{$c_2$}] {} ; &
+      \node[control] (g2)   [label=right:{$g_2$}] {} ; &
+      \node[control] (l2)   [label=right:{$l_2$}] {} ; &
+                                                       &
+      \node[control] (c3)   [label=right:{$c_3$}] {} ; &
+      \node[control] (g3)   [label=right:{$g_3$}] {} ; \\
+    }; 
+
+   \path (f1) edge (x1) ;
+   \path (f2) edge (x2) ;
+   \path (f3) edge (x3) ;
+
+   \path (x1) edge (f2) ;
+   \path (x2) edge (f3) ;
+
+   \path (rho1) edge (d1) ;
+   \path (rho2) edge (d2) ;
+   \path (rho3) edge (d3) ;
+
+   \path (x1) edge (rho1) ;
+   \path (x2) edge (rho2) ;
+   \path (x3) edge (rho3) ;
+
+   \path (hatx1) edge (rho1) ;
+   \path (hatx2) edge (rho2) ;
+   \path (hatx3) edge (rho3) ;
+
+   \path (c1) edge (y1) ;
+   \path (c2) edge (y2) ;
+   \path (c3) edge (y3) ;
+
+   \path (x1) edge (c1) ;
+   %\path (x1) edge (c2) ;
+   %\path (x1) edge (c3) ;
+
+   \path (x2) edge (c2) ;
+   %\path (x2) edge (c3) ;
+
+   \path (x3) edge (c3) ;
+
+   %\path (y1) edge (c2) ;
+   %\path (y1) edge (c3) ;
+
+   %\path (y2) edge (c3) ;
+
+   \path (y1) edge (g1) ;
+   \path (y1) edge (l1) ;
+
+   \path (y2) edge (g2) ;
+   \path (y2) edge (l2) ;
+   \path (m1) edge (g2) ;
+   \path (m1) edge (l2) ;
+
+   \path (y3) edge (g3) ;
+   \path (m2) edge (g3) ;
+
+   %\path (m1) edge (c3) ;
+   \path (m2) edge (c3) ;
+   \path (m1) edge (c2) ;
+
+   \path (g1) edge (hatx1) ;
+   \path (g2) edge (hatx2) ;
+   \path (g3) edge (hatx3) ;
+
+   \path (l1) edge (m1) ;
+   \path (l2) edge (m2) ;
+
+  \stoptikzpicture
+\stopTEXpage
+\stoptext

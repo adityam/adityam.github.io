@@ -1,0 +1,67 @@
+\environment t-presentation
+
+\usemodule  [tikz]
+\usetikzlibrary [arrows]
+
+\tikzstyle{normal}  =[style=fill,shape=circle,fill=darkblue]
+\tikzstyle{dynamics}=[style=draw,shape=rectangle]
+\tikzstyle{reward}  =[style=fill,shape=circle,fill=orange]
+\tikzstyle{control} =[style=fill,shape=rectangle,fill=darkblue] 
+
+\doifmode{mkii}{\enableregime[utf-8]}
+
+\setupbodyfont[12pt]
+
+\starttext
+\startTEXpage
+  \starttikzpicture[->,>=triangle 90,node distance=1.5cm, minimum height=15pt,%
+    minimum width=15pt]
+    \node[normal]  (x) [label=above:{$x$}] {} ;
+    \node[dynamics] (f) [label=above:{$f$}, right of=x] {};
+    \node[reward]  (y) [label=above:{$y$}, right of=f] {};
+    \node[dynamics] (g) [label=above:{$g$}, right of=y] {};
+    \node[normal]  (z) [label=above:{$z$}, right of=g] {};
+
+    \path (x) edge (f); 
+    \path (f) edge (y) ;
+    \path (y) edge (g) ;
+    \path (g) edge (z) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=triangle 90,node distance=1.5cm, minimum height=15pt,%
+    minimum width=15pt]
+
+    \node[normal]  (x) [label=above:{$x$}] {} ;
+    \node[dynamics] (f) [label=above:{$f$}, right of=x] {};
+    \node[reward]  (y) [label=above:{$y$}, right of=f] {};
+    \node[dynamics] (g) [label=above:{$g$}, right of=y] {};
+    \node[normal]  (z) [label=above:{$z$}, right of=g] {};
+
+    \path (f) edge (x); 
+    \path (y) edge (f) ;
+    \path (y) edge (g) ;
+    \path (g) edge (z) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=triangle 90,node distance=1.5cm, minimum height=15pt,%
+    minimum width=15pt]
+
+    \node[normal]  (x) [label=above:{$x$}] {} ;
+    \node[dynamics] (f) [label=below:{$f$}, right of=x] {};
+    \node[reward]  (y) [label=above:{$y$}, above of=f] {};
+    \node[normal]  (z) [label=above:{$z$}, right of=f] {};
+
+    \path (x) edge (f); 
+    \path (f) edge (y) ;
+    \path (z) edge (f) ;
+
+  \stoptikzpicture
+\stopTEXpage
+\stoptext
+

@@ -1,0 +1,92 @@
+% engine=luatex
+
+\startmodule t-presentation
+
+\usemodule[simpleslides][size=14pt, style=aditya]
+
+\definesymbol[paper][\llap{\externalfigure[text-x-generic]
+                                          [width=2em,location=high]}]
+
+\def\Interlude{\dowithpargument\doInterlude}
+
+\def\doInterlude#1%
+  {\page
+   %\setupPageBackground[title]
+    \null
+    \vfill \vfill
+   \startalignment[center]
+     \let\\\crlf
+     \startcolor[simpleslides:contrastcolor]
+       \switchtobodyfont[\TitleSize]
+       \setupinterlinespace[small]
+      #1
+      \endgraf 
+    \stopcolor
+  \stopalignment
+   \vfill \vfill \vfill
+   \page}
+
+\defineframedtext
+  [important]
+  [   width=0.85\textwidth,
+          align=middle,
+         before=\vfill,
+          after=\vfill,
+   framecolor=simpleslides:contrastcolor,
+   background=color,
+   backgroundcolor=simpleslides:imp:background,
+   rulethickness=1bp,
+  ]
+
+\def\emph     {\color[simpleslides:contrastcolor]}
+\def\important{\color[simpleslides:altcontrastcolor]}
+
+
+\starttypescript    [serif] [artemisia]
+  \setups[font:fallback:serif]
+  \definefontsynonym    [Serif]             [Artemisia-Regular]
+  \definefontsynonym    [SerifItalic]       [Artemisia-Italic]
+  \definefontsynonym    [SerifBold]         [Artemisia-Bold]
+  \definefontsynonym    [SerifBoldItalic]   [Artemisia-BoldItalic]
+% \definefontsynonym    [SerifCaps]         [Artemisia-BoldItalic]
+\stoptypescript
+
+\starttypescript    [serif] [artemisia]
+  \definefontsynonym    [Artemisia-Regular]     [name:GFSArtemisia-Regular]
+                        [features=default]
+  \definefontsynonym    [Artemisia-Italic]      [name:GFSArtemisia-Italic]
+                        [features=default]
+  \definefontsynonym    [Artemisia-Bold]        [name:GFSArtemisia-Bold]
+                        [features=default]
+  \definefontsynonym    [Artemisia-BoldItalic]  [name:GFSArtemisia-BoldItalic]
+                        [features=default]
+\stoptypescript
+
+\starttypescript [math][euler][all]
+    \definefontsynonym[MathRoman][euler@euler-math]
+    \loadmapfile[original-ams-euler.map]
+    \loadmapfile[iwona-ex.map]
+    \loadmapfile[iwona-sy.map]
+\stoptypescript
+
+\starttypescript[mainface]
+  \definetypeface   [mainface][rm][serif][artemisia] [default]
+  \definetypeface   [mainface][mm][math] [euler]     [default]   [text=rm]
+  \definetypeface   [mainface][tt][mono] [modern-vari]     [default]   
+  \definetypeface   [mainface][cg][calligraphy] [chancery] [default]
+\stoptypescript
+
+\usetypescript[mainface]
+
+\setupbodyfont[mainface, \NormalSize] 
+
+\let\doublestroke\relax
+
+\usemodule  [mathsets]
+\definemathset[EXP] [text={\doublestroke{E}}]
+\definemathset[PR]  [text=\Pr,left=(,right=)]
+\definemathset[IND] [text={\doublestroke{I}},left={[},right={]}]
+\definemathset[PSP] [text={\doublestroke{P}}]
+\definemathset[SET] 
+
+\stopmodule

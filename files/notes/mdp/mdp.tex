@@ -1,0 +1,352 @@
+\usemodule[writeup]
+
+\unprotected\definetextext[parbox]
+  {\framed
+    [     frame=off,
+          width=5em,
+         height=2.5\lineheight,
+      autowidth=no,
+          align={middle,middle}]}
+
+
+\startMPinclusions[+]
+% Arrowhead Modifications for TAOCP. Copied from some webpage of Knuth. 
+% These arrows are better in appearance than the default mp arrows.
+ahangle := 65;
+ahlength := 7 ;
+vardef arrowhead expr p =
+  save q, e, f, g; path q; pair e; pair f; pair g;
+  e = point length p of p;
+  q = gobble(p shifted -e cutafter makepath(pencircle scaled 2ahlength))
+    cuttings;
+  f = point 0 of (q rotated 0.5ahangle) shifted e;
+  g = point length q of (reverse q rotated -0.5ahangle) shifted e;
+  f .. {dir (angle direction length q of (q rotated 0.5ahangle) - 0.3ahangle)}e
+    & e{dir (angle direction 0 of ((reverse q) rotated -0.5ahangle)+0.3ahangle)} .. g
+enddef;
+def _finarr text t =
+  draw _apth t;
+  draw arrowhead _apth t        % do not fill
+enddef;
+
+def _findarr text t =
+  draw _apth t;
+  draw arrowhead _apth withpen currentpen t;
+  draw arrowhead reverse _apth withpen currentpen t
+enddef;
+
+  input rboxes ;
+  defaultdx := 2bp;
+  defaultdy := 2bp;
+  numeric u ; u := 11mm ;
+  tertiarydef a -+ b =
+    a -- (xpart b, ypart a) -- b
+  enddef ;
+
+  tertiarydef a +- b =
+    a -- (xpart a, ypart b) -- b
+  enddef ;
+
+  vardef drawshaded(text t) =
+    forsuffixes s=t:
+      fill bpath.s withcolor \MPcolor{simpleslides:imp:background};
+      drawboxed(s);
+    endfor
+enddef;
+
+
+\stopMPinclusions
+
+\startbuffer[mdp]
+  rboxit.plant      (\sometxt[parbox]{System}) ;
+  rboxit.controller (\sometxt[parbox]{Control Station}) ;
+
+  controller.w - plant.e = (u,0) ;
+
+  plant.c = origin ;
+
+  drawboxed(plant,controller)
+
+  z1 = controller.e + (0.5u, 0) ;
+  z2 = plant.s - (0, u) ;
+  z3 = plant.n + (0,0.5u) ;
+
+  %drawoptions(withpen pencircle scaled 2bp) ;
+
+  drawarrow plant.e -- lft controller.w ;
+  drawarrow controller.e -- z1 -- (x1, y2) -- z2 -- bot plant.s ;
+  drawarrow z3 -- top plant.n ;
+
+
+  label.top(\sometxt{$X_t$}, 0.5[plant.e, controller.w]) ;
+  label.top(\sometxt{$U_t$}, z1) ;
+  label.top(\sometxt{$W_t$}, z3) ;
+  label.lrt(\sometxt{$f_t$}, 0.5[plant.s, plant.sw]) ;
+  label.bot(\sometxt{$g_t$}, controller.s) ;
+\stopbuffer
+
+\usemodule[bib]
+
+\setupbibtex          [database={IEEEabrv,../../collection}]
+\setuppublications    [alternative=ieee]
+
+\starttext
+
+\title{Structural results for MDP: A direct proof \\ Aditya Mahajan}
+
+\placefigure[right,none][fig:mdp]{none}{\processMPbuffer[mdp]}
+Markov decision process (MDP) models the simplest stochastic control architecture
+shown in the figure on the right. The dynamic behavior of the MDP is modeled by
+an equation of the form
+\startformula
+  X_{t+1} = f_t(X_t, U_t, W_t)
+\stopformula
+where $X_t \in \ALPHABET X_t$ is the state, $U_t \in \ALPHABET U_t$ is the
+control input, and $W_t \in \ALPHABET W_t$ is noise. A control station observes
+the state and chooses the control input $U_t$. This control station can be
+extremely sophisticated. So, in principle, it can analyze all the past
+observations and all its past actions to choose the current control input. This
+behavior of the control station can be modeled by an equation of the form
+\startformula
+  U_t = g_t(X^t, U^{t-1}).
+\stopformula
+($X^t$ means the sequence $X_1, \dots, X_t$. A similar interpretation holds for
+$U^{t-1}$). The function $g_t$ is called the \emph{control law} at time $t$. 
+
+The purpose of the control is to maintain the state of the system close to a
+desired value. This objective is captured by a cost function of the form
+$c_t(X_t, U_t)$. The system operates for a time horizon $T$. During this time it
+incurs a total cost
+\startformula
+ \sum_{t=1}^T c_t(X_t, U_t)
+\stopformula
+
+The initial state $X_1$ of the system is random and is chosen by nature
+according to a known distribution. The noise process $\{W_t, t=1,\dots,T\}$ is
+an independent process that is also independent of the initial state $X_1$.
+
+Suppose we have to design such a control station. We are told the probability
+distribution of the initial state and the noise. We are also told the system
+update functions $f_1, \dots, f_T$ and the cost functions $c_1, \dots, c_T$. We
+are asked to choose a \emph{control strategy} $g \colonequals (g_1, \dots, g_T)$
+to minimize the expected total cost
+\startformula
+  \EXP^g{\sum_{t=1}^T c_t(X_t, U_t) }
+\stopformula
+How should we proceed?
+
+At first glance, the problem looks intimidating. It appears that we have to
+design a very sophisticated controller; one that can analyzes all past data to
+choose a control input. However, this is not the case. A remarkable result is
+that even the optimal control station can discard all past data and choose the
+control input based only on the current state of the system. Formally, we have
+the following:
+
+\startproclaim{Structural Result} For the system model described above,
+  without loss of optimality the control input can be chosen according to
+  \startformula
+    U_t = g_t(X_t), \quad t=1,\dots, T.
+  \stopformula
+  Such a control strategy is called a \emph{Markov strategy}.
+\stopproclaim
+
+The above result claims that the cost incurred by the best Markovian strategy is
+the same as the cost incurred by a strategy that analyzes the past data in the
+most sophisticated manner. This appears to be a tall claim, so lets see how we
+can prove it. The main idea of the proof is an elementary inequality.
+
+\startproclaim{An Elementary Inequality}
+  Let $\ALPHABET X$, $\ALPHABET Y$, $\ALPHABET Z$ be finite spaces and $f :
+  \ALPHABET X × \ALPHABET Z \mapsto \reals$. Then, there exists a function
+  $\hat g : \ALPHABET X \mapsto \ALPHABET Z$ such that for any function $g :
+  \ALPHABET X × \ALPHABET Y \mapsto \ALPHABET Z$,
+  \startformula
+    f(x,\hat g(x)) \le f(x, g(x,y)), \quad \forall x \in \ALPHABET X, y \in
+    \ALPHABET Y.
+  \stopformula
+\stopproclaim
+\startproof{Proof}
+  The result is trivially true by choosing
+  \startformula
+    \hat g(x) = \arg \min_{z \in \ALPHABET Z} f(x,z).
+  \stopformula
+  \vskip -2\baselineskip
+\stopproof
+
+The result can be extended to continuous spaces by invoking appropriate
+measurability arguments. However, for the ease of exposition, I avoid the
+\emph{measurability tax}, and only assume the situation when all variables are
+discrete valued.
+
+The proof of the structural result is almost an immediate consequence of the
+above elementary inequality. To make the argument transparent, we proceed 
+step-by-step. 
+
+\startproclaim{The Two-Step Lemma}
+  Consider the system described above that operates for two steps ($T=2$).
+  Without any loss of optimality the control input can be chosen according to
+  \startformula
+    U_2 = g_2(X_2).
+  \stopformula
+\stopproclaim
+
+\startproclaim{The Three-Step Lemma}
+  Consider the system described above that operates for three steps ($T=3$).
+  Assume that the control law at $t=3$ is Markovian, i.e.,
+  \startformula
+    U_3 = g_3(X_3).
+  \stopformula
+  Then, without loss of optimality, the control input at time $t=2$ can be
+  chosen according to
+  \startformula
+    U_2 = g_2(X_2).
+  \stopformula
+\stopproclaim
+
+We will prove these lemmas later. First, let us show how these lemmas lead to a
+proof of the structural result.
+
+\startproof{Proof of the structural result} 
+  The main idea is that any system can be thought of as a two- or three-step
+  system by aggregating time. Suppose the system operates for $T$ steps. It can
+  be thought of as a two step system where $t=1,\dots, T-1$ correspond to step 1
+  and $t=T$ corresponds to step 2. By using the two-step lemma, without loss of
+  optimality we can choose the controller at time $T$ to be Markovian, i.e.,
+  \startformula
+    U_T = g_T(X_T).
+  \stopformula
+  Thus, the structural result is true for $t=T$. Moreover, the structural
+  results are true for $t=1$ vacuously. So, we now only need to prove the
+  result for $t=2,\dots,T-1$. We do this by proceeding backwards in time.
+
+  The system can be thought of a three step system where $t=1,\dots, T-2$
+  correspond to step 1, $t=T-1$ corresponds to step 2, and $t=T$ corresponds to
+  step 3. Since the controller at time $T$ is Markovian, the assumption of the
+  three-step lemma is satisfied. Thus, by using that lemma, without loss of
+  optimality, we can choose the controller at time $T-1$ to be Markovian, i.e.,
+  \startformula
+    U_{T-1} = g_{T-1}(X_{T-1}).
+  \stopformula
+
+  Next, we again think of the system as a three step system but relabel time
+  differently. $t=1,\dots, T-3$ correspond to step 1, $t=T-2$ corresponds to
+  step 2, and $t=T-1, T$ corresponds to step 3. Since the controllers at time
+  $T$ and $T-1$ are Markovian, the assumption of the three-step lemma is
+  satisfied. Thus, by using that lemma, without loss of
+  optimality, we can choose the controller at time $T-2$ to be Markovian, i.e.,
+  \startformula
+    U_{T-2} = g_{T-2}(X_{T-2}).
+  \stopformula
+
+  Proceeding this way, we continue to think of the system as a three step system
+  by different relabeling of time. Once we have shown that the controllers at
+  time $t=s+1, s+2, \dots, T$ are Markovian, we relabel time as follows.
+  $t=1,\dots,s-1$ corresponds to step 1, $t=s$ corresponds to step 2, and
+  $t=s+1,s+2, \dots, T$ corresponds to step 3. Since the controllers at time
+  $s+1, \dots, T$ are Markovian, the assumption of the three-step lemma is
+  satisfied. Thus, by using that lemma, without loss of
+  optimality, we can choose the controller at time $s$ to be Markovian, i.e.,
+  \startformula
+    U_{s} = g_{s}(X_{s}).
+  \stopformula
+  Proceeding until $s=2$ completes the proof.
+\stopproof
+
+Now lets complete the proofs of the two lemmas.
+
+\startproof{Proof of the two-step lemma} 
+  Fix $g_1$ and look at optimizing $g_2$. The total cost is
+  \startformula
+    c_1(X_1, U_1) + c_2(X_2, U_2).
+  \stopformula
+  The choice of $g_2$ does not influence the first term. So, for a fixed $g_1$,
+  the total cost is the same as minimizing the expected value of the second
+  term. In the elementary inequality, take $f(⋅,⋅) = c(⋅,⋅)$ and $\ALPHABET X =
+  \ALPHABET X_2$, $\ALPHABET Y = \ALPHABET X_1 × \ALPHABET U_1$ and $\ALPHABET Z
+  = \ALPHABET U_2$. Then, there exists a function $\hat g_2 : \ALPHABET X_2
+  \mapsto \ALPHABET U_2$ such that for any (control law) $g_2 : \ALPHABET X_1 ×
+  \ALPHABET X_2 × \ALPHABET U_1 \mapsto \ALPHABET U_2$
+  \startformula
+    c_2(x_2, \hat g_2(x_2)) \le c_2(x_2, g_2(x_1, x_2, u_1)), \quad
+    x_2 \in \ALPHABET X_2, (x_1, u_1) \in \ALPHABET X_1 × \ALPHABET U_1. 
+  \stopformula
+  Consequently, 
+  \startformula
+    \EXP{c_2(X_2, \hat g_2(X_2))} \le \EXP{ c_2(X_2, g_2(X_1, X_2, U_1))}.
+  \stopformula
+  This implies that we can pick control input at time 2 according to
+  \startformula
+    U_2 = \hat g_2(X_2)
+  \stopformula
+  without any loss.
+\stopproof
+  
+\startproof{Proof of the three-step lemma}
+  Fix $g_1$ and $g_3$ and look at optimizing $g_2$. The total cost is
+  \startformula
+    c_1(X_1, U_1) + c_2(X_2, U_2) + c_3(X_3, U_3).
+  \stopformula
+  The choice of $g_2$ does not affect the first term. So, for a fixed $g_1$ and
+  $g_3$, minimizing the total cost is the same as minimizing the expected value
+  of the last two term. Let us look at the expected value of the last term
+  carefully. By the law of iterated expectations, we have
+  \startformula
+    \EXP{c_3(X_3, U_3)} = \EXP{ \EXP{c_3(X_3, U_3) | X_2, U_2} }.
+  \stopformula
+  Now,
+  \startformula \startalign
+    \NC \EXP{c_3(X_3, U_3) | X_2 = x_2, U_2 = u_2} \EQ
+        \EXP{c_3(X_3, g_3(X_3)) | X_2 = x_2, U_2 = u_2)} \NR
+    \NC \EQ \sum_{x_3 \in \ALPHABET X} c_3(x_3, g_3(x_3))
+        \PR{X_3 = x_3 | X_2 = x_2, U_2 = u_2} \NR
+    \NC \EQ \sum_{x_3 \in \ALPHABET X} c_3(x_3, g_3(x_3))
+        \PR{w_2 \in \ALPHABET W_2 : f_3(x_2, u_2, w_2) = x_3} \NR
+    \NC \NC \equalscolon h_2(x_2, u_2).
+  \stopalign \stopformula
+  Thus, the total expected cost affected by the choice of $g_2$ can be written
+  as
+  \placeformula[+] \startstarformula \startalign
+    \NC \EXP{c_2(X_2, U_2) + c_3(X_3, U_3)} \EQ
+        \EXP{c_2(X_2, U_2) + h_2(X_2, U_2)} \NR
+    \NC \NC \equalscolon 
+        \EXP{\tilde c_2(X_2, U_2)} \NR[eq:star]
+  \stopalign \stopstarformula
+  This cost has the same form as the cost to be minimized in the proof of the
+  two-step lemma. Thus, by a similar argument, we can pick the control input at
+  time 2 according to
+  \startformula
+    U_2 = \hat g_2(X_2)
+  \stopformula
+  without any loss.
+\stopproof
+
+\subject{Discussion}
+
+The above argument is a modification of the proof given in
+\cite[Witsenhausen:1979]. Contrast this with the standard proof of the
+structural result like \cite[extras={, Comparison principle, pg
+74}][KumarVaraiya:1986]. The proof presented here does not require us to find a
+dynamic programming decomposition of the problem. The assumption about future
+control laws is needed in the three-step lemma only to establish something
+similar to~(\in[eq:star]), specifically,
+\startformula \startalign[n=1,align=left]
+  \NC \EXP{ \text{\quotation{dependent} cost} | \text{all observations},
+  \text{current control}} \NR
+  \NC \quad =
+  \EXP{ \text{\quotation{dependent} cost} | \text{current \quotation{state}},
+  \text{current control}}. \NR
+\stopalign \stopformula
+Then, we can choose
+\startformula
+  \text{current control} = g(\text{current \quotation{state}}).
+\stopformula
+This argument can be extended to decentralized
+systems~\cite[MahajanTatikonda:2009].
+
+
+\subject{Reference}
+
+\placepublications[criterium=all]
+
+\stoptext
+

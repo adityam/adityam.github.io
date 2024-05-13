@@ -1,0 +1,1475 @@
+% engine=luatex
+
+\usemodule[t][presentation]
+\usemodule[mathsets]
+
+\def\LadderBreak{36}
+
+\environment macros
+
+\setupTitle
+  [title={Optimal design of sequential teams},
+   author={Aditya Mahajan \crlf Dept of Electrical Engineering \crlf
+           Yale University},
+   date={Joint work with:  \crlf
+    Ashutosh Nayyar and Demos Teneketzis (UofM); Sekhar Tatikonda (Yale) \blank[medium] Presented at: McGill University, May 20, 2009}]
+
+\starttext
+
+\placeTitle
+
+\SlideTitle Outline of the talk
+
+\startitemize[n]
+  \head Overview of multi-agent systems 
+
+    \vskip -1.5\baselineskip
+    \startitemize[2]
+      \item Classification :
+             games vs.\ teams 
+             and single-stage vs.\ multi-stage
+      \item Sequential decomposition : what and why
+    \stopitemize
+
+  \head Sequential teams with private and common observations
+
+    \vskip -1.5\baselineskip
+    \startitemize
+      \item A coordinator of a decentralized system
+      %\item The notion of information state
+      \item Sequential decomposition for finite and infinite horizon 
+    \stopitemize
+
+  \head An example: multi-access broadcast
+
+  \head A graphical model for sequential teams 
+
+    \vskip -1.5\baselineskip
+    \startitemize
+      \item Automated method to find structural results
+    \stopitemize
+
+\stopitemize
+
+\SlideTitle Multi-agent decentralized systems
+
+\startitemize
+
+  \head Applications
+
+    \startitemize[columns,two]
+      \item communication networks
+      \item sensor networks
+      \item surveillance networks
+      \item transportation networks
+      \item control systems
+        \column
+      \item monitoring and diagnostic systems
+      \item multi-robot systems
+      \item multi-core CPUs
+      \item \unknown
+    \stopitemize
+
+  \head Salient features
+
+    \startitemize
+      \item System has different components
+      \item These components know different information
+      \item The components need to cooperate and coordinate
+    \stopitemize
+
+\stopitemize
+
+\Interlude \important{Question} \crlf
+    How do we approach the design of a decentralized multi-agent system?
+
+\SlideTitle Classification of multi-agent systems
+
+\startitemize[n]
+
+  \item Teams  vs.\ Games
+
+  \item Single-stage  vs.\ Multi-stage
+
+    \startitemize[unpacked,1]
+      \item Sequential  vs.\ non-sequential systems
+
+        \startitemize[unpacked,2]
+          \item Classical  vs.\ non-classical  information structures
+        \stopitemize
+    \stopitemize
+
+    \startimportant
+      Sequential multi-stage teams with non-classical information structures
+    \stopimportant
+
+\stopitemize
+
+\SlideTitle Sequential Decomposition
+
+\startitemize
+
+  \head Divide and conquer :  \crlf \null \qquad 
+      Exploit sequential and multi-stage nature of the problem 
+    
+      \startimportant
+        Convert a one-shot optimal design problem into a sequence of nested
+        optimization problems
+      \stopimportant
+
+
+  \head Classical information structure (MDP, POMDP) 
+
+    \vskip -1.5\baselineskip
+    \startitemize
+      \item Dynamic programming
+    \stopitemize
+
+\stopitemize
+
+\vfill
+
+\SlideTitle Why consider sequential decomposition
+
+\startitemize
+  \head Finite horizon
+
+    \startitemize
+      \item Brute force search always possible but has high complexity
+      \head Provides a \emph{systematic} way to search for an optimal solution
+        \emph{efficiently}
+
+    \stopitemize
+
+  \head Infinite horizon
+
+    \startitemize
+      \item Brute force search not possible
+      \item An arbitrary solution cannot be implemented
+      \head Identify qualitative properties to search and implement optimal
+        designs \emph{compactly}
+
+    \stopitemize
+
+  \head May help in identifying (and proving) other qualitative properties
+
+\stopitemize
+
+\SlideTitle Sequential Decomposition
+
+\startitemize
+  \head Non-classical information structure
+
+    \vskip -1.5\baselineskip
+    \startitemize[paper,unpacked]
+      \item Hans S.\ Witsenhausen, 
+          \emph{A standard form for sequential
+          stochastic control}, \crlf
+          Math.\ Systems Theory, 7 (1973), pp.~5--11.
+          \crlf     
+          \null \hfill \important
+          {Does not work for infinite horizon problems}
+
+      \item Aditya Mahajan, 
+         \emph{Sequential decomposition of
+         sequential teams}, \crlf
+         Ph.D.\ Thesis, University of Michigan, Ann Arbor
+         (2008).
+          \crlf     
+         \null \hfill \important
+         {Not easy to extend to more than two agents}
+    \stopitemize
+\stopitemize
+
+
+\starthiding %{{{
+\SlideTitle Finite horizon problems
+
+\adaptlayout[lines=+2]
+
+\startitemize
+  \head MDP (Markov decision process)
+
+    \startitemize
+      \head Qualitative property : Take actions based only on the current
+        state
+
+        \starttabulate[|l|l|]
+          \NC Brute force \EQ  $\SIZE U^{(\SIZE X × \SIZE U)^T}$ \NC \NR
+          \NC Sequential decomposition \EQ $T × \SIZE X × \SIZE U^2$ \NC \NR
+        \stoptabulate
+    \stopitemize
+
+  \head POMDP (Partially observable Markov decision process)
+
+    \startitemize
+      \head Qualitative property : Take actions based only on the controller's
+        belief about the state of the system
+
+        \starttabulate[|l|p|]
+          \NC Brute force \EQ $\SIZE U^{(\SIZE Y × \SIZE U)^T}$ \NC \NR
+          \NC Sequential decomposition \EQ Worst case (for exact solution)
+              $\SIZE U^{\SIZE Y^T}$ \NC \NR
+          \NC \NC May be polynomial for specific instances \NC \NR
+          \NC \NC Under some conditions approximation algorithms do better \NC
+              \NR
+        \stoptabulate
+    \stopitemize
+\stopitemize
+
+
+\SlideTitle Infinite horizon problems
+
+\startitemize
+  \head MDP (Markov decision process)
+
+    \startitemize
+      \item Qualitative property : Take actions based only on the current
+        state
+
+      \head Can restrict attention to time invariant designs
+
+      \item Optimal design can be found by solving a linear program with $\SIZE
+        X$ variables and $\SIZE X × \SIZE U$ constraints
+
+    \stopitemize
+
+  \head POMDP (Partially observable Markov decision process)
+
+    \startitemize
+      \item Qualitative property : Take actions based only on the controller's
+        belief about the state of the system
+
+      \head Can restrict attention to time invariant designs
+
+      \item Optimality equations can be approximately solved using randomized
+        algorithms whose worst case complexity is polynomial in $\SIZE X$ and
+        $\SIZE U$
+
+    \stopitemize
+
+\stopitemize
+\stophiding %}}}
+
+
+\Interlude  Sequential decomposition \\ of
+\important{multi-agent} sequential teams 
+that works for \\
+\important{finite and
+infinite horizon}
+
+% \Interlude {\switchtobodyfont[120pt]\important{YES}}
+
+\SlideTitle Models considered in this talk 
+
+\adaptlayout[lines=+2]
+
+\startitemize[n]
+
+  \head multi-agent ($> 2$) teams with private and common observations
+
+    \startitemize
+
+      \head Assume structural property of optimal controller
+
+      \item Identify a \emph{coordinator} of the system
+
+      \item Identify an \emph{information state} sufficient for performance
+        analysis
+
+      \item Optimally control the evolution of information state 
+
+        \startlinecorrection
+          \midaligned{\bfc$\Updownarrow$\hskip 4em}
+        \stoplinecorrection
+
+        Markov decision process where
+        \vskip -.5\baselineskip
+          \starttabulate[|i7l|p|] 
+            \NC State space  \EQ space of probability measures \NC \NR
+            \NC Action space \EQ space of functions \NC \NR
+          \stoptabulate
+
+    \stopitemize
+
+  \head A graphical model for sequential teams
+
+    \startitemize
+      \item Automated method to find structural results
+    \stopitemize
+
+\stopitemize
+
+\SlideTitle Main results
+
+\startitemize
+  \head Multi-agent teams : finite horizon
+
+    \startitemize
+
+      \item Coordinator's problem is a centralized problem
+      \item Absence of any common observation $\implies$ 
+        coordinator = designer
+
+    \stopitemize
+
+  \head Multi-agent teams : infinite horizon
+
+    \startitemize
+
+      \item Cannot restrict attention to time invariant designs
+
+      \item Can restrict attention to time invariant \important{meta-designs}
+
+    \stopitemize
+
+  \head Graphical model for sequential teams
+
+    \startitemize
+
+      \item Structural results can be derived based on conditional independence
+
+      \item Conditional independence can be tested efficiently in graphical
+        models
+
+    \stopitemize
+
+\stopitemize
+
+\Interlude The first model \unknown{}
+
+\SlideTitle Teams with common information
+
+\startitemize
+  \head Some models of teams considered in the literature \unknown {}
+
+    \startitemize[columns, two]
+      \item delayed state sharing
+      \item delayed information sharing
+      \item delayed observation sharing
+      \item delayed control sharing
+      \item delayed belief sharing 
+        \column
+      \item periodic state sharing
+      \item periodic information sharing
+      \item periodic observation sharing
+      \item periodic control sharing
+      \item periodic belief sharing 
+    \stopitemize
+\startimportant
+  Sharing is good! Can we generalize this?
+\stopimportant
+\stopitemize
+
+\SlideTitle Teams with common information
+
+\startitemize
+  \item \emph{Plant:} \quad $\VAR x(t+1) = f(\VAR x(t), \VAR u[1:n](t), \VAR w(t))$
+  \item \emph{Observations}
+
+    \vskip -.5\baselineskip
+    \startitemize
+      \item {Common Observation:} \quad 
+        $\VAR z(t) = o(\VAR x(t), \VAR u[1:n](t-1), \VAR q(t))$
+      \item {Private Observation:} \quad
+        $\VAR y[i](t) = h_i(\VAR x(t), \VAR n[i](t))$
+    \stopitemize
+  \item \emph{Control at agent $i$:} \quad
+      $\VAR u[i](t) = g_{i,t}(\VAR y[i](1:t), \VAR u[i](1:t-1), \VAR z(1:t))$
+
+  \item \emph{Design:} \quad $G_T \DEFINED \VAR g[1:n](1:T)$ 
+    \quad (control laws of all agents for all time)
+
+  \item \emph{Cost} 
+    
+    \vskip -.5\baselineskip
+    \startitemize
+      \item {At time $t$:} \quad $c(\VAR x(t), \VAR u[1:n](t))$
+      \item {Of a design $G_T$:} \quad
+        $\displaystyle \COST_T(G_T) =
+        \EXP^{G_T}{\sum_{t=1}^T c(\VAR x(t), \VAR u[1:n](t))}$
+    \stopitemize
+
+\stopitemize
+
+\SlideTitle Problem P (Finite horizon)
+
+\startitemize 
+  \head Given
+
+    \startitemize[columns,two]
+      \item Alphabets $\ALPHABETS[X,Z,Y_i,U_i]$
+      \item Plant function $f$
+      \item Observation functions $o$ and $h_i$
+      \item Cost functions $c$
+      \item PMF of $\VAR w(t)$, $\VAR q(t)$, and $\VAR n[i](t)$
+    \stopitemize
+
+  \head Determine
+
+    \startitemize
+      \item An optimal design $G^*_T$
+        \startformula
+          \COST_T(G^*_T) = J^*_T \DEFINED
+          \min_{G_T} \COST_T(G_T)
+        \stopformula
+    \stopitemize
+\stopitemize
+
+\SlideTitle Salient Features
+
+\startitemize
+  \head Team problem
+
+    All agents have common objective 
+
+  \head Sequential team
+
+    Agent's actions or events in nature do not influence order of agent's
+    actions.
+
+  \head Data, information and non-classical information structure 
+
+    \centerline{$σ(\VAR y[i](1:t), \VAR u[i](1:t-1), \VAR z(1:t)) 
+    \mathrel{\cancel{\subset \atop \supset}}
+    σ(\VAR y[j](1:t), \VAR u[j](1:t-1), \VAR z(1:t))$, \quad $i \neq j$}
+
+\stopitemize
+
+\Interlude Solution Approach: \\ Sequential Decomposition 
+
+\SlideTitle Assumption on controller structure
+
+\startitemize
+  \head Assumption A
+
+   \vskip -1\baselineskip
+    \startimportant[before=\blank, after=\blank, width=broad]
+      Without loss of optimality, 
+      all controllers can \emph{compress} their past private information 
+      $(\VAR y[i](1:t-1), \VAR u[i](1:t-1))$ into a sufficient statistic (memory)
+      $\VAR m[i](t)$ that takes values in a \emph{time invariant} space 
+      $\ALPHABET M_i$.
+    \stopimportant
+   \vskip -1\baselineskip
+
+  \head Modified control
+
+    \centerline{$\displaystyle 
+    \VAR u[i](t) = 
+    \cross{g_{i,t}(\VAR y[i](1:t), \VAR u[i](1:t-1), \VAR z(1:t))} = 
+    g_{i,t}(\VAR y[i](t), \VAR m[i](t), \VAR z(1:t))$}
+
+  \head Memory update
+
+    \centerline{$\displaystyle 
+    \VAR m[i](t+1) = l_{i,t}(\VAR y[i](t), \VAR m[i](t), \VAR z(1:t))$}
+
+  \head Many systems satisfy Assumption~A
+
+\stopitemize
+
+\SlideTitle Solution Approach --- An alternate problem
+
+\startitemize
+  \head Problem PC (Problem with a coordinator)
+
+    A \emph{centralized} system with $n$ components and a coordinator.
+
+  \item \emph{Coordinator's Observations}:  $\VAR z(t)$
+
+  \item \emph{Coordinator's {\em meta-control} }  \crlf
+    \null \qquad
+    $γ_{i,t} = \ALPHABET Z^t \to (\ALPHABET Y_i × \ALPHABET M_i \to
+    \ALPHABET U_i)$ 
+    and 
+    $λ_{i,t} = \ALPHABET Z^t \to (\ALPHABET Y_i × \ALPHABET M_i \to
+    \ALPHABET M_i)$ 
+    \startformula \startalign[m=2,distance=4em]
+      \NC \hat g_{i,t} \EQ γ_{i,t}(\VAR z(1:t)) 
+      \NC \hat l_{i,t} \EQ λ_{i,t}(\VAR z(1:t)) \NR
+    \stopalign \stopformula
+
+  \item \emph{Component's operation:} \crlf
+    \null \qquad
+    Passively applies the functions supplied
+    by the coordinator.
+    \startformula \startalign[m=2,distance=4em]
+      \NC \VAR u[i](t)  \EQ \hat g_{i,t}(\VAR y[i](t), \VAR m[i](t))
+      \NC \VAR m[i](t+1)\EQ \hat l_{i,t}(\VAR y[i](t), \VAR m[i](t)) \NR
+    \stopalign \stopformula
+    
+\stopitemize
+
+\SlideTitle The two problems are equivalent
+
+\startitemize
+  \head $\COST_T(\text{Problem PC}) ≥ \COST_T(\text{Problem P})$
+
+    \startitemize
+      \item Given any strategy $(G_T, L_T)$ of controllers, an equivalent coordinator
+        meta-strategy $(Γ_T, Λ_T)$ can be constructed.
+
+        \startformula \startalign[m=2,distance=4em]
+          \NC γ_{i,t}(\VAR z(1:t)) \EQ g_{i,t}(⋅, ⋅, \VAR z(1:t)) 
+          \NC λ_{i,t}(\VAR z(1:t)) \EQ l_{i,t}(⋅, ⋅, \VAR z(1:t)) \NR
+        \stopalign \stopformula
+    \stopitemize
+
+  \head $\COST_T(\text{Problem P}) ≥ \COST_T(\text{Problem PC})$
+
+    \startitemize
+      \item Coordinators actions are measurable at all agents.
+      \item All agents can implement the coordinator's meta-strategy.
+        \startformula \startalign
+          \NC g_{i,t}(\VAR y[i](t),\VAR m[i](t), \VAR z(1:t)) 
+              \EQ γ_{i,t}(\VAR z(1:t))(\VAR y[i](t), \VAR m[i](t)) \NR
+          \NC l_{i,t}(\VAR y[i](t),\VAR m[i](t), \VAR z(1:t)) 
+              \EQ λ_{i,t}(\VAR z(1:t))(\VAR y[i](t), \VAR m[i](t)) \NR
+        \stopalign \stopformula
+    \stopitemize
+
+\stopitemize
+
+\Interlude The coordinator's problem is centralized!
+
+\SlideTitle Information states:
+  Pr( state $\mathsurround\zeropoint\bigg|$ information )
+
+\startitemize 
+  \let\1\important
+  
+  \head State (for coordinator)
+
+    \startformula \startalign[n=5,align={right,left,middle}]
+      \NC \VAR s[1](t) \EQ (\VAR x(t), \NC \VAR y[1:n](t), \NC \VAR u[1:n](t-1), 
+      \NC \VAR m[1:n](t-1)) \NR
+      \NC \VAR s[i](t) \EQ (\VAR x(t), \NC \VAR y[1:\1{k}](t), 
+      \NC \VAR u[1:\1{i-1}](t), 
+      \NC \VAR m[1:\1{i-1}](t), \VAR m[\1{i}:n](t-1)), \quad i = 2, \dots, n \NR
+    \stopalign \stopformula
+
+   \emph{Cost}: \quad
+      $c(\VAR x(t), \VAR u[1:n](t)) = \hat c(\VAR s[n](t))$
+
+  \head Information (at the coordinator)
+    
+    \startformula
+      σ(\VAR z(1:t);\underparent{
+      \VAR {\hat g}[1:n](1:t-1), \VAR {\hat l}[1:n](1:t-1),
+      \VAR {\hat g}[1:i-1](t), \VAR {\hat l}[1:i-1](t)}_{\VAR φ[i](t)},
+      \cross{\VAR γ[1:n](1:t-1)}, \cross{\VAR λ[1:n](1:t-1)})
+    \stopformula
+
+  \head Information state
+
+    \startformula
+      \VAR π[i](t)(\VAR z(1:t), \VAR φ[i](t)) 
+      = \PR{\VAR S[i](t) | σ(\VAR z(1:t); φ(t))} = 
+      \PR^{\VAR φ[i](t)}{\VAR S[i](t) | \VAR Z(1:t) = \VAR z(1:t)}
+    \stopformula
+\stopitemize 
+
+
+\SlideTitle Properties of information states
+
+\startitemize
+  \head Update
+
+    There exists functions $F_i$, $i=1,\dots,n$, such that
+    \startformula \startalign[m=2]
+      \NC \VAR π[1](t) \EQ F_1(\VAR π[n](t-1), \VAR {\hat g}[k](t-1),
+          \VAR {\hat l}[k](t-1)) \NC \NC \NR
+      \NC \VAR π[i](t) \EQ F_1(\VAR π[i-1](t), \VAR {\hat g}[i-1](t),
+          \VAR {\hat l}[i-1](t)), \NC  i \EQ 2, \dots, n \NR
+    \stopalign \stopformula
+
+  \item Information state update is independent of the \important{meta-strategy}
+
+  \item Information state is measurable at all controllers
+
+  \item Information state is \quotation{time-invariant}
+\stopitemize
+
+\SlideTitle Sequential Decomposition
+
+\startitemize
+  \head Initialization
+
+    \startformula
+      V_{n,T}(\tilde π_n) = 
+      \EXP{\hat c(\VAR S[n]() | \VAR π[n](T) = \tilde π_n)}
+    \stopformula
+
+  \head Backward recursion
+
+    \startitemize 
+      \item For $i = 1,\dots, n-1$, and $t = 1,\dots, T$,
+        \startformula
+          V_{i,t}(\tilde π_i) = \inf_{\hat g_{i,t}, \hat l_{i,t}} \big[
+            \EXP^{\hat g_{i,t}, \hat l_{i,t}}
+            {V_{i+1, t}(\VAR π[i+1](t)) | \VAR π[i](t) = \tilde π_i}
+            \big]
+        \stopformula
+
+      \item For $t=1,\dots,T$,
+        \startformula
+          V_{n,t}(\tilde π_n) = 
+      \EXP{\hat c(\VAR S[n]() | \VAR π[n](t) = \tilde π_n)} + 
+          \inf_{\hat g_{n,t}, \hat l_{n,t}} \big[
+            \EXP^{\hat g_{n,t}, \hat l_{n,t}}
+            {V_{1, t+1}(\VAR π[1](t+1)) | \VAR π[n](t) = \tilde π_n}
+            \big]
+        \stopformula
+
+    \stopitemize
+
+\stopitemize
+
+\SlideTitle An interpretation of the solution
+
+\startitemize
+  \item All the agents decide what to do before the system starts operating
+
+    \startimportant
+      In the presence of common information, the coordinator allows the agents
+      to  adapt to the
+      component of the same path that is commonly observed
+    \stopimportant
+
+    \startimportant
+      In the absence of common information, the coordinator is same as the
+      system designer
+    \stopimportant
+
+  \item Information states store and  process the common information and past
+    policies more efficiently.
+
+\stopitemize
+
+\SlideTitle Infinite horizon problem
+
+\startitemize
+  \item  Information states belong to \quotation{time invariant} spaces, so the
+    sequential decomposition extends to infinite horizon.
+
+  \item Meta-strategy is stationary $\implies$ meta control laws are time
+    invariant.
+
+  \item Actual control laws change with time
+
+  \item The coordinator's viewpoint makes it easy to find and implement optimal
+    time varying control laws.
+
+\stopitemize
+
+\SlideTitle Summary so far \unknown {}
+
+\startitemize
+  \item Started with a general $n$ agent sequential team with common
+    observations.
+    
+  \item Assume certain structural results exist (private information can be
+    compressed to a sufficient statistic)
+
+  \item Consider an alternate problem (with passive agents and a coordinator)
+
+  \item Both problems are equivalent
+
+  \item The coordinator's problem is centralized!
+
+  \item Coordinator chooses meta control laws (control laws that choose control
+    laws)
+
+  \item Each step of the sequential decomposition is a functional problem
+\stopitemize
+
+\Interlude An example 
+
+\SlideTitle Multiaccess broadcast
+
+    \placefigure[right,none]{}
+      {\externalfigure[network][width=0.4\textwidth, location=middle]}
+
+\SlideTitle Multiaccess broadcast
+
+    \placefigure[right,none]{}
+      {\externalfigure[network][width=0.4\textwidth, location=middle]}
+\startitemize
+  \head MAB Channel
+
+    \vskip -1\baselineskip
+    \startitemize
+      \item Single user transmits $\implies$ 
+        \externalfigure[face-smile][location=middle]
+      \item Both users transmit   $\implies$ 
+        \externalfigure[face-sad][location=middle]
+    \stopitemize
+
+
+  \head Transmitters
+
+    \startitemize
+      \item Queues with buffer of size 1
+      \item Packet held in queue until successful transmission
+      \item Packet arrival is independent Bernoulli process
+    \stopitemize
+\stopitemize
+
+\SlideTitle Multiaccess broadcast
+
+\startitemize
+  \head Channel Feedback
+
+    \centerline{Both users know if there was no Tx, successful Tx, or collision}
+
+  \head Policy of user
+
+    \startformula
+      \VAR u[i](t) = g_{i,t}(\VAR x[i](1:t), \VAR u[i](1:t-1), \VAR z(1:t))
+    \stopformula
+
+  \head Objective : Maximize throughput (or minimize delay)
+
+    \startitemize
+      \item Avoid collisions
+      \item Avoid idle
+    \stopitemize
+
+\stopitemize
+
+\SlideTitle History of multiaccess broadcast
+
+\startitemize[paper]
+  \item Hluchyj and Gallager, 
+    \emph{Multiaccess of a
+    slotted channel by finitely many users}, NTC~81.
+
+    \startitemize[2]
+        \vskip -\lineheight
+      \item Considered symmetric arrival rates 
+      \item Restricted attention to \quotation{window protocols}
+    \stopitemize
+
+  \item Ooi and Wornell, 
+    \emph{Decentralized control of multiple access broadcast
+    channels}, CDC~96.
+
+    \startitemize[2]
+        \vskip -\lineheight
+      \item Considered a relaxation of the problem
+      \item Numerically find optimal performance of the relaxed problem 
+      \item Hluchyj and Gallager's scheme meets this upper bound
+    \stopitemize
+
+  \item AI Literature
+    \startitemize
+        \vskip -\lineheight
+      \item Consider the case of asymmetric arrival rates
+      \item Approximate heuristic solutions for small horizons
+    \stopitemize
+
+\stopitemize
+
+\SlideTitle Optimal Solution
+
+\startitemize
+  \head Structural Result
+
+    \startformula
+      u_i(t) = g_{i,t}(\VAR x[i](t), \cross{\VAR x[i](1:t-1)}, 
+      \cross{\VAR u[i](1:t-1)}, \VAR z(1:t))
+    \stopformula
+
+  \head Assumption A is satisfied $\implies$ sequential decomposition
+
+  \head Further simplifications
+
+    \startitemize
+      \item Information states
+        \startformula
+          P( (\VAR x[1](t), \VAR x[2](t)) \mid \VAR z(1:t)) \equiv
+          ( P(\VAR x[1](t) \mid \VAR z(1:t)), P(\VAR x[2](t) \mid \VAR z(1:t))
+        \stopformula
+
+      \item Actions: $\hat g_{i,t}(0) = 0$, $\hat g_{i,t}(1) = ??$
+    \stopitemize
+
+\stopitemize
+
+\SlideTitle Optimal Solution
+
+
+\startitemize
+  \item Sequential decomposition same as that of a POMDP with finite state and
+    action space.
+
+  \head For symmetric arrival rates $p$
+
+    \startitemize
+      \item If $p > τ$, follow TDMA
+      \item If $p < τ$, 
+        \startitemize[n][left=S]
+          \item If you have a packet, transmit it. If collision, one user moves
+            to S2.
+          \item Idle, then move to S1
+        \stopitemize
+    \stopitemize
+
+  \item Same as the strategy proposed by Hluchyj and Gallager. \crlf
+    \centerline{\emph{We can prove optimality.}}
+
+  \item All previous attempts provide approximate solutions!
+
+\stopitemize
+
+
+\Interlude Back to general teams \\  Structural properties?
+
+\SlideTitle A model for sequential team
+
+\startitemize
+  \head Components of a sequential team
+
+    \startitemize[unpacked]
+      \item A set $N$ of indices of system variables $\{X_n, n \in N\}$ and a partial order \rlap{$\prec$ on $N$}
+        \vskip -.5\baselineskip
+        \startitemize[packed]
+          \item $A \subset N$, denoting the indices of decisions 
+          \item $R \subset N$, denoting the indices of reward variables
+        \stopitemize
+
+      \item Finite sets $\{\ALPHABET X_n$, $n \in N\}$ of state spaces of $X_n$
+
+      \item $\{I_n$, $n \in N\}$, such that for all $i \in I_n$, $i \prec n$.
+        $\ALPHABET I_n = \prod_{i \in I_n} \ALPHABET X_i$
+
+      \item $F_{N\setminus A} = \{f_n$, $n \in N \setminus A\}$, where $f_n$ is a
+        stochastic kernel from $\ALPHABET I_n$ to $\ALPHABET X_n$.
+
+    \stopitemize
+
+  \head Design
+
+    \startitemize
+      \item $G_A = \{g_n$, $n \in N\}$, where $g_n$ is a decision rule from
+        $\ALPHABET I_n$ to $\ALPHABET X_n$
+    \stopitemize
+
+\stopitemize
+
+\SlideTitle A model for sequential team
+
+\startitemize
+  \head Probability measure induced by a design
+
+    \startformula
+      P^{G_A}(X_N) = \prod_{n \in N\setminus A} f_n(X_n | I_n) \prod_{n \in A}
+      \IND {X_n = g_n (I_n)}
+    \stopformula
+
+  \head Optimization problem
+
+    Minimize $\displaystyle \EXP{\sum_{n \in R} X_n}$, where the expectation is
+    with respect to $P^{G_A}$.
+\stopitemize
+
+\SlideTitle Generality of the Model
+
+\startitemize
+  \head Witsenhausen's intrinsic model 
+
+    \startitemize[paper,unpacked]
+      \item Hans S.\ Witsenhausen, 
+        \emph{On information structures, feedback and causality}, \crlf
+        SIAM Journal of Control, 9 (1971), pp.~149-160. \crlf
+        \null \hfill \important
+          {partial order $\iff$ sequentiality}
+
+    %  \item Hans S.\ Witsenhausen, 
+    %    \emph{The intrinsic model for stochastic control: Some open problems}
+    %    \crlf
+    %    Lecture Notes in Economics and Mathematical Systems, 17 (1975),
+    %    pp~322-335.
+    \stopitemize
+
+  \head Witsenhausen's sequential control model 
+
+    \startitemize[paper]
+      \item Hans S.\ Witsenhausen, 
+        \emph{A standard form for sequential stochastic control}, \crlf
+        Math.\ Systems Theory, 7 (1973), pp.~5--11. 
+    \stopitemize
+
+  \head Witsenhausen's equivalent control model 
+
+    \startitemize[paper]
+      \item Hans S.\ Witsenhausen, 
+        \emph{Equivalent stochastic control problems}, \crlf
+        Math.\ Controls, Signals and Systems, 1 (1988), pp.~3--11.
+    \stopitemize
+\stopitemize
+          
+% \startitemize %{{{
+%   \head Conditions to check if a multi-stage game or team is
+% 
+%     \startitemize
+%       \item causal
+%       \item deadlock free
+%       \item sequential
+%     \stopitemize
+% 
+%   \head Properties of such systems
+% 
+% \stopitemize
+% 
+% \SlideTitle How to check if a system is sequential \unknown {}
+% 
+% \startitemize
+%   \head The intuitive definition
+% 
+%     DMs actions or events in nature do not influence order of DM's
+%     actions.
+% 
+%   \head The (informal) formal definition
+% 
+%     \vskip -1\baselineskip
+%     \startitemize
+%       \item \emph{Subsystem}: A set of system variables form a subsystem if
+%         these variables depend only on other variables in the set.
+% 
+%       \item \emph{Closure of a DM~$α$:} $\overline {\{α\}}$ is the smallest
+%         subsystem containing $α$ (or more precisely, the data observed by~$α$).
+% 
+%       \item \emph{A binary relation on DMs:} $α \leftarrow β$ iff 
+%         $\overline {\{α\}} \subseteq \overline {\{β\}}$.
+% 
+%       \item $\leftarrow$ is reflexive and transitive $\implies$ a
+%         \important{quasi-order}.
+% 
+%     \stopitemize
+% 
+%     \startimportant
+%       A system is sequential if and only if $\leftarrow$ is a partial order.
+%     \stopimportant
+% 
+% \stopitemize %}}}
+
+\SlideTitle A graphical model for sequential teams
+
+\startitemize
+  \head Directed Acyclic Factor Graph
+
+  \head Factor Graph
+
+    \startitemize
+      \item Variable node $n$ $\equiv$ system variable $X_n$
+      \item Factor   node $\tilde n$ $\equiv$ stochastic kernel $f_n$ or
+        decision rule $g_n$
+    \stopitemize
+
+  \head Directed Graph
+
+    \startitemize
+      \item $(i, \tilde n)$, for each $n \in N$ and $i \in I_n$
+      \item $(n, \tilde n)$, for each $n \in N$
+    \stopitemize
+      
+  \head Acyclic Graph
+
+    \startitemize
+      \item Partial order on $N$ implies acyclic graph
+    \stopitemize
+\stopitemize
+
+\SlideTitle An example: MDP
+
+\startitemize 
+  \head Mathematical Model
+
+    \startitemize
+      \item Plant:   $f_{t-1}(x_t | x_{t-1}, u_{t-1})$
+      \item Control: $u_t = g_t(x_1, \dots, x_t, u_1, \dots, u_{t-1})$
+      \item Reward:  $r_t = ρ_t(x_t, u_t)$
+    \stopitemize
+
+  \head Graphical Model
+
+    \vskip -2\baselineskip
+    \placefigure[here,none]{}
+      {\externalfigure[fig-mdp][page=1, width=0.8\textwidth]}
+
+\stopitemize
+
+\dostepwiserecurse{1}{3}{2}{
+\SlideTitle Structural Results for MDP
+
+\startimportant
+  Without loss of optimality, $u_t = g_t(x_t)$
+\stopimportant
+
+\startitemize
+  \head Graphically \par
+
+    \vskip -2\baselineskip
+    \placefigure[here,none]{}
+      {\externalfigure[fig-mdp][page=#1, width=0.8\textwidth]}
+
+\stopitemize
+}
+
+\SlideTitle Structural results
+
+\startitemize
+  \head The main idea
+
+    \startalignment[middle]
+      If $X_i \in $ data is independent of future rewards given the control
+      action and other data at the DM, then it can be ignored
+    \stopalignment
+
+    \startimportant
+      Can we automate this process?
+    \stopimportant
+
+\stopitemize
+
+\Interlude \switchtobodyfont[20pt] \setupinterlinespace
+        Struct. result $\equiv$ cond.\ independence \blank[big]
+        Graphical models can easily test conditional independence
+
+\SlideTitle Graphical models
+
+\startitemize
+  \head Terminology
+
+    \vskip -1\baselineskip
+    \startitemize
+      \item \emph{$\PARENTS{n}$}: All nodes $m$ such that $m \CONNECTED
+        n$
+
+      \item \emph{$\CHILDREN{n}$}: All nodes $m$ such that $n
+        \CONNECTED m$
+
+      \item \emph{$\ANCESTORS{n}$}: All nodes $m$ such that there is a
+        directed path from \rlap{$m$ to $n$}
+
+      \item \emph{$\DESCENDANTS{n}$}: All nodes $m$ such that there
+        is a directed path from \rlap{$n$ to $m$}
+
+    \stopitemize
+
+  \head In terms of teams
+
+    \vskip -1\baselineskip
+    \startitemize
+      \item Parents of a control (factor) node = data observed by controller
+      \item Children of a control node = control action
+      \item Ancestors of a control node = all nodes that affect the
+        data observed 
+      \item Descendants of a control node = all nodes that are affected
+        by the control action
+    \stopitemize
+
+\stopitemize
+
+\IncludePicture
+  [horizontal]
+  [fig-mdp]
+  [page=3]
+  {Graphical Models}
+
+\SlideTitle Conditional independence 
+
+\startitemize
+  \head Three canonical graphs to verify $x \INDEPENDENT z \mid y$
+
+    \vskip -3\baselineskip
+
+    \placefigure[here,none]{}
+    \startcombination[3]
+      {\externalfigure[fig-ind][page=1]}
+      {\externalfigure[face-smile][location=middle] Markov chain}
+      {\externalfigure[fig-ind][page=2]}
+      {\externalfigure[face-smile][location=middle] Hidden cause}
+      {\externalfigure[fig-ind][page=3]}
+      {\llap{\externalfigure[face-sad][location=middle]} Explanation }
+    \stopcombination
+
+  \head Blocking of a trail
+
+    \vskip -.5\baselineskip
+    A trail from $a$ to $b$ is blocked by $C$ if $\exists$ a node $v$ on the
+    trail such that either:
+    \vskip -.5\baselineskip
+    \startitemize[1]
+      \item either $\to v \to$, $\from v \from$, or $\from v \to$, and $v \in C$
+      \item $\to v \from$ and neither $v$ nor any of $v$'s descendants are in
+        $S$.
+    \stopitemize
+\stopitemize
+
+\SlideTitle Conditional independence 
+
+\startitemize
+
+  \head d-separation
+
+    $A$ is d-separated from $B$ by $S$ if all trails from $A$ to $B$ are blocked
+    by $S$
+
+  \head Conditional independence
+
+    For any probability measure $P$ that factorizes according to a DAFG, 
+    
+    \blank[medium]
+    \startalignment[middle]
+      $A$ d-separated from $B$ by $C$ implies \crlf
+      $X_A$ is conditionally independent
+      of $X_B$ given $X_C$, $P$~a.s.
+    \stopalignment
+
+  \head Efficient algorithms to verify d-separation
+
+    \vskip -1\baselineskip
+    \startitemize
+      \item Moral graph
+        \hskip 5em
+      \symbol[2]\space Bayes Ball
+    \stopitemize
+
+\stopitemize
+
+\SlideTitle Automated Structural results
+
+\startitemize
+  \head First attempt
+
+    \startitemize[unpacked]
+      \item \emph{Dependent rewards:} $R_d(\tilde n) = R \cap
+        \DESCENDANTS{\tilde n}$
+
+      \item \emph{Irrelevant data:} At a control node $\tilde n$, and parent $i$
+        is irrelevant if $R_d(\tilde n)$ is d-separate from $i$ given
+        $\PARENTS{\tilde n} \cup \CHILDREN{\tilde n} \setminus \{i\}$
+
+      \item \emph{Requisite data:} All parents that are not irrelevant
+    \stopitemize
+
+  \head Structural result
+
+    \startitemize
+      \item Without loss of optimality, we can choose $u_n =
+        g_n($requisite$(\tilde n))$
+    \stopitemize
+
+
+\stopitemize
+  
+\SlideTitle 
+
+\startshowresult{Structural Results for MDP --- Step 1}{1}
+\startitemize
+  \head Pick node $g_3$.
+
+    \startitemize
+      \item Original $u_3 = g_3(x_1, x_2, x_3, u_1, u_2)$
+      \item requisite($g_3$) = $\{x_3\}$
+      \item Thus, $u_3 = g_3(x_3)$
+    \stopitemize
+\stopitemize
+\stopshowresult
+
+\startshowresult{Structural Results for MDP --- Step 2}{2}
+\startitemize
+  \head Pick node $g_2$.
+
+    \startitemize
+      \item Original $u_2 = g_2(x_1, x_2, u_1)$
+      \item requisite($g_2$) = $\{x_2\}$
+      \item Thus, $u_2 = g_2(x_2)$
+    \stopitemize
+\stopitemize
+\stopshowresult
+
+
+\SlideTitle Structural Results for MDP --- Step 2
+
+\placefigure[here,none]{}
+  {\externalfigure[fig-mdp][page=3, width=0.8\textwidth]}
+
+\Interlude Almost there \unknown{}
+
+\SlideTitle A \quotation{decentralized} MDP
+
+\startitemize
+  \head Mathematical Model
+
+    \startitemize
+      \item Plant: $f_{t-1}(x_t | x_{t-1}, u_{1,t-1}, u_{2,t-1})$
+      \item Controller~$i$: $u_{i,t} = g_{i,t}(x_1, \dots, x_t, u_{i,1}, \dots,
+        u_{i,t-1})$
+      \item Reward: $ρ(r | x_t, u_{1,t}, u_{2,t})$
+    \stopitemize
+
+  \head Graphical Model
+
+    \vskip -3\baselineskip
+\placefigure[here,none]{}
+  {\externalfigure[fig-dec-mdp][page=1, width=0.8\textwidth]}
+
+\stopitemize
+
+\Interlude Need to take care of deterministic functions!
+
+\SlideTitle Functionally determined nodes
+
+\startitemize
+  \head Functionally determined 
+
+    \vskip -1.5\baselineskip
+    \startitemize
+      \item $X_B$ is functionally determined by $X_A$ if
+        \emph{$X_B \INDEPENDENT X_N \mid X_A$}
+    \stopitemize
+
+    \head Conditional independence with functionally determined nodes
+
+    \vskip -1\baselineskip
+      \startitemize
+        \item Can be checked using \important{D}-separation
+        \item Similar to d-sep: in the defn of blocking change
+          \quotation{in $C$} by \rlap{\quotation{is func detm by $C$}}
+      \stopitemize
+
+  \head Blocking of a trail (version that takes care of detm nodes)
+
+    \vskip -.5\baselineskip
+    A trail from $a$ to $b$ is blocked by $C$ if $\exists$ a node $v$ on the
+    trail such that either:
+    \vskip -.5\baselineskip
+    \startitemize[1]
+      \item either $\to v \to$, $\from v \from$, or $\from v \to$, and \emph{$v$ is functionally determined by $C$}
+      \item $\to v \from$ and neither $v$ nor any of $v$'s descendants are in
+        $S$.
+    \stopitemize
+\stopitemize
+
+\SlideTitle Automated Structural results
+
+\startitemize
+  \head Second attempt
+
+    \startitemize[unpacked]
+      \item \emph{Irrelevant data:} Change d-separation by D-separation
+        
+      \item \emph{Requisite data:} All parents that are not irrelevant
+    \stopitemize
+
+  \head Structural result
+
+    \startitemize
+      \item Without loss of optimality, we can choose \crlf
+        \centerline{$u_n =
+        g_n($requisite$(\tilde n)$, \important{functionally\_detm($\tilde n$})$)$}
+    \stopitemize
+      \startimportant
+        Proof: use policy independence of conditional expectation and
+        follow the steps of the three step lemma.
+      \stopimportant
+\stopitemize
+
+\IncludePicture
+  [horizontal]
+  [fig-dec-mdp]
+  {Lets try this!}
+
+% \IncludePicture
+%   [horizontal]
+%   [fig-dec-mdp-cycle]
+%   [highlight=yes,
+%   alternative=focus,
+%   x=3.25,
+%   y=4,
+%   xscale=2.1,
+%   yscale=2,
+%   direction=-45]
+%   {Can lead to cycles}
+% 
+% \SlideTitle Automated Structural results
+% 
+% \startitemize
+%   \head Third attempt
+% 
+%     \startitemize[unpacked]
+%       \item \emph{Effectively observed:}:
+%         functionally\_determined($\tilde n) \setminus \ANCESTORS{R_d(\tilde
+%         n)}$
+%     \stopitemize
+% 
+%   \head Structural result
+% 
+%     \startitemize
+%       \item Without loss of optimality, we can choose \crlf
+%         \centerline{$u_n =
+%         g_n($requisite$(\tilde n)$, \important{effective\_obs($\tilde n$)$)$}}
+%     \stopitemize
+% 
+% \stopitemize
+% 
+% \SlideTitle Automated Structural results
+% 
+% \startitemize
+%   \head Third attempt
+% 
+%     \startitemize[unpacked]
+%       \item \emph{Effectively observed:}:
+%         Functionally determined at $\tilde n \setminus \ANCESTORS{R_d(\tilde
+%         n)}$
+%     \stopitemize
+% 
+%   \head Structural result
+% 
+%     \startitemize
+%       \item Without loss of optimality, we can choose \crlf
+%         \centerline{$u_n =
+%         g_n($requisite$(\tilde n)$, \important{effective\_obs($\tilde n$)$)$}}
+%     \stopitemize
+% 
+%     \startimportant
+%       Works! Proof: use policy independence of conditional expectation and
+%       follow the steps of the three step lemma.
+%     \stopimportant
+% 
+% \stopitemize
+
+\dorecurse{14}{
+\IncludePicture
+  [horizontal]
+  [fig-dec-mdp]
+  [page=\the\numexpr#1+1]
+  {Structural Results for Dec MDP --- Step #1}}
+
+\SlideTitle Structural Results for Dec MDP
+
+\startitemize
+  \head Graphically
+
+    \vskip -2\baselineskip
+    \placefigure[here,none]{}
+      {\externalfigure[fig-dec-mdp][page=15, width=0.8\textwidth]}
+
+    \head Mathematically
+
+      \startitemize
+        \item Original Controllers:
+          $u_{i,t} = g_{i,t}(x_1, \dots, x_t, u_{i,1}, \dots,
+          u_{i,t})$
+
+        \item New controllers: 
+          $u_{1,t} = g_{1,t}(x_t)$ 
+        \nop \hphantom{New controllers:}
+          $u_{2,t} = g_{2,t}(x_t, u_{1,t})$ 
+
+      \stopitemize
+\stopitemize
+
+\SlideTitle Automated Structural results
+
+\startitemize
+  \head Simplify Once
+
+    \startitemize
+      \item For each control node
+        \startitemize
+          \item Find irrelevant nodes and functionally determined nodes.
+          \item Remove edges from irrelevant nodes, add edges from functionally
+            determined nodes.
+        \stopitemize
+    \stopitemize
+
+  \head Find fixed point
+
+    \startitemize
+      \item Keep on simplifying until the graph does not change
+    \stopitemize
+
+  \head Software Implementation
+
+    \startitemize
+      \item A EDSL to find structural results \hfill (is there times
+        for a demo??)
+    \stopitemize
+\stopitemize
+
+\Interlude Conclusion
+
+\SlideTitle Conclusion
+
+\startitemize
+  \head First Model
+
+    \startitemize
+      \item Private and common observations
+      \item The notion of a coordinator
+      \item Sequential decomposition for finite and infinite horizon
+    \stopitemize
+
+  \head Second Model
+
+    \startitemize
+      \item Graphical model
+      \item Automated structural results
+    \stopitemize
+\stopitemize
+
+\SlideTitle Future directions
+
+\startitemize
+  \head Computational algorithms
+
+    \startnarrower
+      The theory will not be practical until efficient algorithms to solve
+      nested optimality equations are identified
+    \stopnarrower
+
+  \head Graphical Model
+
+    \startitemize
+      \item Automated method to discover belief states
+      \item Automated method for sequential decomposition
+      \item Hierarchy of common observations
+    \stopitemize
+
+  \head Extensions to non-stochastic systems
+
+    \startitemize
+      \item Appear feasible
+      \item Use $σ$-algebra rather than the measure induced by the $σ$-algebra
+    \stopitemize
+
+\stopitemize
+
+\Interlude \important{Thank you}
+
+\stoptext
+
+\SlideTitle Reflections
+
+\startitemize
+  \head Going from one agent systems to two agent systems requires a paradigm
+    shift 
+
+  \item The success of POMDPs has led to the failure to understand multi-agent
+    systems
+
+    \startimportant
+      Do not think in terms of data 
+    \stopimportant
+
+  \head Do not think in terms of \bold{one} agent, \crlf \null \hskip 8em
+        think in terms of \bold{every} agent
+
+\stopitemize
+
+\stoptext

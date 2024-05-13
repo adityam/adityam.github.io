@@ -1,0 +1,242 @@
+\startmodule[simpleslides-s-aditya]
+
+\setuplayout  
+  [topspace=2\lineheight,
+   top=2\lineheight,
+   topdistance=0cm,
+   header=0cm,
+   headerdistance=0cm,
+   height=middle,
+   footerdistance=\lineheight,
+   footer=1.25\lineheight,
+   bottomspace=0.25\lineheight,
+   bottom=0.25\lineheight,
+   bottomdistance=0cm,
+   backspace=0.5in,
+   leftmargin=0.25cm,
+   leftmargindistance=.15cm,
+   width=middle,
+   cutspace=0.5in,
+   rightmargin=.25cm,
+   rightmargindistance=.15cm,
+   grid=on,
+   columndistance=5pt,
+   columns=6,
+ ]
+
+% \setupsubpagenumber
+%   [state=start,
+%    way=bytext]
+% 
+% \setupinteraction
+%   [state=start,
+%    menu=on,
+%    style=,
+%    color=simpleslides:contrastcolor,
+%    contrastcolor=simpleslides:altcontrastcolor]
+% 
+% \setupinteractionbar
+%   [alternative=f,
+%    width=\textwidth,
+%    height=0.5\lineheight,
+%    depth=0.5\lineheight,
+%    distance=3pt,
+%    color=simpleslides:contrastcolor,
+%    contrastcolor=simpleslides:altcontrastcolor]
+% 
+% \setupfootertexts[\interactionbar]
+
+\definecolor [simpleslides:backgroundcolor]  [s=.95]
+\definecolor [simpleslides:variantcolor]     [s=.8]
+\definecolor [simpleslides:contrastcolor]    [b=.5]
+\definecolor [simpleslides:itemize:color]    [simpleslides:contrastcolor]
+%definecolor [simpleslides:altcontrastcolor] [m=1,y=1,k=.25]
+\definecolor [simpleslides:altcontrastcolor] [r=.87,g=.25,b=.11] %[orange]
+\definecolor [simpleslides:imp:background]   [r=1,g=1,b=0.85]
+
+
+\newdimen\simpleslidesMainTitleSize
+\newdimen\simpleslidesAuthorSize
+
+\simpleslidesMainTitleSize=3\simpleslidesNormalSize
+\simpleslidesAuthorSize=1.44\simpleslidesNormalSize
+
+\simpleslidesTitleSize=1.44\simpleslidesNormalSize
+
+
+\def\MainTitleSize{\the\simpleslidesMainTitleSize}
+\def\AuthorSize{\the\simpleslidesAuthorSize}
+   
+\setupTitle
+  [before={\vfill\vfill},
+   align=middle,
+   titlecolor=simpleslides:contrastcolor,
+   titlestyle={\switchtobodyfont[\MainTitleSize]},
+   aftertitle=\vfill,
+   authorstyle={\switchtobodyfont[\AuthorSize]},
+   afterauthor={\vfill\vfill},
+   after={\vfill}]
+   
+\startuniqueMPgraphic{simpleslides:MP:horizontal} 
+StartPage ;
+fill Page withcolor \MPcolor{simpleslides:backgroundcolor} ;
+StopPage
+\stopuniqueMPgraphic
+
+\startuseMPgraphic{simpleslides:MP:ornament}
+StartPage ;
+
+save a, b; 
+numeric a,b;
+b = PaperWidth/2 - NOfPages*5pt/2 ;
+
+save p,q ; path p, q;
+p =((0,15bp)    -- (3bp,30bp)) shifted (b,0);
+q =((-22bp,15bp) -- (0,30bp) ) shifted (b,0);
+ for i := NOfPages-1 downto 1:
+   draw (if i mod 5 = 0 : q else : p fi) 
+         randomized 1bp
+         shifted (i*5pt,0)
+        withcolor (if i < PageNumber : \MPcolor{simpleslides:contrastcolor} 
+                  else :              \MPcolor{simpleslides:variantcolor}
+                  fi) 
+      withpen pencircle scaled (1bp randomized .5bp) ;
+ endfor ;
+
+% save LadderBreak ; numeric LadderBreak ;
+% LadderBreak := \LadderBreak ;
+% 
+% save a, b,c ;
+% numeric a, b ;
+% a = 25bp ;
+% c = (NOfPages - LadderBreak)*5bp ;
+% b = PaperWidth - a - c;
+% 
+% save p,q; path p,q ;
+% p =((0,15bp)    -- (3bp,30bp)) ;
+% q =((-22bp,15bp) -- (0,30bp)  );
+
+% draw ((a, 15bp) -- (a + (LadderBreak*5bp), 15bp)) randomized 1bp
+%      withcolor (if PageNumber >= LadderBreak : \MPcolor{simpleslides:contrastcolor} 
+%                else :                     \MPcolor{simpleslides:variantcolor}
+%                fi) 
+%      withpen pencircle scaled (2bp randomized .5bp) ;
+% 
+% draw  ((a, 30bp) -- (a + (LadderBreak*5bp), 30bp)) randomized 1bp
+%      withcolor (if PageNumber >= LadderBreak : \MPcolor{simpleslides:contrastcolor} 
+%                else :                     \MPcolor{simpleslides:variantcolor}
+%                fi) 
+%      withpen pencircle scaled (2bp randomized .5bp) ;
+% 
+% 
+% draw ((b, 15bp) -- (b + c,15bp)) randomized 1bp
+%      withcolor (if PageNumber = NOfPages : \MPcolor{simpleslides:contrastcolor} 
+%                else :                     \MPcolor{simpleslides:variantcolor}
+%                fi) 
+%      withpen pencircle scaled (2bp randomized .5bp) ;
+% draw  ((b, 30bp) -- (b + c , 30bp)) randomized 1bp
+%      withcolor (if PageNumber = NOfPages : \MPcolor{simpleslides:contrastcolor} 
+%                else :                     \MPcolor{simpleslides:variantcolor}
+%                fi) 
+%      withpen pencircle scaled (2bp randomized .5bp) ;
+
+% for i := NOfPages-1 downto 1:
+%   draw (if i mod 5 = 0 : q else : p fi)
+%         shifted (if i < LadderBreak: (a+i*5pt,0) else : (b+(i-LadderBreak)*5pt,0) fi)
+%         randomized 1bp
+%        withcolor (if i < PageNumber : \MPcolor{simpleslides:contrastcolor} 
+%                  else :              \MPcolor{simpleslides:variantcolor}
+%                  fi) 
+%      withpen pencircle scaled (1bp randomized .5bp) ;
+% endfor ;
+StopPage ;
+\stopuseMPgraphic
+
+\defineoverlay 
+  [simpleslides:background:horizontal] 
+  [\useMPgraphic{simpleslides:MP:horizontal}] 
+
+\defineoverlay 
+  [simpleslides:background:vertical] 
+  [\useMPgraphic{simpleslides:MP:horizontal}] 
+
+\defineoverlay 
+  [simpleslides:background:title] 
+  [\useMPgraphic{simpleslides:MP:horizontal}] 
+
+\defineoverlay 
+  [simpleslides:background:ornament] 
+  [\useMPgraphic{simpleslides:MP:ornament}] 
+
+
+
+\setupSlideTitle
+  [align=right,
+   style={\switchtobodyfont[\TitleSize]\bolditalic},
+   color=simpleslides:contrastcolor]
+
+% \setuphead 
+%   [subsubject]
+%   [numberstyle=bolditalic, textstyle=bolditalic,color=darkblue,style=\tfb,
+%   before=\blank,after=\blank]
+
+
+\setupalign[flushleft,nothyphenated,verytolerant]
+
+\setupinterlinespace[auto,medium]
+
+\setupcombinations[distance=3em]
+
+\setupitemize[color=simpleslides:itemize:color, 
+              headstyle=\tfa,
+              headcolor=simpleslides:itemize:color]
+
+\setupitemize[autointro]
+
+\setupitemize[2][packed]
+\setupitemize[2][headstyle=bold, headcolor=]
+
+\definesymbol[2][\useMPgraphic{simpleslides:itemize:triangle}]
+\definesymbol[1][{\symbol[circle]}] 
+\definesymbol[2][{\symbol[triangle]}] 
+\definesymbol[3][{\symbol[dash]}] 
+
+\definesymbol[paper][\llap{\externalfigure[text-x-generic]
+                                           [width=2em,location=high]}]
+
+
+\def\Interlude{\dowithpargument\doInterlude}
+
+\def\doInterlude#1%
+  {\page
+   %\setupPageBackground[title]
+    \null
+    \vfill \vfill
+   \startalignment[center]
+     \let\\\crlf
+     \startcolor[simpleslides:contrastcolor]
+       \switchtobodyfont[\MainTitleSize]
+       \setupinterlinespace[small]
+      #1
+      \endgraf 
+    \stopcolor
+  \stopalignment
+   \vfill \vfill \vfill
+   \page}
+
+\defineframedtext
+  [important]
+  [   width=0.85\textwidth,
+          align=middle,
+         before=\vfill,
+          after=\vfill,
+   framecolor=simpleslides:contrastcolor,
+   background=color,
+   backgroundcolor=simpleslides:imp:background,
+   rulethickness=1bp,
+  ]
+
+\def\emph     {\color[simpleslides:contrastcolor]}
+\def\important{\color[simpleslides:altcontrastcolor]}
+
+\stopmodule

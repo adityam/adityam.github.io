@@ -1,0 +1,268 @@
+\usemodule[writeup]
+
+\usemodule[bib]
+\setupbibtex          [database={IEEEabrv,../../collection}]
+\setuppublications    [alternative=ieee]
+
+\startMPinclusions
+  input rboxes ;
+\stopMPinclusions 
+
+\def\ldots{\ldotp\ldotp\ldotp}
+\def\acro#1{{\normal\sans#1}}
+
+\starttext
+
+\title{Yamamoto Itoh achievable scheme for variable length feedback communication \\ Aditya Mahajan}
+
+Feedback communication refers to the idealized situation where the channel
+output is available at the encoder with one unit of delay. For the case of
+discrete memoryless channels, the availability of feedback does not increase
+capacity; it does, however, significantly boost the error exponents provided the
+transmission time is allowed to be random. 
+
+This result was proved by Burnashev~\cite[Burnashev:1976], who also
+gave an exact characterization of the reliability function for variable length
+communication---a remarkable result given the fact that the reliability function
+of \emph{fixed} length communication is still not completely characterized.
+Burnashev's proof proceeded in two steps. He first proved an upper bound on the
+reliability function and then proposed a variable length scheme that achieves
+that bound. 
+
+The Burnashev's achievable scheme operates for random number of epochs; each
+epoch consists of two phases: a message phase and a confirmation phase; each
+phase is of a random length. The performance analysis of the scheme is quite
+involved.
+
+Later, Yamamoto and Itoh~\cite[YamamotoItoh:1979] presented a simpler achievable
+scheme, which structurally is similar to the one proposed by Burnashev---the
+only difference is that each phase is of fixed length, which makes the
+performance analysis quite simple. Unfortunately, the analysis in the original
+paper is incomplete: Yamamoto and Itoh only analyze one epoch of the scheme.
+They do not take into account the increase in transmission time due to
+retransmissions and its affect on the rate and error exponent. In this note, we
+give a complete proof of the Yamamoto-Itoh scheme.
+
+\subject {The coding scheme}
+
+We present a family of coding schemes $\mathcal S = \{S_1, S_2, \dots\}$, which
+achieves the Burnashev exponent as the \emph{index} of the coding scheme goes to
+infinity. This family asymptotically achieves a rate $R$, $R < C$, where $C$ is
+the capacity of the channel. 
+
+Scheme $S_n$ operates in multiple epochs; each epoch is of length $n$; the total
+number of epochs is a stopping time denoted by $K_n$.  Each epoch consists of
+two phases: a \emph{message phase} of length $α_n n$ and a \emph{confirmation phase}
+\footnote{Yamamoto and Itoh called the second phase as \emph{control phase} but
+I think that \emph{confirmation phase} is a better term} of
+length $(1-α_n)n$. The parameter $α_n$ is chosen such that
+\startformula
+  α_n > \frac{R}{C}\quad \text{ and } \quad \lim_{n \to ∞} α_n = \frac RC.
+\stopformula
+
+The $k$-th epoch of the scheme operates as follows:
+\startitemize[n]
+  \item \emph{Message mode}: The transmitter sends one of $M_n = 2^{nR}$ messages
+    using a codebook of length $α_n n$. Let $W_n(k)$ denote the transmitted
+    message and $\hat W_n(k)$ denote the decoded message. Then, the probability of
+    error is bounded by
+    \startformula
+      \PR{\hat W_n(k) \neq W_n(k)} \le 2^{-α_n n E_G(R/α_n)}
+    \stopformula
+    where $E_G(R)$ is the random coding exponent~\cite[Gallager:1968] at
+    rate $R$. Since $α_n > R/C$, we have that $R/α_n < C$ and hence
+    \placeformula[eq:gallager] \startstarformula
+      E_G(R/α_n) > 0
+    \stopstarformula
+
+  \item \emph{Confirmation mode}: The encoder transmits an \acro{ACCEPT} message
+    if $\hat W_n(k) = W_n(k)$, otherwise it transmits a \acro{REJECT} message.
+    \acro{ACCEPT} consists of $(1-α_n)n$ repetitions of $x_A$ while
+    \acro{REJECT} consists of $(1-α_n)n$ repetitions of $x_R$ where
+    \startformula
+      (x_A, x_R) = \arg \max_{(x_1, x_2)} D(Q(⋅|x_1) \Vert Q(⋅|x_2))
+    \stopformula
+    where $D(⋅\Vert ⋅)$ is the KL divergence between two distributions and
+    $Q(⋅|x)$ is the output distribution when the input is $x$. Let
+    \startformula
+      B = D(Q(⋅|x_A) \Vert Q(⋅|x_R)).
+    \stopformula
+
+    At the end of this phase, the receiver generates likelihood ratios for
+    \acro{ACCEPT} and \acro{REJECT}, i.e.,
+    \startformula
+      L_A(k) = \log \frac{p_A(k)}{1- p_A(k)} \quad \text{and} \quad
+      L_R(k) = \log \frac{p_R(k)}{1- p_R(k)}
+    \stopformula
+    where
+    \startformula \startalign
+      \NC p_A(k) \NC= \PR{\text{\acro{ACCEPT}} | \text{output of confirmation phase}} \NR
+      \NC p_R(k) \NC= \PR{\text{\acro{REJECT}} | \text{output of confirmation phase}} \NR
+    \stopalign \stopformula
+
+    If
+    \startformula
+      L_A(k) \ge T_n L_R(k)
+    \stopformula
+    the receiver declares \acro{ACCEPT} otherwise it declares \acro{REJECT}. Let
+    $V_n(k)$ denote the transmitted symbol and $\hat V_n(k)$ denote the decoded
+    symbol. As shown in~\cite[Blahut:1974] if the threshold $T_n$ is chosen
+    appropriately, 
+    \startformula \startalign
+      \NC \PR{\hat V_n(k) \neq V_n(k) | V_n(k) = \text{\acro{ACCEPT}}} \NC \le 2^{-(1-α_n) n H^A_n} \NR
+      \NC \PR{\hat V_n(k) \neq V_n(k) | V_n(k) = \text{\acro{REJECT}}} \NC \le 2^{-(1-α_n) n H^R_n} \NR
+    \stopalign \stopformula
+    where
+    \placeformula[eq:blahut] \startstarformula
+      \lim_{n \to ∞} H^A_n = 0 \quad \text{and} \quad 
+      \lim_{n \to ∞} H^R_n = B
+    \stopstarformula
+\stopitemize
+
+\startproclaim{Stopping Criterion} If $\hat V_n(k) = \text{\acro{ACCEPT}}$,
+  communication stops and the receiver declares $\hat W_n(k)$ as the final decoded
+  message; otherwise, the encoder and the decoder discard the output of the
+  current epoch, and the encoder starts epoch $(k+1)$.
+\stopproclaim
+
+\subject {Performance Analysis}
+
+A key feature of the above coding scheme is that asymptotically the number of
+retransmission go to zero. 
+
+\startproclaim{Lemma on number of retransmissions}
+  Let $K_n$ denote the epoch when communication stops, i.e.,
+  \startformula
+    K_n = \{ \inf k \in \naturalnumbers : \hat V_n(k) = \text{\acro{ACCEPT}} \}
+  \stopformula
+  Then $K_n$ is geometrically distributed with success probability going to one,
+  i.e.,
+  \startformula
+    \PR{K_n = k} = p_n (1-p_n)^{k-1}
+  \stopformula
+  where
+  \startformula
+    \lim_{n \to ∞} p_n = 1
+  \stopformula
+  Consequently, for large values of $n$, only one transmission occurs, i.e.,
+  \placeformula[eq:transmissions] \startstarformula
+    \lim_{n \to ∞} \EXP{K_n} = 1
+  \stopstarformula
+\stopproclaim
+
+\startproof{Proof of the Lemma}
+  For any $k \in \naturalnumbers$, we have
+  \startformula \startalign
+    \NC \PR{K_n \ge k+1} \EQ
+        \EXP{ \prod_{i=1}^k \{\hat V_n(i) = \text{\sans{REJECT}}\}} \NR
+    \NC \EQ \prod_{i=1}^k \PR{\hat V_n(i) = \text{\sans{REJECT}}} \NR
+    \NC \EQ (1-p_n)^k
+  \stopalign \stopformula
+  where 
+  \startformula
+    p_n = \PR{\hat V_n(1) = \text{\sans{ACCEPT}}}
+  \stopformula
+  Hence, $K_n$ has a geometric distribution.
+
+  Now, consider $1-p_n = \PR{\hat V_n(1) = \text{\sans{REJECT}}}$.
+  \startformula \startalign
+    \NC 0 \le 1 - p_n \NC\le \PR{\hat W_n(1) \neq W_n(1)} + \PR{\hat V_n(1) \neq
+        \text{\sans{ACCEPT}} | \hat W_n(1) = W_n(1)} \NR
+    \NC \NC=\PR{\hat W_n(1) \neq W_n(1)} + \PR{\hat V_n(1) \neq V_n(1) | V_n(1)
+        = \text{\sans{ACCEPT}}} \NR
+    \NC \NC\le 2^{-α_n n E_G(R/α_n)} + 2^{-(1-α_n)n H^A_n}
+  \stopalign \stopformula
+  Taking limit $n \to ∞$ and using (\in[eq:gallager]) and (\in[eq:blahut]), we get that
+  \startformula
+    \lim_{n \to ∞} 1 - p_n  = 0
+  \stopformula
+\stopproof
+
+An immediate consequence of the above Lemma is that the rate of the proposed
+coding scheme is $R$.
+
+\startproclaim{Rate of Coding Scheme}
+  \startformula
+    \text{\normal{Rate}} = \lim_{n \to ∞} \frac {\log M_n}{\EXP{K_n n}} = \frac {R}{\lim_{n \to ∞} \EXP{K_n}} = R
+  \stopformula
+\stopproclaim
+
+\startproclaim{Probability of error}
+The retransmission processes is a renewal process. 
+\placefigure[none,here]{}
+  {\startMPcode
+   pair source ;
+    source := origin ;
+    boxit.d (textext("$\hat W_n \neq W_n$")) ;
+    boxit.D (textext("$\hat W_n =    W_n$")) ;
+
+    boxit.u (textext("$\hat V_n \neq V_n$ \quad (Error)"))      ;
+    boxit.U (textext("$\hat V_n =    V_n$ \quad (Retransmit)")) ;
+    boxit.v (textext("$\hat V_n \neq V_n$ \quad (Retransmit)")) ;
+    boxit.V (textext("$\hat V_n =    V_n$ \quad (No Error)"))   ;
+
+    d.s - D.n = (0,1cm) ;
+
+    0.5[d.c,D.c] - source = (2cm,0) ;
+
+    u.sw - U.nw = v.sw - V.nw = (0, 3mm) ;
+
+    0.5[u.w, U.w] - d.e = (1cm,0) ;
+    0.5[v.w, V.w] - D.e = (1cm,0) ;
+
+    drawunboxed(d,D,u,U,v,V) ;
+
+    drawarrow source -- d.w ;
+    drawarrow source -- D.w ;
+
+    drawarrow d.e -- u.w ;
+    drawarrow d.e -- U.w ;
+    drawarrow D.e -- v.w ;
+    drawarrow D.e -- V.w ;
+
+
+  \stopMPcode}
+Thus, the probability of error can be written as
+\startformula 
+  P_e = \PR{\hat W_n \neq W_n}\PR{\hat V_n \neq V_n | V_n =
+      \text{\acro{REJECT}}} + P_e \PR{\hat V_n = \text{\acro{REJECT}}} 
+\stopformula
+Rearranging, we get that
+\startformula
+  P_e =  \frac {\PR{\hat W_n \neq W_n}\PR{\hat V_n \neq V_n | V_n = \text{\acro{REJECT}}}} 
+      {\PR{\hat V_n = \text{\acro{ACCEPT}}}}
+\stopformula
+\stopproclaim
+
+\page[preference]
+
+\startproclaim{Error Exponents}
+  The error exponent of the above scheme is
+  \startformula
+    E(R) = \lim_{n \to ∞} \frac {\log(1/P_e)}{\EXP{K_n n}} \ge 
+    \left( 1 - \frac RC \right) B
+  \stopformula
+\stopproclaim
+
+\startproof{Proof of Error Exponents}
+  We can simply the expression for error exponents as follows:
+  \startformula \startalign
+    \NC \lim_{n \to ∞} \frac {\log(1/P_e)}{\EXP{K_n n}} \EQ
+        \lim_{n \to ∞} \frac { α_n n E_G(R/α_n) + (1-α_n) n H^R_n + \log p_n } 
+                             {\EXP{K_n n}} \NR
+    \NC \EQ
+        \lim_{n \to ∞} \frac { α_n E_G(R/α_n) + (1-α_n) H^R_n } 
+                             {\EXP{K_n }} \NR
+    \NC \NC \ge ( 1 - (R/C)) B
+  \stopalign \stopformula
+  where the first equality follows from the simplified expression for $P_e$, the
+  second equality follows from the fact that $\lim_{n \to ∞} p_n = 1$, and the
+  last inequality follows from (\in[eq:gallager]), (\in[eq:blahut]), and the
+  choice of $α_n$.
+\stopproof
+
+\subject {References}
+
+\placepublications[criterium=all]
+
+\stoptext

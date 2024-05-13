@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - 'images/*'
+    - 'files/*'
 
 website:
   title: "Aditya Mahajan"

@@ -1,0 +1,124 @@
+\startmodule[simpleslides-s-aditya]
+
+\setuplayout  
+  [topspace=2\lineheight,
+   top=2\lineheight,
+   topdistance=0cm,
+   header=0cm,
+   headerdistance=0cm,
+   height=middle,
+   footerdistance=\lineheight,
+   footer=1.25\lineheight,
+   bottomspace=0.25\lineheight,
+   bottom=0.25\lineheight,
+   bottomdistance=0cm,
+   backspace=0.5in,
+   leftmargin=0.25cm,
+   leftmargindistance=.15cm,
+   width=middle,
+   cutspace=0.5in,
+   rightmargin=.25cm,
+   rightmargindistance=.15cm,
+   grid=on,
+   columndistance=5pt,
+   columns=6,
+ ]
+
+\definecolor [simpleslides:backgroundcolor]  [s=.95]
+\definecolor [simpleslides:variantcolor]     [s=.8]
+\definecolor [simpleslides:contrastcolor]    [b=.5]
+\definecolor [simpleslides:itemize:color]    [simpleslides:contrastcolor]
+%\definecolor [simpleslides:altcontrastcolor] [r=.67,g=.25,b=.11] 
+\definecolor [simpleslides:altcontrastcolor] [r=.95] %,b=.25] 
+\definecolor [simpleslides:imp:background]   [r=1,g=1,b=0.85]
+
+\simpleslidesTitleSize      =3\simpleslidesNormalSize
+\simpleslidesSlideTitleSize =1.44\simpleslidesNormalSize
+
+\setupTitle
+  [before={\vfill\vfill},
+   align=middle,
+   titlecolor=simpleslides:contrastcolor,
+   aftertitle=\vfill,
+   afterauthor={\vfill\vfill},
+   after={\vfill}]
+   
+\startuniqueMPgraphic{simpleslides:MP:horizontal} 
+StartPage ;
+fill Page withcolor \MPcolor{simpleslides:backgroundcolor} ;
+StopPage
+\stopuniqueMPgraphic
+
+\startuseMPgraphic{simpleslides:MP:ornament}
+StartPage ;
+
+save a, b; 
+numeric a,b;
+b = PaperWidth/2 - NOfPages*5pt/2 ;
+
+save p,q ; path p, q;
+p =((0,15bp)    -- (3bp,30bp)) shifted (b,0);
+q =((-22bp,15bp) -- (0,30bp) ) shifted (b,0);
+ for i := NOfPages-1 downto 1:
+   draw (if i mod 5 = 0 : q else : p fi) 
+         randomized 1bp
+         shifted (i*5pt,0)
+        withcolor (if i < PageNumber : \MPcolor{simpleslides:contrastcolor} 
+                  else :              \MPcolor{simpleslides:variantcolor}
+                  fi) 
+      withpen pencircle scaled (1bp randomized .5bp) ;
+ endfor ;
+
+StopPage ;
+\stopuseMPgraphic
+
+\defineoverlay 
+  [simpleslides:background:horizontal] 
+  [\useMPgraphic{simpleslides:MP:horizontal}] 
+
+\defineoverlay 
+  [simpleslides:background:vertical] 
+  [\useMPgraphic{simpleslides:MP:horizontal}] 
+
+\defineoverlay 
+  [simpleslides:background:title] 
+  [\useMPgraphic{simpleslides:MP:horizontal}] 
+
+\defineoverlay 
+  [simpleslides:background:ornament] 
+  [\useMPgraphic{simpleslides:MP:ornament}] 
+
+
+
+\setupSlideTitle
+  [align=right,
+   style={\switchtobodyfont[\SlideTitleSize]\bolditalic},
+   color=simpleslides:contrastcolor]
+
+% \setuphead 
+%   [subsubject]
+%   [numberstyle=bolditalic, textstyle=bolditalic,color=darkblue,style=\tfb,
+%   before=\blank,after=\blank]
+
+
+\setupalign[flushleft,nothyphenated,verytolerant]
+
+\setupinterlinespace[auto,medium]
+
+\setupcombinations[distance=3em]
+
+\setupitemize[color=simpleslides:itemize:color, 
+              headstyle=\tfa,
+              headcolor=simpleslides:itemize:color]
+
+\setupitemize[autointro]
+
+\setupitemize[2][packed]
+\setupitemize[2][headstyle=bold, headcolor=]
+
+\definesymbol[2][\useMPgraphic{simpleslides:itemize:triangle}]
+\definesymbol[1][{\symbol[circle]}] 
+\definesymbol[2][{\symbol[triangle]}] 
+\definesymbol[3][{\symbol[dash]}] 
+
+\stopmodule

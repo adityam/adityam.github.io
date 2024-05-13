@@ -1,0 +1,635 @@
+\environment t-presentation
+
+\doifmode{mkii}{\enableregime[utf-8]}
+
+\usemodule  [tikz]
+\usetikzlibrary [arrows]
+
+\tikzstyle{normal}  =[style=draw,shape=circle]
+\tikzstyle{dynamics}=[style=draw,shape=rectangle]
+\tikzstyle{reward}  =[style=fill,shape=circle, fill=darkred]
+\tikzstyle{rewarded}  =[style=fill,shape=circle, fill=orange]
+\tikzstyle{control} =[style=fill,shape=rectangle, fill=darkblue]
+\tikzstyle{condition} =[style=draw,shape=circle, draw=orange]
+\tikzstyle{data} =[style=fill,shape=circle, fill=gray]
+\tikzstyle{choice} =[style=fill,shape=rectangle, fill=orange]
+
+\setupbodyfont[10pt]
+
+\starttext
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                & & 
+     \node[reward] (r1) [label=left:{$r_1$}] {} ; &
+                                                & & 
+     \node[reward] (r2) [label=left:{$r_2$}] {} ; \\
+     % Second row
+     \node[dynamics] (f0)   [label=right:{$f_0$}]     {}; &
+     \node[control]  (g11)  [label=right:{$g_{1,1}$}] {}; &
+     \node[dynamics] (rho1) [label=right:{$ρ_1$}]     {}; &
+     \node[dynamics] (f1)   [label=right:{$f_1$}]     {}; &
+     \node[control]  (g12)  [label=right:{$g_{1,2}$}] {}; &
+     \node[dynamics] (rho2) [label=right:{$ρ_2$}]     {}; \\
+     % Third row
+     \node[normal]  (x1)    [label=left:{$x_1$}]     {}; &
+     \node[normal]  (u11)   [label=left:{$u_{1,1}$}] {}; &
+     \node[normal]  (u21)   [label=left:{$u_{2,1}$}] {}; &
+     \node[normal]  (x2)    [label=left:{$x_2$}]     {}; &
+     \node[normal]  (u12)   [label=left:{$u_{1,2}$}] {}; &
+     \node[normal]  (u22)   [label=left:{$u_{2,2}$}] {}; \\
+                                                      & & 
+     \node[control] (g21)   [label=right:{$g_{2,1}$}] {}; &
+                                                      & & 
+     \node[choice] (g22)   [label=right:{$g_{2,2}$}] {}; \\
+    } ;
+    
+    \path (f0) edge (x1) ;
+    \path (f1) edge (x2) ;
+
+    \path (x1)  edge (f1) ;
+    \path (u11) edge (f1) ;
+    \path (u21) edge (f1) ;
+
+    \path (x1)  edge (rho1) ;
+    \path (u11) edge (rho1) ;
+    \path (u21) edge (rho1) ;
+    \path (rho1) edge (r1) ;
+
+    \path (x2)  edge (rho2) ;
+    \path (u12) edge (rho2) ;
+    \path (u22) edge (rho2) ;
+    \path (rho2) edge (r2) ;
+
+    \path (x1)  edge (g11) ;
+    \path (x1)  edge (g21) ;
+
+    \path (x1)  edge (g12) ;
+    \path (x1)  edge (g22) ;
+
+    \path (x2)  edge (g12) ;
+    \path (x2)  edge (g22) ;
+
+    \path (u11) edge (g12) ;
+    \path (u21) edge (g22) ;
+
+    \path (g11) edge (u11) ;
+    \path (g12) edge (u12) ;
+    \path (g21) edge (u21) ;
+    \path (g22) edge (u22) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                & & 
+     \node[reward] (r1) [label=left:{$r_1$}] {} ; &
+                                                & & 
+     \node[reward] (r2) [label=left:{$r_2$}] {} ; \\
+     % Second row
+     \node[dynamics] (f0)   [label=right:{$f_0$}]     {}; &
+     \node[control]  (g11)  [label=right:{$g_{1,1}$}] {}; &
+     \node[dynamics] (rho1) [label=right:{$ρ_1$}]     {}; &
+     \node[dynamics] (f1)   [label=right:{$f_1$}]     {}; &
+     \node[control]  (g12)  [label=right:{$g_{1,2}$}] {}; &
+     \node[dynamics] (rho2) [label=right:{$ρ_2$}]     {}; \\
+     % Third row
+     \node[normal]  (x1)    [label=left:{$x_1$}]     {}; &
+     \node[normal]  (u11)   [label=left:{$u_{1,1}$}] {}; &
+     \node[normal]  (u21)   [label=left:{$u_{2,1}$}] {}; &
+     \node[normal]  (x2)    [label=left:{$x_2$}]     {}; &
+     \node[normal]  (u12)   [label=left:{$u_{1,2}$}] {}; &
+     \node[normal]  (u22)   [label=left:{$u_{2,2}$}] {}; \\
+                                                      & & 
+     \node[control] (g21)   [label=right:{$g_{2,1}$}] {}; &
+                                                      & & 
+     \node[control] (g22)   [label=right:{$g_{2,2}$}] {}; \\
+    } ;
+    
+    \path (f0) edge (x1) ;
+    \path (f1) edge (x2) ;
+
+    \path (x1)  edge (f1) ;
+    \path (u11) edge (f1) ;
+    \path (u21) edge (f1) ;
+
+    \path (x1)  edge (rho1) ;
+    \path (u11) edge (rho1) ;
+    \path (u21) edge (rho1) ;
+    \path (rho1) edge (r1) ;
+
+    \path (x2)  edge (rho2) ;
+    \path (u12) edge (rho2) ;
+    \path (u22) edge (rho2) ;
+    \path (rho2) edge (r2) ;
+
+    \path (x1)  edge (g11) ;
+    \path (x1)  edge (g21) ;
+
+    \path (x1)  edge (g12) ;
+    \path (x1)  edge (g22) ;
+
+    \path (x2)  edge (g12) ;
+    \path (x2)  edge (g22) ;
+
+    \path (u11) edge (g12) ;
+%   \path (u21) edge (g22) ;
+    \path[color=green, thick] (u11) edge (g22) ;
+    \path[color=green, thick] (u12) edge (g22) ;
+
+    \path (g11) edge (u11) ;
+    \path (g12) edge (u12) ;
+    \path (g21) edge (u21) ;
+    \path (g22) edge (u22) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                & & 
+     \node[reward] (r1) [label=left:{$r_1$}] {} ; &
+                                                & & 
+     \node[reward] (r2) [label=left:{$r_2$}] {} ; \\
+     % Second row
+     \node[dynamics] (f0)   [label=right:{$f_0$}]     {}; &
+     \node[control]  (g11)  [label=right:{$g_{1,1}$}] {}; &
+     \node[dynamics] (rho1) [label=right:{$ρ_1$}]     {}; &
+     \node[dynamics] (f1)   [label=right:{$f_1$}]     {}; &
+     \node[control]  (g12)  [label=right:{$g_{1,2}$}] {}; &
+     \node[dynamics] (rho2) [label=right:{$ρ_2$}]     {}; \\
+     % Third row
+     \node[normal]  (x1)    [label=left:{$x_1$}]     {}; &
+     \node[normal]  (u11)   [label=left:{$u_{1,1}$}] {}; &
+     \node[normal]  (u21)   [label=left:{$u_{2,1}$}] {}; &
+     \node[normal]  (x2)    [label=left:{$x_2$}]     {}; &
+     \node[normal]  (u12)   [label=left:{$u_{1,2}$}] {}; &
+     \node[normal]  (u22)   [label=left:{$u_{2,2}$}] {}; \\
+                                                      & & 
+     \node[choice] (g21)   [label=right:{$g_{2,1}$}] {}; &
+                                                      & & 
+     \node[control] (g22)   [label=right:{$g_{2,2}$}] {}; \\
+    } ;
+    
+    \path (f0) edge (x1) ;
+    \path (f1) edge (x2) ;
+
+    \path (x1)  edge (f1) ;
+    \path (u11) edge (f1) ;
+    \path (u21) edge (f1) ;
+
+    \path (x1)  edge (rho1) ;
+    \path (u11) edge (rho1) ;
+    \path (u21) edge (rho1) ;
+    \path (rho1) edge (r1) ;
+
+    \path (x2)  edge (rho2) ;
+    \path (u12) edge (rho2) ;
+    \path (u22) edge (rho2) ;
+    \path (rho2) edge (r2) ;
+
+    \path (x1)  edge (g11) ;
+    \path (x1)  edge (g21) ;
+
+    \path (x1)  edge (g12) ;
+    \path (x1)  edge (g22) ;
+
+    \path (x2)  edge (g12) ;
+    \path (x2)  edge (g22) ;
+
+    \path (u11) edge (g12) ;
+%   \path (u21) edge (g22) ;
+    \path[color=green, thick] (u21) edge (g12) ;
+    \path (u11) edge (g22) ;
+    \path (u12) edge (g22) ;
+
+    \path (g11) edge (u11) ;
+    \path (g12) edge (u12) ;
+    \path (g21) edge (u21) ;
+    \path (g22) edge (u22) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                & & 
+     \node[reward] (r1) [label=left:{$r_1$}] {} ; &
+                                                & & 
+     \node[reward] (r2) [label=left:{$r_2$}] {} ; \\
+     % Second row
+     \node[dynamics] (f0)   [label=right:{$f_0$}]     {}; &
+     \node[control]  (g11)  [label=right:{$g_{1,1}$}] {}; &
+     \node[dynamics] (rho1) [label=right:{$ρ_1$}]     {}; &
+     \node[dynamics] (f1)   [label=right:{$f_1$}]     {}; &
+     \node[choice]  (g12)  [label=right:{$g_{1,2}$}] {}; &
+     \node[dynamics] (rho2) [label=right:{$ρ_2$}]     {}; \\
+     % Third row
+     \node[normal]  (x1)    [label=left:{$x_1$}]     {}; &
+     \node[normal]  (u11)   [label=left:{$u_{1,1}$}] {}; &
+     \node[normal]  (u21)   [label=left:{$u_{2,1}$}] {}; &
+     \node[normal]  (x2)    [label=left:{$x_2$}]     {}; &
+     \node[normal]  (u12)   [label=left:{$u_{1,2}$}] {}; &
+     \node[normal]  (u22)   [label=left:{$u_{2,2}$}] {}; \\
+                                                      & & 
+     \node[control] (g21)   [label=right:{$g_{2,1}$}] {}; &
+                                                      & & 
+     \node[control] (g22)   [label=right:{$g_{2,2}$}] {}; \\
+    } ;
+    
+    \path (f0) edge (x1) ;
+    \path (f1) edge (x2) ;
+
+    \path (x1)  edge (f1) ;
+    \path (u11) edge (f1) ;
+    \path (u21) edge (f1) ;
+
+    \path (x1)  edge (rho1) ;
+    \path (u11) edge (rho1) ;
+    \path (u21) edge (rho1) ;
+    \path (rho1) edge (r1) ;
+
+    \path (x2)  edge (rho2) ;
+    \path (u12) edge (rho2) ;
+    \path (u22) edge (rho2) ;
+    \path (rho2) edge (r2) ;
+
+    \path (x1)  edge (g11) ;
+    \path (x1)  edge (g21) ;
+
+    \path (x1)  edge (g12) ;
+    \path (x1)  edge (g22) ;
+
+    \path (x2)  edge (g12) ;
+    \path (x2)  edge (g22) ;
+
+    \path (u11) edge (g12) ;
+%   \path (u21) edge (g22) ;
+    \path (u21) edge (g12) ;
+    \path (u11) edge (g22) ;
+    \path (u12) edge (g22) ;
+    \path[color=green,thick] (u11) edge (g21) ;
+
+    \path (g11) edge (u11) ;
+    \path (g12) edge (u12) ;
+    \path (g21) edge (u21) ;
+    \path (g22) edge (u22) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                & & 
+     \node[reward] (r1) [label=left:{$r_1$}] {} ; &
+                                                & & 
+     \node[reward] (r2) [label=left:{$r_2$}] {} ; \\
+     % Second row
+     \node[dynamics] (f0)   [label=right:{$f_0$}]     {}; &
+     \node[control]  (g11)  [label=right:{$g_{1,1}$}] {}; &
+     \node[dynamics] (rho1) [label=right:{$ρ_1$}]     {}; &
+     \node[dynamics] (f1)   [label=right:{$f_1$}]     {}; &
+     \node[control]  (g12)  [label=right:{$g_{1,2}$}] {}; &
+     \node[dynamics] (rho2) [label=right:{$ρ_2$}]     {}; \\
+     % Third row
+     \node[normal]  (x1)    [label=left:{$x_1$}]     {}; &
+     \node[normal]  (u11)   [label=left:{$u_{1,1}$}] {}; &
+     \node[normal]  (u21)   [label=left:{$u_{2,1}$}] {}; &
+     \node[normal]  (x2)    [label=left:{$x_2$}]     {}; &
+     \node[normal]  (u12)   [label=left:{$u_{1,2}$}] {}; &
+     \node[normal]  (u22)   [label=left:{$u_{2,2}$}] {}; \\
+                                                      & & 
+     \node[control] (g21)   [label=right:{$g_{2,1}$}] {}; &
+                                                      & & 
+     \node[choice] (g22)   [label=right:{$g_{2,2}$}] {}; \\
+    } ;
+    
+    \path (f0) edge (x1) ;
+    \path (f1) edge (x2) ;
+
+    \path (x1)  edge (f1) ;
+    \path (u11) edge (f1) ;
+    \path (u21) edge (f1) ;
+
+    \path (x1)  edge (rho1) ;
+    \path (u11) edge (rho1) ;
+    \path (u21) edge (rho1) ;
+    \path (rho1) edge (r1) ;
+
+    \path (x2)  edge (rho2) ;
+    \path (u12) edge (rho2) ;
+    \path (u22) edge (rho2) ;
+    \path (rho2) edge (r2) ;
+
+    \path (x1)  edge (g11) ;
+    \path (x1)  edge (g21) ;
+
+    \path (x1)  edge (g12) ;
+%   \path (x1)  edge (g22) ;
+
+    \path (x2)  edge (g12) ;
+    \path (x2)  edge (g22) ;
+
+    \path (u11) edge (g12) ;
+    \path[color=green,thick] (u21) edge (g22) ;
+    \path (u21) edge (g12) ;
+%   \path (u11) edge (g22) ;
+    \path (u12) edge (g22) ;
+    \path (u11) edge (g21) ;
+
+    \path (g11) edge (u11) ;
+    \path (g12) edge (u12) ;
+    \path (g21) edge (u21) ;
+    \path (g22) edge (u22) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                & & 
+     \node[reward] (r1) [label=left:{$r_1$}] {} ; &
+                                                & & 
+     \node[reward] (r2) [label=left:{$r_2$}] {} ; \\
+     % Second row
+     \node[dynamics] (f0)   [label=right:{$f_0$}]     {}; &
+     \node[control]  (g11)  [label=right:{$g_{1,1}$}] {}; &
+     \node[dynamics] (rho1) [label=right:{$ρ_1$}]     {}; &
+     \node[dynamics] (f1)   [label=right:{$f_1$}]     {}; &
+     \node[control]  (g12)  [label=right:{$g_{1,2}$}] {}; &
+     \node[dynamics] (rho2) [label=right:{$ρ_2$}]     {}; \\
+     % Third row
+     \node[normal]  (x1)    [label=left:{$x_1$}]     {}; &
+     \node[normal]  (u11)   [label=left:{$u_{1,1}$}] {}; &
+     \node[normal]  (u21)   [label=left:{$u_{2,1}$}] {}; &
+     \node[normal]  (x2)    [label=left:{$x_2$}]     {}; &
+     \node[normal]  (u12)   [label=left:{$u_{1,2}$}] {}; &
+     \node[normal]  (u22)   [label=left:{$u_{2,2}$}] {}; \\
+                                                      & & 
+     \node[control] (g21)   [label=right:{$g_{2,1}$}] {}; &
+                                                      & & 
+     \node[control] (g22)   [label=right:{$g_{2,2}$}] {}; \\
+    } ;
+    
+    \path (f0) edge (x1) ;
+    \path (f1) edge (x2) ;
+
+    \path (x1)  edge (f1) ;
+    \path (u11) edge (f1) ;
+    \path (u21) edge (f1) ;
+
+    \path (x1)  edge (rho1) ;
+    \path (u11) edge (rho1) ;
+    \path (u21) edge (rho1) ;
+    \path (rho1) edge (r1) ;
+
+    \path (x2)  edge (rho2) ;
+    \path (u12) edge (rho2) ;
+    \path (u22) edge (rho2) ;
+    \path (rho2) edge (r2) ;
+
+    \path (x1)  edge (g11) ;
+    \path (x1)  edge (g21) ;
+
+    \path (x1)  edge (g12) ;
+%   \path (x1)  edge (g22) ;
+
+    \path (x2)  edge (g12) ;
+    \path (x2)  edge (g22) ;
+
+    \path (u11) edge (g12) ;
+    \path (u21) edge (g22) ;
+    \path (u21) edge (g12) ;
+%   \path (u11) edge (g22) ;
+    \path (u12) edge (g22) ;
+    \path (u11) edge (g21) ;
+
+    \path (g11) edge (u11) ;
+    \path (g12) edge (u12) ;
+    \path (g21) edge (u21) ;
+    \path (g22) edge (u22) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                & & 
+     \node[reward] (r1) [label=left:{$r_1$}] {} ; &
+                                                & & 
+     \node[reward] (r2) [label=left:{$r_2$}] {} ; \\
+     % Second row
+     \node[dynamics] (f0)   [label=right:{$f_0$}]     {}; &
+     \node[control]  (g11)  [label=right:{$g_{1,1}$}] {}; &
+     \node[dynamics] (rho1) [label=right:{$ρ_1$}]     {}; &
+     \node[dynamics] (f1)   [label=right:{$f_1$}]     {}; &
+     \node[control]  (g12)  [label=right:{$g_{1,2}$}] {}; &
+     \node[dynamics] (rho2) [label=right:{$ρ_2$}]     {}; \\
+     % Third row
+     \node[normal]  (x1)    [label=left:{$x_1$}]     {}; &
+     \node[normal]  (u11)   [label=left:{$u_{1,1}$}] {}; &
+     \node[normal]  (u21)   [label=left:{$u_{2,1}$}] {}; &
+     \node[normal]  (x2)    [label=left:{$x_2$}]     {}; &
+     \node[normal]  (u12)   [label=left:{$u_{1,2}$}] {}; &
+     \node[normal]  (u22)   [label=left:{$u_{2,2}$}] {}; \\
+                                                      & & 
+     \node[control] (g21)   [label=right:{$g_{2,1}$}] {}; &
+                                                      & & 
+     \node[control] (g22)   [label=right:{$g_{2,2}$}] {}; \\
+    } ;
+    
+    \path (f0) edge (x1) ;
+    \path (f1) edge (x2) ;
+
+    \path (x1)  edge (f1) ;
+    \path (u11) edge (f1) ;
+    \path (u21) edge (f1) ;
+
+    \path (x1)  edge (rho1) ;
+    \path (u11) edge (rho1) ;
+    \path (u21) edge (rho1) ;
+    \path (rho1) edge (r1) ;
+
+    \path (x2)  edge (rho2) ;
+    \path (u12) edge (rho2) ;
+    \path (u22) edge (rho2) ;
+    \path (rho2) edge (r2) ;
+
+    \path (x1)  edge (g11) ;
+    \path (x1)  edge (g21) ;
+
+%   \path (x1)  edge (g12) ;
+%   \path (x1)  edge (g22) ;
+
+    \path (x2)  edge (g12) ;
+    \path (x2)  edge (g22) ;
+
+%   \path (u11) edge (g12) ;
+    \path (u21) edge (g22) ;
+    \path (u21) edge (g12) ;
+%   \path (u11) edge (g22) ;
+    \path (u12) edge (g22) ;
+    \path (u11) edge (g21) ;
+
+    \path (g11) edge (u11) ;
+    \path (g12) edge (u12) ;
+    \path (g21) edge (u21) ;
+    \path (g22) edge (u22) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                & & 
+     \node[reward] (r1) [label=left:{$r_1$}] {} ; &
+                                                & & 
+     \node[reward] (r2) [label=left:{$r_2$}] {} ; \\
+     % Second row
+     \node[dynamics] (f0)   [label=right:{$f_0$}]     {}; &
+     \node[control]  (g11)  [label=right:{$g_{1,1}$}] {}; &
+     \node[dynamics] (rho1) [label=right:{$ρ_1$}]     {}; &
+     \node[dynamics] (f1)   [label=right:{$f_1$}]     {}; &
+     \node[control]  (g12)  [label=right:{$g_{1,2}$}] {}; &
+     \node[dynamics] (rho2) [label=right:{$ρ_2$}]     {}; \\
+     % Third row
+     \node[normal]  (x1)    [label=left:{$x_1$}]     {}; &
+     \node[normal]  (u11)   [label=left:{$u_{1,1}$}] {}; &
+     \node[normal]  (u21)   [label=left:{$u_{2,1}$}] {}; &
+     \node[normal]  (x2)    [label=left:{$x_2$}]     {}; &
+     \node[normal]  (u12)   [label=left:{$u_{1,2}$}] {}; &
+     \node[normal]  (u22)   [label=left:{$u_{2,2}$}] {}; \\
+                                                      & & 
+     \node[control] (g21)   [label=right:{$g_{2,1}$}] {}; &
+                                                      & & 
+     \node[control] (g22)   [label=right:{$g_{2,2}$}] {}; \\
+    } ;
+    
+    \path (f0) edge (x1) ;
+    \path (f1) edge (x2) ;
+
+    \path (x1)  edge (f1) ;
+    \path (u11) edge (f1) ;
+    \path (u21) edge (f1) ;
+
+    \path (x1)  edge (rho1) ;
+    \path (u11) edge (rho1) ;
+    \path (u21) edge (rho1) ;
+    \path (rho1) edge (r1) ;
+
+    \path (x2)  edge (rho2) ;
+    \path (u12) edge (rho2) ;
+    \path (u22) edge (rho2) ;
+    \path (rho2) edge (r2) ;
+
+    \path (x1)  edge (g11) ;
+    \path (x1)  edge (g21) ;
+
+%   \path (x1)  edge (g12) ;
+%   \path (x1)  edge (g22) ;
+
+    \path (x2)  edge (g12) ;
+    \path (x2)  edge (g22) ;
+
+%   \path (u11) edge (g12) ;
+%   \path (u21) edge (g22) ;
+    \path (u21) edge (g12) ;
+%   \path (u11) edge (g22) ;
+    \path (u12) edge (g22) ;
+    \path (u11) edge (g21) ;
+
+    \path (g11) edge (u11) ;
+    \path (g12) edge (u12) ;
+    \path (g21) edge (u21) ;
+    \path (g22) edge (u22) ;
+
+  \stoptikzpicture
+\stopTEXpage
+
+\startTEXpage
+  \starttikzpicture[->,>=latex']
+    \matrix[row sep={10mm,between origins},%
+            column sep={15mm,between origins}] {
+                                                & & 
+     \node[reward] (r1) [label=left:{$r_1$}] {} ; &
+                                                & & 
+     \node[reward] (r2) [label=left:{$r_2$}] {} ; \\
+     % Second row
+     \node[dynamics] (f0)   [label=right:{$f_0$}]     {}; &
+     \node[control]  (g11)  [label=right:{$g_{1,1}$}] {}; &
+     \node[dynamics] (rho1) [label=right:{$ρ_1$}]     {}; &
+     \node[dynamics] (f1)   [label=right:{$f_1$}]     {}; &
+     \node[control]  (g12)  [label=right:{$g_{1,2}$}] {}; &
+     \node[dynamics] (rho2) [label=right:{$ρ_2$}]     {}; \\
+     % Third row
+     \node[normal]  (x1)    [label=left:{$x_1$}]     {}; &
+     \node[normal]  (u11)   [label=left:{$u_{1,1}$}] {}; &
+     \node[normal]  (u21)   [label=left:{$u_{2,1}$}] {}; &
+     \node[normal]  (x2)    [label=left:{$x_2$}]     {}; &
+     \node[normal]  (u12)   [label=left:{$u_{1,2}$}] {}; &
+     \node[normal]  (u22)   [label=left:{$u_{2,2}$}] {}; \\
+                                                      & & 
+     \node[control] (g21)   [label=right:{$g_{2,1}$}] {}; &
+                                                      & & 
+     \node[control] (g22)   [label=right:{$g_{2,2}$}] {}; \\
+    } ;
+    
+    \path (f0) edge (x1) ;
+    \path (f1) edge (x2) ;
+
+    \path (x1)  edge (f1) ;
+    \path (u11) edge (f1) ;
+    \path (u21) edge (f1) ;
+
+    \path (x1)  edge (rho1) ;
+    \path (u11) edge (rho1) ;
+    \path (u21) edge (rho1) ;
+    \path (rho1) edge (r1) ;
+
+    \path (x2)  edge (rho2) ;
+    \path (u12) edge (rho2) ;
+    \path (u22) edge (rho2) ;
+    \path (rho2) edge (r2) ;
+
+    \path (x1)  edge (g11) ;
+    \path (x1)  edge (g21) ;
+
+%   \path (x1)  edge (g12) ;
+%   \path (x1)  edge (g22) ;
+
+    \path (x2)  edge (g12) ;
+    \path (x2)  edge (g22) ;
+
+%   \path (u11) edge (g12) ;
+%   \path (u21) edge (g22) ;
+%   \path (u21) edge (g12) ;
+%   \path (u11) edge (g22) ;
+    \path (u12) edge (g22) ;
+    \path (u11) edge (g21) ;
+
+    \path (g11) edge (u11) ;
+    \path (g12) edge (u12) ;
+    \path (g21) edge (u21) ;
+    \path (g22) edge (u22) ;
+
+  \stoptikzpicture
+\stopTEXpage
+\stoptext
+     
+
