@@ -1,0 +1,48 @@
+- index     : 6
+  title     : "Approximate information state based convergence analysis of recurrent Q-learning"
+  authors   :
+    - Erfan Seyedsalehi
+    - Nima Akbarzadeh
+    - Amit Sinha
+    - Aditya Mahajan
+  date    : June 2023
+  arxiv   : "2306.05991"
+
+- index     : 5
+  title     : "Linear Quadratic Mean Field Teams: Optimal and Approximately Optimal Decentralized Solutions"
+  authors   :
+    - Jalal Arabneydi
+    - Aditya Mahajan
+  date      : Aug 2016 
+  pdf       : projects/info-structures/preprint/mean-field-teams.pdf
+
+- index     : 4
+  title     : "On computing optimal thresholds in decentralized sequential hypothesis testing"
+  authors   :
+    - Can Cui
+    - Aditya Mahajan
+  date      : Jan 2016 
+  pdf       : projects/decentralized-detection/preprint/computing-thresholds.pdf
+
+- index     : 3
+  title     : Question about measurability of optimal control strategies in static teams
+  authors   :
+    - Aditya Mahajan
+    - Ashutosh Nayyar
+    - Demosthenis Teneketzis
+  date      : Oct 2015
+  pdf       : projects/info-structures/preprint/quesiton.pdf
+
+- index     : 2
+  title     : On the relationship between maximin information and common knowledge
+  authors   : 
+    - Aditya Mahajan
+  date      : Jan 2014
+  pdf       : projects/information/preprint/maximin-information.pdf
+
+- index     : 1
+  title     : "Structural results for MDP: A direct proof"
+  authors   :
+    - Aditya Mahajan
+  date      : Jun 2010
+  pdf       : projects/mdp/preprint/mdp-structure.pdf

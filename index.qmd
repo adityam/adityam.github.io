@@ -1,0 +1,37 @@
+<div class="container shadow-lg p-3 mb-5 bg-body rounded">
+
+```{=html}
+    <img src="images/mahajan-v3.jpg" width="200" class="rounded float-start me-5">
+  <div class="me-5">
+  <p>
+    <strong class="fs-3">Aditya Mahajan</strong><br />
+    Professor, <a href="https://www.mcgill.ca/ece">Electrical and Computer Engineering</a> <br />
+    McGill University, Montreal, Canada
+  </p>
+
+  <p>
+    <strong>email:</strong> aditya [dot] mahajan [at] mcgill [dot] ca <br />
+    <strong>Phone:</strong> (514) 398-8088
+  </p>
+
+  <!-- Clearfix to clear floating effects -->
+  <p class="clearfix"><strong>Affiliations:</strong>
+  <a href="https://mila.quebec/en/">
+    <abbr title="Quebec Artificial Intelligence Insititute">Mila</abbr>
+  </a>;
+  <a href="https://www.cim.mcgill.ca/">
+    <abbr title="Center for Intelligent Machines">CIM</abbr>
+  </a>;
+  <a href="http://www.gerad.ca/en/">
+    <abbr title="Groupe d'études et de recherche en analyse des décisions">GERAD</abbr>
+  </a>;
+  <a href="">
+    <abbr title="International Laboratory for Learning Systems">ILLS</abbr>
+  </a>.
+  </p>
+  </div>
+```
+
+</div>
+
+

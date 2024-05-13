@@ -1,0 +1,31 @@
+- label   : 2023-bandits
+  title   : "Restless bandits, index policies and applications in reinforcement learning"
+  url     : "https://gast.gitlabpages.inria.fr/restlessbandit-workshop"
+  location: Grenoble Alpes University
+  dates   : "20-21 Nov, 2023"
+
+
+- label   : 2017-security
+  title   : Control and Information Theoretic Approaches to Privacy and Security
+  url     : "http://2017.ieeeglobalsip.org"
+  location : GlobalSIP Conference, Montreal
+  dates   : "14-16 Nov, 2017"
+
+- label   : 2016-demosfest
+  title   : "Information, Decisions and Networks: A workshop in honor of Demos Teneketzis's 65th Birthday"
+  url     : "http://www.ece.umich.edu/events/demosteneketzis/"
+  location : University of Michigan
+  dates   : "28–29 July, 2016"
+
+- label   : 2014-banff
+  title   : Optimal Cooperation, Communication, and Learning in Decentralized Systems
+  url     : "http://www.birs.ca/events/2014/5-day-workshops/14w5077"
+  location : Banff International Research Station
+  dates   : "12–17 Oct, 2014"
+
+- label   : 2013-seqit
+  title   : Sequential and Adaptive Information Theory
+    # Seems to be deleted in update
+    # url     : "http://www.cim.mcgill.ca/SEQ-IT-13/"
+  location : McGill University
+  dates   : "7–9 Nov, 2013"

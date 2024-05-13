@@ -1,0 +1,45 @@
+project:
+  type: website
+  resources:
+    - 'images/*'
+
+website:
+  title: "Aditya Mahajan"
+  search: false
+
+  navbar:
+    background: primary
+    title: false
+
+    right:
+      - text: Home
+        href: index.qmd
+
+      - text: Bio
+        href: bio.qmd
+
+      - text: Publications
+        menu: 
+        - text: Journal
+          href: journals.qmd
+
+        - text: Conference
+          href: journals.qmd
+
+      - text: Students
+        href: students.qmd
+
+      - text: Teaching
+        href: courses.qmd
+
+      - text: Activities
+        href: activities.qmd
+
+format:
+  html:
+    theme: spacelab
+    toc: false
+    toc-depth: 2
+
+    minimal: true
+

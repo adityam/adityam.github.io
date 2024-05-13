@@ -1,0 +1,63 @@
+---
+date-format: "MMM YYYY"
+
+format:
+  html:
+    toc: true
+
+listing:
+  - id: preprints
+    template: ejs/journals.ejs
+    contents: data/preprints.yaml
+
+  - id: journals
+    template: ejs/journals.ejs
+    contents: data/journals.yaml
+
+  - id: unpublished
+    template: ejs/journals.ejs
+    contents: data/unpublished.yaml
+
+  - id: book-chapters
+    template: ejs/book-chapters.ejs
+    contents: data/books.yaml
+
+---
+
+
+## Preprints
+
+:::{#preprints}
+:::
+
+
+## Journal and Selective Conference Publications
+:::{#journals}
+:::
+
+## Book Chapters
+:::{#book-chapters}
+:::
+
+## Thesis
+
+- **Sequential decomposition of sequential teams: applications to real-time communication and networked control systems**
+  ([pdf](projects/thesis/mahajan-thesis.pdf))
+  <br />
+  Aditya Mahajan
+  <br />
+  <em>University of Michigan</em>,
+  Sep 2008. 
+  
+## Unpublished Drafts
+
+:::{#unpublished}
+:::
+
+
+<div class="fs-10">
+### Disclaimer
+
+This material is presented to ensure timely dissemination of scholarly and technical work. Copyright and all rights therein are retained by authors or by other copyright holders. All person copying this information are expected to adhere to the terms and constraints invoked by each author's copyright. In most cases, these works may not be reposted without the explicit permission of the copyright holder.
+</div>
+

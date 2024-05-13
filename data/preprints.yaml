@@ -1,0 +1,31 @@
+- index     : 41
+  title     : "Model approximation in MDPs with unbounded per-step cost 	"
+  authors   :
+    - Berk Bozkurt
+    - Aditya Mahajan
+    - Ashutosh Nayyar
+    - Yi Ouyang
+  status  : submitted
+  date    : Feb 2024
+  arxiv   : "2402.08813"
+
+- index     : 40
+  title     : "Mean-field games among teams"
+  authors   :
+    - Jayakumar Subramanian
+    - Akshat Kumar
+    - Aditya Mahajan
+  status  : submitted
+  date    : Oct 2023
+  arxiv   : "2310.12282"
+
+- index     : 39
+  title     : "On the sensitivity of restless bandit solutions to model mismatch"
+  authors   : 
+    - Amit Sinha
+    - Aditya Mahajan
+  status    : submitted
+  date      : March 2022
+  pdf       : projects/bandits/preprint/approx-Whittle.pdf
+
+

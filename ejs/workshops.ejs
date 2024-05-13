@@ -1,0 +1,17 @@
+```{=html}
+<ul>
+<% for (const item of items) { %>
+<li value="<%- item.label %>">
+<p>
+<strong><%- item.title %></strong>, 
+  <% if (item.url) { %>
+    (<a href="<%- item.url %>">link</a>)
+  <% } %>
+<br />
+<%- item.location %>, 
+<%- item.dates %>.
+</p>
+</li>
+<% } %>
+</ul>
+```

@@ -1,0 +1,250 @@
+- id        : tamu-22
+  title     : Approximate planning and learning for partially observed systems
+  seminar   : "University of Texas, A&M"
+  slides    : talks/22-tamu.pdf
+  video     : "https://drive.google.com/file/d/1yPFRnhpAH8SME8uLPn67fmts2qthqjNQ/view?usp=sharing"
+  date      : Oct 2022
+
+- id        : mfg-21
+  title     : "Reinforcement Learning in Stationary Mean-Field Games"
+  seminar   : "Machine Learning and Mean-Field Games"
+  slides    : talks/21-mean-field-seminar.pdf
+  date      : Nov 2021
+  video     : https://youtu.be/Cpm97pTXbfI
+
+- id        : approx-mpe-21
+  title     : "Robustness and sample complexity of model-based MARL for general-sum Markov games"
+  seminar   : "Workshop on Agent behavior in combinatorial game theory"
+  slides    : talks/21-combinatorial-games.pdf
+  date      : Nov 2021
+
+- id        : rl-network-teams-21
+  title     : "Learning to control network-coupled subsystems with unknown dynamics"
+  seminar   : "Workshop on Mean-field games on Networks"
+  slides    : talks/21-pims.pdf
+  video     : "https://www.mathtube.org/lecture/video/learning-control-networked-coupled-subsystems-unknown-dynamics"
+  date      : Nov 2021
+
+- id        : restoq-21
+  title     : Approximate planning and learning for partially observed systems
+  seminar   : "Reinforcement learning and sotchastic control in queues and networks (ReStoq) Workshop, WiOpt"
+  slides    : talks/21-restoq.pdf
+  video     : keynotes/21-iscon.mp4
+  date      : Oct 2021
+
+- id        : umich-20
+  title     : "Approximate planning and learning for partially observed systems"
+  seminar   : "Communication and Signal Processing Seminar, University of Michigan"
+  slides    : talks/20-umich.pdf
+  date      : Feb 2020
+  video     : https://youtu.be/ejVnHml1G0Q
+
+- id        : mila-20
+  title     : "Approximate planning and learning for partially observed systems"
+  seminar   : "Mila RL Reading Group"
+  slides    : talks/mila-2020.pdf
+  date      : Feb 2020
+
+- id        : cmo-19
+  title     : "Information state (and its approximations) for stochastic control"
+  seminar   : "BIRS-CMO Workshop on Multi-Stage Stochastic Optimization for Clean Energy Transition"
+  slides    : talks/19-cmo.pdf
+  date      : Sep 2019
+
+- id        : fields-2017
+  title     : "Decentralized Kalman Filtering"
+  seminar   : "Fields Workshop on Stochastic Processes and their Applications, Ottawa"
+  slides    : talks/17-fields.pdf
+  date      : Aug 2017
+
+- id        : michigan-2017
+  title     : "Mean-field teams"
+  seminar   : "Systems Science Seminar, University of Michigan"
+# slides    : talks/17-umich.pdf
+  date      : July 2017
+
+- id        : bliss-2017
+  title     : "Fundamental limits of remote estimation"
+  seminar   : "BLISS Seminar, UC Berkeley"
+  slides    : talks/17-bliss.pdf
+  date      : Mar 2017
+
+- id        : it-forum-2016
+  title     : "Remote state estimation over erasure channels: structure of optimal strategies and fundamental limits"
+  seminar   : "IT Forum, Stanford"
+  slides    : talks/2016-it-forum.pdf
+  date      : Nov 2016
+
+- id        : allerton-2016
+  title     : "Optimal decentralized control of systems with partially exchangeable agents"
+  seminar   : "Allerton Conference on Communication, Control, and Computing"
+  slides    : projects/info-structures/slides/2016-allerton.pdf
+  date      : Sep 2016
+
+- id        : wiopt-2016
+  title     : "Fundamental limits of remote estimation under communication constraints"
+  seminar   : "Modeling and Optimization in Mobile, Ad-Hoc Wireless Networks (WiOpt)"
+  slides    : projects/real-time/slides/2016-wiopt.pdf
+  date      : May 2016
+
+- id        : rutgers-2015
+  title     : "Remote estimation of Markov processes under communication constraints"
+  seminar   : "Applied Probability Conference, Rutgers"
+  slides    : talks/rutgers-2015.pdf
+  date      : Oct 2015
+
+- id        : usc-2015
+  title     : "Mean-field teams"
+  seminar   : "CommNets Seminar, USC"
+# slides    : talks/usc-2015.pdf
+  date      : Aug 2015
+
+- id        : cybernetics-2015
+  title     : "Fundamental limits of remote-estimation under communication constraints"
+  seminar   : "Mathematical Cybernetics: Hybrid, Stochastic and Decentralized Systems"
+  slides    : talks/cybernetics-2015.pdf
+  date      : May 2015
+
+
+- id        : toronto-2014
+  title     : "Optimal real-time transmission of Markov sources under constraints on the number of transmissions"
+  seminar   : University of Toronto
+  slides    : talks/toronto-2014.pdf
+  date      : Nov 2014
+
+- id        : banff-2014
+  title     : "Decentralized stochastic control: The person-by-person and common information approaches"
+  seminar   : BIRS Workshop on Optimal Cooperation, Communication, and Learning in Decentralized Systems
+  city      : Banff
+  date      : Oct 2014
+  slides    : talks/banff-2014.pdf
+  video     : "http://www.birs.ca/events/2014/5-day-workshops/14w5077/videos/watch/201410141451-Mahajan.mp4"
+
+- id        : reparti-2014
+  title     : "Decentralized stochastic control"
+  seminar   : REPARTI (Regroupement pour l'étude des environnements partagés intelligents répartis) Workshop
+  city      : Quebec City
+  date      : May 2014
+  slides    : talks/reparti-2014.pdf
+
+- id        : gerad-2012
+  title     : "Dynamic Programming in Decentralized Stochastic Control"
+  seminar   : GERAD (Group d'Etudes et de Recherche en Analyse des Décisions) Seminar
+  city      : Montreal
+  date      : October 2012
+
+- id        : common-info-2012
+  title     : "Optimal decentralized stochastic control: A common information approach"
+  seminar   : Concordia University
+  note      : Seminar to IEEE Control Systems Society Montreal Chapter 
+  city      : Montreal
+  date      : October 2012
+  slides    : talks/gerad-2012.pdf
+
+- id        : cadarache-2012
+  title     : "Optimal decentralized stochastic control: The designer and common information approaches"
+  seminar   : CEA-EDF-INRIA Summer School on Stochastic Optimization
+  city      : Cadarache
+  date      : July 2012
+
+- id        : common-info-2012
+  title     : "Optimal decentralized stochastic control: A common information approach"
+  seminar   : GERAD (Group d'Etudes et de Recherche en Analyse des Décisions) Seminar
+  city      : Montreal
+  date      : April 2012
+  slides    : talks/gerad-2012.pdf
+
+- id        : birs-2012
+  title     : An overview of structural results in real-time communication
+  seminar   : BIRS workshop on interactive information theory
+  city      : Banff
+  date      : January 2012
+  slides    : talks/birs-2012.pdf
+
+- id        : queens-2011
+  title     : Separation results for decentralized stochastic control under delayed sharing of information
+  seminar   : Queen's University
+  city      : Kingston
+  note      : IEEE Kingston section talk
+  date      : July 2011
+  slides    : talks/queens-2011.pdf
+
+- id        : bellairs-2011
+  title     : Introduction to sequential teams
+  seminar   : MITACS workshop on fusion and inference in networks, Bellairs Insitute
+  city      : Barbados
+  date      : March 2011
+  slides    : talks/bellairs-2011.pdf
+
+- id        : job-2010
+  title     : Decentralized decision making under uncertainty 
+  seminar   : Ecole des Pont
+  city      : Paris
+  date      : June 2010
+  slides    : talks/mcgill-2010.pdf
+
+- id        : job-2010
+  title     : Decentralized decision making under uncertainty 
+  seminar   : McGill University
+  city      : Montreal
+  date      : May 2010
+  slides    : talks/mcgill-2010.pdf
+
+- id        : mac-feedback-2010
+  title     : >-
+    Auxiliary random variables in multi-terminal communication with feedback: a
+    decentralized control perspective
+  seminar   : University of California
+  city      : Berkeley
+  date      : April 2010
+
+- id        : mac-feedback-2010
+  title     : >-
+    Auxiliary random variables in multi-terminal communication with feedback: a
+    decentralized control perspective
+  seminar   : Stanford University
+  city      : Stanford
+  date      : April 2010
+
+- id        : uiuc-2010
+  title     : Interconnections between information theory and decentralized stochastic control
+  seminar   : University of Illinois
+  city      : Urbana Champaign
+  date      : March 2010
+
+- id        : notre-dame-2010
+  title     : >-
+    Structure of optimal decentralized control policies: an axiomatic approach 
+  seminar   : University of Notre Dame
+  city      : South Bend
+  date      : March 2010
+  slides    : talks/notre-dame-2010.pdf
+
+- id        : ucla-2010
+  title     : Role of information structures in decentralized decision making
+  seminar   : University of California
+  city      : Los Angeles
+  date      : Feb 2010
+  slides    : talks/ucla-2010.pdf
+
+- id        : michigan-2009
+  title     : Graphical reasoning for decentralized systems
+  seminar   : University of Michigan
+  city      : Ann Arbor
+  date      : Oct 2009
+  slides    : talks/michigan-2009.pdf
+
+- id        : canada-2009
+  title     : Optimal design of sequential teams
+  seminar   : "Queen's University"
+  city      : Kingston 
+  date      : May 2009
+  slides    : talks/canada-2009.pdf
+
+- id        : canada-2009
+  title     : Optimal design of sequential teams
+  seminar   : McGill University
+  city      : Montreal
+  date      : May 2009
+  slides    : talks/canada-2009.pdf
+

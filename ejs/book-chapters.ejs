@@ -1,0 +1,49 @@
+<% 
+function joinWithCommasAnd(array) {
+    if (array.length === 0) return '';
+    if (array.length === 1) return array[0];
+    if (array.length === 2) return array.join(' and ');
+
+    const lastItem = array.pop();
+    return `${array.join(', ')}, and ${lastItem}`;
+}
+%>
+
+```{=html}
+<ol>
+<% for (const item of items) { %>
+    <li value="<%- item.index %>"><p>
+      <strong><%- item.title %></strong>
+      <% if (item.arxiv) { %>
+        (<a href="http://arxiv.org/abs/<%- item.axiv %>">arxiv</a>)
+      <% } %>
+      <% if (item.pdf) { %>
+        (<a href="projects/<%- item.pdf %>">pdf</a>)
+      <% } %>
+      <% if (item.code) { %>
+        (<a href="<%- item.code %>">code</a>)
+      <% } %>
+      <br />
+      <%- joinWithCommasAnd(item.authors) %>
+      <br />
+      <% if (item.booktitle) { %> 
+        <em><%- item.booktitle %></em>, 
+      <% } %>
+      <% if (item.pages) { %> 
+        pp.&nbsp;<%- item.pages %>,
+      <% } %>
+      <% if (item.publisher) { %> 
+        <%- item.publisher %>,
+      <% } %>
+      <%- item.date %>.
+      <br />
+      <% if (item.doi) { %>
+        DOI: <a href="http://doi.org/<%- item.doi %>"><%- item.doi %></a>)
+      <% } %>
+      <% if (item.url) { %>
+        URL: <a href="<%- item.doi %>"><%- item.url %></a>)
+      <% } %>
+    </p></li>
+<% } %>
+</ol>
+```

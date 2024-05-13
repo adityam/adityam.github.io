@@ -1,0 +1,26 @@
+---
+listing:
+  id: workshops
+  template: ejs/workshops.ejs
+  contents: data/workshops.yaml
+---
+
+## Informal Systems Seminars
+The Systems and Control group organizes weekly <a href="https://www.gerad.ca/en/people/aditya-mahajan/events">Informal Systems
+Seminars</a>. Some recent seminars are availalbe on <a
+href="https://www.youtube.com/playlist?list=PLV_P5YiB-jctghMJoFasHo2Hhs4MUQHhc">youtube</a>.
+
+## Workshop Organization
+
+:::{#workshops}
+:::
+## Editorial board
+
+- Associal Editor, IEEE Transactions on Automatic Control,
+    (2022–present).
+
+- Associal Editor, IEEE Control Systems Letters (2022–present).
+
+- Associal Editor, Mathematics of Control, Signals, and Systems, (2016–present).
+
+- Associal Editor, Conference Editorial Board, IEEE Control Systems Society, (2014–2017).

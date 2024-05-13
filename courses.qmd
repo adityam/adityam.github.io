@@ -1,0 +1,28 @@
+<div class="container shadow-lg p-3 mb-5 bg-body rounded">
+
+## Undergraduate Courses
+
+- **ECSE 393: Signals and Systems I** <br />
+  From Fall 2012 to Winter 2016.
+
+- **ECSE 307: Linear Systems and Control** <br />
+  From Fall 2017 to present.
+
+- **ECSE 321: Introduction to Software Engineering** <br />
+  From Winter 2011 to Fall 2014.
+
+## Graduate Courses
+
+- **ECSE 506: Stochastic control and decision theory** 
+  ([website](https://adityam.github.io/stochastic-control/)) <br />
+  Winter 2012 to present (every even year)
+
+- **ECSE 508: Multi-agent systems** <br />
+  Winter 2011 to present (every odd year)
+
+- **ECSE 509: Probability and Random Signals** <br />
+  Fall 2022 to present.
+
+</div>
+
+

@@ -1,0 +1,122 @@
+<h2>Current PhD Students</h2>
+<div class="tight">
+<ul>
+<li>
+Tao Zhang
+</li>
+<li>
+Samin Nili-Ahmadabadi
+</li>
+<li>
+Amit Sinha
+</li>
+<li>
+Borna Sayedana (co-supervised with Prof. Peter Caines)
+</li>
+<li>
+Raihan Seraj (co-supervised with Prof. Jerome Le Ny)
+</li>
+</ul>
+</div>
+<h2>Current Master's Students</h2>
+<div class="tight">
+<ul>
+<li>
+Edwin Meriaux
+</li>
+<li>
+Reihaneh Ghoroghchian
+</li>
+</ul>
+</div>
+<div class="figure">
+<img src="images/2021-group-photo.png" width="100%" alt="group photo 2017" />
+<p align="middle">Group photo (2021). Top Row (L to R): Aditya, Chenyu, Mohammad, Berk. Middle Row: Jayakumar, Cheng, Borna, Fatih. Bottom Row: Nima, Amit, Raihan.</p>
+</div>
+<div class="figure">
+<img src="images/2017-group-photo.jpg" width="100%" alt="group photo 2017" />
+<p align="middle">Group photo (2017). From L to R: Borna, Nima, Jhelum, Raihan, Aditya, Jayakumar, Mohammad.</p>
+</div>
+<h2>Graduated PhD Students</h2>
+<ul>
+<li>
+Nima Akbarzadeh, Aug 2022. <em>Restless multi-armed bandits: Indexability, Whittle Index Computation, and Learning</em>.
+</li>
+<li>
+Mohammad Afshari, March 2021. <em>Team optimal decentralized estimation and control of networked linear quadratic systems</em>.
+</li>
+<li>
+Jayakumar Subramanian, April 2020. <em>Reinforcement learning in partially observed and multi-agent systems</em>.
+</li>
+<li>
+Jhelum Chakravorty, Aug 2017. <em>Fundamental limits of remote estimation</em>.
+</li>
+<li>
+Jalal Arabneydi, Dec 2016. <em>New Concepts in Team Theory: Mean Field Teams and Reinforcement Learning</em>.
+</li>
+<li>
+Chuangshen Dong, Apr 2016. <em>Greener Cyber Physical Systems---Data Analysis and Algorithm Design</em>.
+</li>
+</ul>
+<h2>Graduated Master's Students</h2>
+<div class="tight">
+<ul>
+<li>
+Annavaleria Ardito, March 2024. <em>Study and implementation of multiple mobile robots control</em>.
+</li>
+<li>
+Berk Bozkurt, Apr 2024. <em>Weighted-norm bounds on model approximation in MDPs with unbounded per-step cost</em>.
+</li>
+<li>
+Erfan SeyedSalehi, Apr 2023. <em>Approximate information state for model based recurrent Q-learning</em>.
+</li>
+<li>
+Sharareh Younesian (co-supervised with Prof. Peter Caines), Dec 2022. <em>Structure-aware reinforcement learning for searching optimal monotone policies</em>.
+</li>
+<li>
+Chenyu Liu, June 2022. <em>Optimism in $Q$-learning: Unified overview and comparison</em>.
+</li>
+<li>
+Alper Öker (co-supervised with Prof. Peter Caines), April 2021. <em>Distributed Kalman Filtering and Estimation</em>.
+</li>
+<li>
+Anirudha Jitani (co-supervised with Prof. Doina Precup), April 2021. <em>Intelligent node-overload protection in mobile edge computing using reinforcement learning</em>.
+</li>
+<li>
+Amit Sinha, Dec 2020. <em>Reinforcement learning in POMDPs</em>.
+</li>
+<li>
+Samin Yeasar Arnob, May 2020. <em>Improving Robustness in Inverse Reinforcement Learning</em>.
+</li>
+<li>
+Borna Sayedana, Aug 2019. <em>Monotonicity of value function and optimal policy in cross-layer design of communication systems</em>.
+</li>
+<li>
+Raihan Seraj, April 2019. <em>Learning in the presence of partial observability and concept drifts</em>.
+</li>
+<li>
+Romina Hassani, Dec 2018. <em>Social learning and distributed hypothesis testing</em>.
+</li>
+<li>
+Sebin Mathew, Aug 2018. <em>Dual decomposition algorithms for sensor scheduling</em>.
+</li>
+<li>
+Ming Lei, Aug 2017. <em>Optimal policies for energy storage in microgrids</em>.
+</li>
+<li>
+Aide Zhou, Apr 2017. <em>Monte Carlo simulations for remote state estimation</em>.
+</li>
+<li>
+Calvin Ma, Aug 2016. <em>Multi-armed bandits for MPSoC design space exploration</em>.
+</li>
+<li>
+Can Cui, Aug 2015. <em>On computing optimal thresholds for sequential hypothesis testing</em>.
+</li>
+<li>
+Mehnaz Mannan, Apr 2015. <em>Finite-state approximation for a class of POMDPs and comparison of reinforcement learning algorithms for managing energy storage in renewable generation</em>.
+</li>
+<li>
+Prokopis Prokopiou, Aug 2014. <em>An estimation based allocation rule with super-linear regret and finite lock-on time for dependent multi-armed bandits</em>.
+</li>
+</ul>
+</div>

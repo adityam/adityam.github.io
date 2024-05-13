@@ -1,0 +1,547 @@
+- index     : 38
+  title     : "Strong consistency and rate of convergence of switched least squares system identification for autonomous switched Markov jump linear systems"
+  authors   : 
+    - Borna Sayedana
+    - Mohammad Afshari
+    - Peter E. Caines
+    - Aditya Mahajan
+  journal   : IEEE Transcations on Automatic Control
+  date      : July 2024 (in print)
+  pdf       : projects/switched-systems/preprint/estimating-MJLS.pdf
+  doi       : 10.1109/TAC.2024.3351806
+
+- index     : 37
+  title     : "On learning Whittle index policy for restless bandits with scalable regret"
+  authors   : 
+    - Nima Akbarzadeh
+    - Aditya Mahajan
+  journal   : IEEE Transactions on Control of Networked Systems
+  date      : July 2023 (accepted)
+  pdf       : projects/bandits/preprint/rb-tsde.pdf
+  doi       : 10.1109/TCNS.2023.3333402
+
+- index     : 36
+  title     : "Briding State and History Representations: Understanding self-predictive RL"
+  authors   :
+    - Tianwei Ni
+    - Benjamin Eysenbach
+    - Erfan SeyedSalehi
+    - Michel Ma
+    - Clement Gehring
+    - Aditya Mahajan
+    - Pierre-Luc Bacon
+  journal   : International Confernece on Learning Representations (ICLR)
+  location  : Vienna, Austria
+  date    : May 2024
+  arxiv   : 2401.08898
+  code    : https://github.com/twni2016/self-predictive-rl
+
+- index     : 35
+  title     : "On learning history-based policies for controlling Markov decision processes"
+  authors   :
+    - Gandharv Patil
+    - Aditya Mahajan
+    - Doina Precup
+  journal   : International Conference on Artificial Intelligence and Statistics (AISTATS)
+  location  : Valencia, Spain
+  date    : May 2024
+  arxiv   : 2211.03011
+
+- index     : 34
+  title     : "Two families of indexable partially observable restless bandits and Whittle index computation"
+  authors   : 
+    - Nima Akbarzadeh
+    - Aditya Mahajan
+  journal   : Performance Evaluation
+  pages     : 102394
+  date      : Jan 2024
+  pdf       : projects/bandits/journal/pomdp-bandits.pdf
+  doi       : 10.1016/j.peva.2023.102394
+
+
+- index     : 33
+  title     : "Dealing With Non-stationarity in Decentralized Cooperative Multi-Agent Deep Reinforcement Learning via Multi-Timescale Learning"
+  authors   :
+    - Hadi Nekoei
+    - Akilesh Badrinaaraayanan
+    - Amit Sinha
+    - Mohammad Amini
+    - Janarthanan Rajendran
+    - Aditya Mahajan
+    - Sarath Chandar
+  journal   : Conference on Lifelong Learning Agents (CoLLA)
+  location  : Montreal, Canada
+  date    : Aug 2023
+  pdf       : projects/reinforcement-learning/conference/2023-colla.pdf
+
+- index     : 32
+  title     : "Decentralized linear quadratic systems with major and minor agents and non-Gaussian noise"
+  authors   :
+    - Mohammad Afshari
+    - Aditya Mahajan
+  journal   : IEEE Transcations on Automatic Control
+  date      : Aug 2023
+  volume    : 68
+  number    : 8
+  pages     : 4666–4681
+  pdf       : projects/info-structures/journal/major-minor.pdf
+  doi       : 10.1109/TAC.2022.3210049
+
+- index     : 31
+  title     : "Scalable regret for learning to control network-coupled subsystems with unknown dynamics"
+  authors   :
+    - Sagar Sudhakara
+    - Aditya Mahajan
+    - Ashutosh Nayyar
+    - Ouyang Yi
+  journal   : IEEE Transactions on Control of Networked Systems
+  volume    : 10
+  number    : 1
+  pages     : 2-14
+  date      : March 2023 
+  pdf       : projects/reinforcement-learning/journal/network-tsde.pdf
+  doi       : 10.1109/TCNS.2022.3184107
+
+- index     : 30
+  title     : "Robustness and sample complexity of model-based MARL for general-sum Markov games"
+  authors   : 
+    - Jayakumar Subramanian
+    - Amit Sinha
+    - Aditya Mahajan
+  journal   : Dynamic Games and Application
+  date      : March 2023 
+  pages     : 56-88
+  pdf       : projects/game-theory/journal/model-based-MARL.pdf
+  doi       : 10.1007/s13235-023-00490-2
+
+
+- index     : 29
+  title     : "Structure-aware reinforcement learning for node overload protection in mobile edge computing"
+  authors   :
+    - Anirudha Jitani
+    - Aditya Mahajan
+    - Zhongwen Zhu
+    - Hatem Abou-zeid
+    - Emannuel T. Fapi
+    - Hakimeh Purmehdi
+  journal   : IEEE Transactions on Cognitive Communications and Networking
+  date      : Dec 2022 
+  volume    : 8
+  number    : 4
+  pages     : 1881-1897
+  pdf       : projects/communication/journal/node-overload-protection.pdf
+  doi       : 10.1109/TCCN.2022.3195503
+
+- index     : 28
+  title     : "Conditions for indexability of restless bandits and an O(K<sup>3</sup>) algorithm to compute Whittle index"
+  authors   :
+    - Nima Akbarzadeh
+    - Aditya Mahajan
+  date      : Dec 2022
+  journal   : Journal of Applied Probability
+  pdf       : projects/bandits/journal/restless-bandits-corrected.pdf
+  volume    : 54
+  number    : 4
+  pages     : 1164-1192
+  doi       : 10.1017/apr.2021.61
+  code      : https://doi.org/10.24433/CO.8624544.v1
+
+- index     : 27
+  title     : "Scalable operator allocation for multi-robot assistance: A restless bandit approach"
+  authors   :
+    - Abhinav Dahiya
+    - Nima Akbarzadeh
+    - Aditya Mahajan
+    - Stephen L. Smith
+  journal   : IEEE Transactions on Control of Networked Systems
+  date      : Sep 2022
+  volume    : 9
+  number    : 3
+  pages     : 1397-1408
+
+  pdf       : projects/bandits/journal/multi-robot-assistance.pdf
+  code      : https://codeocean.com/capsule/9390571/tree/v1
+  doi       : 10.1109/TCNS.2022.3153872
+
+- index     : 26
+  title     : "Optimal control of network-coupled subsystems: Spectral decomposition and low-dimensional solutions"
+  authors   :
+    - Shuang Gao
+    - Aditya Mahajan
+  journal   : IEEE Transactions on Control of Networked Systems
+  date      : June 2022 
+  volume    : 9
+  number    : 2
+  pages     : 657-669
+  pdf       : projects/linear-systems/journal/network-spectral-decomposition.pdf
+  doi       : 10.1109/TCNS.2021.3124259
+
+- index     : 25
+  title     : "Approximate information state for approximate planning and reinforcement learning in partially observed systems"
+  authors   :
+    - Jayakumar Subramanian
+    - Amit Sinha
+    - Raihan Seraj
+    - Aditya Mahajan
+  journal   : Journal of Machine Learning Research
+  date      : Feb 2022 
+  volume    : 23
+  number    : 12
+  pages     : 1-83
+  pdf       : projects/reinforcement-learning/journal/ais.pdf
+  code      : https://github.com/info-structures/ais
+  url       : https://www.jmlr.org/papers/v23/20-1165.html
+
+- index     : 24
+  title     : "Multi-agent estimation and filtering for minimizing team mean-squared error"
+  authors   :
+    - Mohammad Afshari
+    - Aditya Mahajan
+  journal   : IEEE Transactions on Signal Processing
+  date      : Aug 2021 
+  pdf       : projects/linear-systems/journal/team-mmse.pdf
+  volume    : 69
+  pages     : 5206-5221
+  doi       : 10.1109/TSP.2021.3104981
+
+
+- index     : 23
+  title     : "Optimal local and remote controllers with unreliable
+  uplink channels: An elementary proof"
+  authors   :
+    - Mohammad Afshari
+    - Aditya Mahajan
+  journal   : IEEE Transcations on Automatic Control
+  date      : Aug 2020 
+  volume    : 65
+  number    : 8
+  pages     : 3616–3622
+  pdf       : projects/info-structures/journal/2020-local-and-remote.pdf
+  doi       : 10.1109/TAC.2019.2951658
+
+- index     : 22
+  title     : "Renewal Monte Carlo: Renewal theory based reinforcement learning"
+  authors   :
+    - Jayakumar Subramanian
+    - Aditya Mahajan
+  journal   : IEEE Transcations on Automatic Control
+  date      : Aug 2020 
+  pdf       : projects/reinforcement-learning/journal/2020-renewal-monte-carlo.pdf
+  pages     : 3663–3670
+  volume    : 65
+  number    : 8
+  doi       : 10.1109/TAC.2019.2953089
+  code      : https://codeocean.com/capsule/027c3bab-27cf-4f47-8153-6533c2bfc1e5
+
+- index     : 21
+  title     : "Counterexamples on the monotonicity of delay optimal strategies for energy harvesting transmitters"
+  authors   :
+    - Borna Sayedana
+    - Aditya Mahajan
+  journal   : IEEE Wireless Communication Letters
+  date      : July 2020 
+  pages     : 1070-1074
+  volume    : 9
+  number    : 7
+  pdf       : projects/communication/journal/counterexamples.pdf
+  code      : https://doi.org/10.24433/CO.9177397.v3
+  doi       : 10.1109/LWC.2020.2981066
+
+
+- index     : 20
+  title     : "Remote estimation over a packet-drop channel with Markovian state"
+  authors   :
+    - Jhelum Chakravorty
+    - Aditya Mahajan
+  journal   : IEEE Transcations on Automatic Control
+  date      : May 2020 
+  number    : 5
+  volume    : 65
+  pages     : 2016-2031
+  pdf       : projects/real-time/journal/2020-markov-remote-estimation.pdf
+  code      : https://doi.org/10.24433/CO.8529792.v1
+  doi       : 10.1109/TAC.2019.2926160
+
+- index     : 19
+  title     : Reinforcement learning in stationary mean-field games
+  authors   :
+    - Jayakumar Subramanian
+    - Aditya Mahajan
+  journal   : International Conference on Autonomous Agents and Multiagent Systems (AAMAS)
+  location  : Montreal, Canada
+  date      : May 2019
+  pdf       : projects/reinforcement-learning/conference/2019-aamas.pdf
+  slides    : projects/reinforcement-learning/slides/2019-aamas.pdf
+  poster    : projects/reinforcement-learning/posters/2019-aamas.pdf
+  acmid     : 3331700
+
+- index     : 18
+  title     : Sufficient conditions for the value function and optimal strategy to be even and quasi-convex
+  authors   :
+    - Jhelum Chakravorty
+    - Aditya Mahajan
+  journal   : IEEE Transcations on Automatic Control
+  date      : Nov 2018
+  number    : 11
+  volume    : 63
+  pdf       : projects/mdp/journal/even-and-quasi-convex.pdf
+  code      : https://codeocean.com/2017/12/11/remote-estimation-of-first-order-autoregressive-processes-over-i-i-d-packet-drop-channel-over-a-finite-horizon/interface
+  doi       : 10.1109/TAC.2018.2800796
+
+- index     : 17
+  title     : Information-Theoretic Privacy for Smart Metering Systems with a Rechargeable Battery
+  authors   :
+    - Simon Li
+    - Ashish Khisti
+    - Aditya Mahajan
+  journal   : IEEE Transcations on Information Theory
+  date      : May 2018
+  number    : 5
+  volume    : 64
+  pages     : 3679–3695
+  pdf       : projects/privacy/journal/smart-meter-privacy.pdf
+  doi       : 10.1109/TIT.2018.2809005
+
+
+- index     : 16
+  title     : Fundamental limits of remote estimation of autoregressive Markov processes under communication constraints
+  authors   :
+    - Jhelum Chakravorty
+    - Aditya Mahajan
+  journal   : IEEE Transactions on Automatic Control
+  date      : March 2017
+  status    : accepted
+  pdf       : projects/real-time/journal/2017-remote-estimation.pdf
+  doi       : 10.1109/TAC.2016.2580589
+
+- index     : 15
+  title     : Decentralized stochastic control
+  authors   :
+    - Aditya Mahajan
+    - Mehnaz Mannan
+  journal   : Annals of Operations Research
+  volume    : 241
+  number    : 1
+  pages     : 109–126
+  date      : June 2016
+  pdf       : projects/info-structures/journal/decentralized-control.pdf
+  doi       : 10.1007/s10479-014-1652-0
+
+
+- index     : 14
+  title     : An algorithmic approach to identify irrelevant information in sequential teams
+  authors   :
+    - Aditya Mahajan
+    - Sekhar Tatikonda
+  journal   : Automatica
+  date      : Nov 2015 
+  pages     : 178–191
+  pdf       : projects/graphical-models/journal/graph-irrelevant.pdf
+  doi       : 10.1016/j.automatica.2015.08.002 
+
+- index     : 13
+  title     : >-
+    Sufficient statistics for linear control strategies in decentralized systems with partial history sharing
+  authors   :
+    - Aditya Mahajan
+    - Ashutosh Nayyar
+  journal   : IEEE Transactions on Automatic Control
+  volume    : 60
+  number    : 8
+  pages     : 2046–2056
+  date      : Aug 2015 
+  pdf       : projects/info-structures/journal/linear-sufficient-statistics.pdf
+  doi       : 10.1109/TAC.2015.2398884
+
+- index     : 12
+  title     : Optimal decentralized control of coupled subsystems with control sharing
+  authors   : 
+    - Aditya Mahajan
+  journal   : IEEE Transactions on Automatic Control
+  volume    : 58
+  number    : 9
+  pages     : 2377-2382
+  date      : Sep 2013 
+  pdf       : projects/info-structures/journal/control-sharing.pdf
+  doi       : 10.1109/TAC.2013.2251807
+
+- index     : 11
+  title     : >-
+    Decentralized stochastic control with partial history sharing: A common information approach
+  authors   :
+    - Ashutosh Nayyar
+    - Aditya Mahajan
+    - Demosthenis Teneketzis
+  journal   : IEEE Transactions on Automatic Control
+  volume    : 58
+  number    : 7
+  pages     : 1644-1658
+  date      : July 2013
+  pdf       : projects/info-structures/journal/partial-sharing.pdf
+  doi       : 10.1109/TAC.2013.2239000
+  award     : 2015 George Axelby Outstanding Paper Award
+
+- index     : 10
+  title     : Information structures in optimal decentralized control
+  authors   :
+    - Aditya Mahajan
+    - Nuno C. Martins
+    - Michael C. Rotkowitz
+    - Serdar Yüksel
+  journal: IEEE Conference on Decision and Control (CDC)
+  pages     : 1291–1306
+  date      : Dec 2012
+  location  : Maui, Hawaii
+  pdf       : projects/info-structures/conference/2012-cdc.pdf
+  slides    : projects/info-structures/slides/2012-cdc.pdf
+  doi       : 10.1109/CDC.2012.6425819
+
+
+- index     : 9
+  title     : >-
+    Opportunistic capacity and error exponent region for the compound channel
+    with feedback
+  authors   :
+    - Aditya Mahajan
+    - Sekhar Tatikonda
+  journal   : IEEE Transactions on Information Theory
+  volume    : 58
+  number    : 7
+  pages     : 4331-4341
+  date      : July 2012
+  pdf       : projects/compound-channel/journal/compound.pdf
+  doi       : 10.1109/TIT.2012.2191689
+  code      : https://github.com/adityam/compound-channel
+
+- index     : 8
+  title     : Optimal control strategies in delayed sharing information structures
+  authors   :
+    - Ashutosh Nayyar
+    - Aditya Mahajan
+    - Demosthenis Teneketzis
+  journal   : IEEE Transactions on Automatic Control
+  volume    : 56
+  number    : 7
+  pages     : 1606-1620
+  date      : July 2011
+  pdf       : projects/info-structures/journal/delay-sharing.pdf
+  doi       : 10.1109/TAC.2010.2089381
+
+- index     : 7
+  title     : >-
+    A wireless soil moisture smart sensor web using physics-based optimal
+     control: Concept and initial demonstrations
+  authors    :
+    - Mahta Moghaddam
+    - Dara Entekhabi
+    - Yuriy Goykhman
+    - Ke Li
+    - Mingyan Liu
+    - Aditya Mahajan
+    - Ashutosh Nayyar
+    - David I Shuman
+    - Demosthenis Teneketzis
+  journal   : IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing
+  date      : Dec 2010
+  volume    : 3
+  number    : 4
+  pages     : 522-535
+  pdf       : projects/soil-moisture/journal/models.pdf
+  doi       : 10.1109/JSTARS.2010.2052918
+
+- index     : 6
+  title     : >-
+    Measurement scheduling for soil moisture sensing: From physical models to optimal control
+  authors   :
+    - David Shuman
+    - Ashutosh Nayyar
+    - Aditya Mahajan
+    - Yuriy Goykhman
+    - Ke Li
+    - Mingyan Liu
+    - Demosthenis Teneketzis
+    - Mahta Moghaddam
+    - Dara Entekhabi
+  journal   : Proceedings of the IEEE
+  note      : special issue on Sensor Networks and Applications
+  date      : Nov 2010
+  volume    : 98
+  number    : 11
+  pages     : 1918-1934
+  pdf       : projects/soil-moisture/journal/scheduling.pdf
+  doi       : 10.1109/JPROC.2010.2052532
+
+- index     : 5
+  title     : >-
+    Optimal design of sequential real-time communication systems
+  authors   :
+    - Aditya Mahajan
+    - Demosthenis Teneketzis
+  journal   : IEEE Transactions on Information Theory
+  volume    : 55
+  number    : 11
+  pages     : 5317-5337
+  date      : Nov 2009
+  pdf       : projects/real-time/journal/2009-real-time.pdf
+  doi       : 10.1109/TIT.2009.2030462
+  code      : https://github.com/adityam/real-time-example
+
+- index     : 4
+  title     : >-
+    Optimal performance of networked control systems with non-classical
+    information structures
+  authors   :
+    - Aditya Mahajan
+    - Demosthenis Teneketzis
+  journal   : SIAM Journal of Control and Optimization
+  volume    : 48
+  number    : 3
+  pages     : 1377-1404
+  date      : May 2009
+  pdf       : projects/networked-control/journal/2009-networked-control.pdf
+  doi       : 10.1137/060678130
+
+- index     : 3
+  title     : >-
+    On the design of globally optimal communication strategies for real-time
+    noisy communication with noisy feedback
+  authors   :
+    - Aditya Mahajan
+    - Demosthenis Teneketzis
+  journal   : IEEE Journal on Selected Areas in Communication
+  volume    : 28
+  number    : 4
+  pages     : 580-595
+  date      : May 2008
+  pdf       : projects/real-time/journal/2008-noisy-feedback.pdf
+  doi       : 10.1109/JSAC.2008.080502
+
+- index     : 2
+  title     : >-
+    A novel method of down conversion for multiple bandpass signals
+  authors   :
+    - Aditya Mahajan
+    - Manu Agarwal
+    - Ajit K. Chaturvedi
+  journal   : IEEE Transactions on Wireless Communication
+  volume    : 5
+  number    : 2
+  pages     : 427-434
+  date      : Feb 2006
+  pdf       : projects/sampling/journal/2006-downconversion.pdf
+  doi       : 10.1109/TWC.2006.1611066
+
+- index     : 1
+  title     : >-
+    An improved interpretation of depletion approximation in 
+    p-n junctions
+  authors   :
+    - Baquer Mazhari
+    - Aditya Mahajan
+  journal   : IEEE Transactions on Education
+  volume    : 48
+  number    : 1
+  pages     : 60-62
+  date      : Feb 2005
+  pdf       : projects/devices/journal/2005-depletion-approximation.pdf
+  doi       : 10.1109/TE.2004.832876
