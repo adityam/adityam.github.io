@@ -20,7 +20,7 @@ listing:
 
   - id: book-chapters
     template: ejs/book-chapters.ejs
-    contents: data/books.yaml
+    contents: data/book-chapters.yaml
 
 ---
 

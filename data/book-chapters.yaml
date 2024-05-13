@@ -5,7 +5,7 @@
     - Aditya Mahajan
   booktitle : "Methods and Applications of Statistics in Clinical Trials, Volume 2:  Planning, Analysis, and Inferential Methods"
   publisher : John Wiley & Sons
-  date      : 2014
+  year      : 2014
   pages     : 416-435
   pdf       : projects/bandits/book/2013-bandit-computations.pdf
   doi       : 10.1002/9781118596333.ch24
@@ -18,7 +18,7 @@
     - Demosthenis Teneketzis
   booktitle : Information and Control in Networks
   publisher : Springer-Verlag
-  date      : 2014
+  year      : 2014
   pages     : 123-156 
   pdf       : projects/info-structures/book/2014-common-information.pdf
   doi       : 10.1007/978-3-319-02150-8_4
@@ -30,7 +30,7 @@
     - Demosthenis Teneketzis
   booktitle : Foundations and Applications of Sensor Management
   publisher : Springer-Verlag
-  date      : 2008
+  year      : 2008
   pages     : 121-151
   pdf       : projects/bandits/book/2008-mab.pdf
   doi       : 10.1007/978-0-387-49819-5_6
