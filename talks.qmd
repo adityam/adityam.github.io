@@ -1,1 +1,14 @@
+---
+date-format: "MMM YYYY"
+
+listing:
+  - id: seminars
+    template: ejs/seminars.ejs
+    contents: data/seminars.yaml
+
+---
+
 ## Talks and Seminars
+
+:::{#seminars}
+:::

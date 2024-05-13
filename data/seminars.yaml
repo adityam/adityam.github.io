@@ -1,3 +1,15 @@
+- id        : rmab-23
+  title     : Reinforcement learning in restless bandits
+  seminar   : "Workshop on restless bandits, Grenoble"
+  slides    : talks/23-rmab.html
+  date      : Nov 2023
+
+- id        : mila-23
+  title     : "Planning (and learning) in multi-agent systems"
+  seminar   : "MILA RL Workshop, Mt Tremblant"
+  slides    : talks/23-mila-rl.pdf
+  date      : Jun 2023
+
 - id        : tamu-22
   title     : Approximate planning and learning for partially observed systems
   seminar   : "University of Texas, A&M"
