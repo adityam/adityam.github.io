@@ -27,6 +27,9 @@ website:
         - text: Conference
           href: conferences.qmd
 
+      - text: Talks
+        href: talks.qmd
+
       - text: Students
         href: students.qmd
 
