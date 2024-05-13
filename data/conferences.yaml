@@ -111,7 +111,7 @@
     - Aditya Mahajan
   conference: Indian Control Conference
   location  : Virtual
-  date      : 20–22 Dec, 2021
+  date      : Dec 2021
   pdf       : projects/game-theory/conference/2021-icc.pdf
   slides    : projects/game-theory/slides/2021-icc.pdf
 
@@ -125,7 +125,7 @@
     - Yi Ouyang
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Virtual
-  date      : 13–15 Dec, 2021
+  date      : Dec 2021
   pdf       : projects/reinforcement-learning/conference/2021-cdc.pdf
 
 - index     : 59
@@ -136,7 +136,7 @@
     - Jerome Le Ny
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Virtual
-  date      : 13–15 Dec, 2021
+  date      : Dec 2021
   pdf       : projects/game-theory/conference/2021-cdc.pdf
   slides    : projects/game-theory/slides/2021-cdc.pdf
 
@@ -148,7 +148,7 @@
     - Jerome Le Ny
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Virtual
-  date      : 13–15 Dec, 2021
+  date      : Dec 2021
   pdf       : projects/human-automation/conference/2021-cdc.pdf
   slides    : projects/human-automation/slides/2021-cdc.pdf
 
@@ -163,7 +163,7 @@
     - Hakimeh Purmehdi
   conference: "IEEE International Conference on Communications (ICC)"
   location  : Montreal, Canada
-  date      : 14–18 Jun, 2021
+  date      : Jun 2021
   pdf       : projects/communication/conference/2021-icc.pdf
   video     : projects/communication/videos/2021-icc.mp4
 
@@ -175,7 +175,7 @@
     - Edmund Yeh
   conference: "International Symposium on Modeling and Optimization in Mobile, Ad Hoc and Wireless Networks (WiOpt)"
   location  : Volos, Greece
-  date      : 15–19 Jun, 2020
+  date      : Jun 2020
   pdf       : projects/communication/conference/2020-wiopt.pdf
   code      : https://doi.org/10.24433/CO.8504008.v1
 
@@ -186,7 +186,7 @@
     - Aditya Mahajan
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Nice, France
-  date      : 11–13 Dec, 2019
+  date      : Dec 2019
   pdf       : projects/bandits/conference/2019-cdc.pdf
   slides    : projects/bandits/slides/2019-cdc.pdf
   code      : https://codeocean.com/capsule/2ef7d3c2-8e3f-49b1-a61e-fd948e07bf47/tree/v1
@@ -198,7 +198,7 @@
     - Aditya Mahajan
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Nice, France
-  date      : 11–13 Dec, 2019
+  date      : Dec 2019
   pdf       : projects/mdp/conference/2019-cdc.pdf
   slides    : projects/mdp/slides/2019-cdc.pdf
 
@@ -209,7 +209,7 @@
     - Aditya Mahajan
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Nice, France
-  date      : 11–13 Dec, 2019
+  date      : Dec 2019
   pdf       : projects/linear-systems/conference/2019-cdc.pdf
 
 - index     : 52
@@ -219,7 +219,7 @@
     - Aditya Mahajan
   conference: Canadian Workshop on Information Theory
   location  : Hamilton, Ontario, Canada
-  date      : 2–6 June, 2019
+  date      : June 2019
   pdf       : projects/bandits/conference/2019-cwit.pdf
   slides    : projects/bandits/slides/2019-cwit.pdf
 
@@ -230,7 +230,7 @@
     - Aditya Mahajan
   conference: Reinforcement Learning and Decision Making (RLDM)
   location  : Montreal, Canada
-  date      : 7–10 July, 2019
+  date      : July 2019
   pdf       : projects/mdp/conference/2019-rldm.pdf
 
 
@@ -242,7 +242,7 @@
     - Aditya Mahajan
   conference: Reinforcement Learning and Decision Making (RLDM)
   location  : Montreal, Canada
-  date      : 7–10 July, 2019
+  date      : July 2019
   pdf       : projects/reinforcement-learning/conference/2019-rldm.pdf
 
 - index     : 49
@@ -253,7 +253,7 @@
     - Aditya Mahajan
   conference: AAMAS Workshop on Adaptive and Learning Agents
   location  : Montreal, Canada
-  date      : 13-17 May, 2019
+  date      : May 2019
   pdf       : projects/reinforcement-learning/conference/2019-ala.pdf
   poster    : projects/reinforcement-learning/posters/2019-ala.pdf
 
@@ -265,7 +265,7 @@
     - Aditya Mahajan
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Miami, Florida
-  date      : Dec 17–19, 2018
+  date      : Dec 2018
   pdf       : projects/info-structures/conference/2018-cdc.pdf
   slides    : projects/info-structures/slides/2018-cdc.pdf
 
@@ -277,7 +277,7 @@
     - Aditya Mahajan
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Miami, Florida
-  date      : Dec 17–19, 2018
+  date      : Dec 2018
   pdf       : projects/real-time/conference/2018-cdc.pdf
   slides    : projects/real-time/slides/2018-cdc.pdf
 
@@ -289,7 +289,7 @@
     - Aditya Mahajan
     - Aditya A. Paranjape
   location  : Miami, Florida
-  date      : Dec 17–19, 2018
+  date      : Dec 2018
   pdf       : projects/linear-systems/conference/2018-cdc.pdf
   slides    : projects/linear-systems/slides/2018-cdc.pptx
 
@@ -300,7 +300,7 @@
     - Aditya Mahajan
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Miami, Florida
-  date      : Dec 17–19, 2018
+  date      : Dec 2018
   pdf       : projects/reinforcement-learning/conference/2018-cdc.pdf
   slides    : projects/reinforcement-learning/slides/2018-cdc.pdf
 
@@ -311,7 +311,7 @@
     - Aditya Mahajan
   conference: IFAC Workshop on Distributed Estimation and Control in Networked Systems
   location  : Groningen, Netherlands
-  date      : Aug 27–28, 2018
+  date      : Aug 2018
   pdf       : projects/info-structures/conference/2018-necsys.pdf
   poster    : projects/info-structures/posters/2018-necsys.pdf
 
@@ -322,7 +322,7 @@
     - Aditya Mahajan
   conference: ICML/IJCAI/AAMAS Workshop on Planning and Learning (PAL-18)
   location  : Stockholm, Sweden
-  date      : July 15, 2018
+  date      : July 2018
   pdf       : projects/reinforcement-learning/conference/2018-pal.pdf
   poster    : projects/reinforcement-learning/posters/2018-pal.pdf
 
@@ -334,16 +334,17 @@
     - Aditya Mahajan
   conference: IEEE GlobalSIP Symposium on Control and Information Theoretic Approaches to Privacy and Security
   location  : Montreal, Canada
-  date      : Nov 14–16, 2017
+  date      : Nov 2017
   pdf       : projects/privacy/conference/2017-globalsip.pdf
   slides    : projects/privacy/slides/2017-globalsip.pdf
 
 - index     : 41
   title     : Remote estimation over control area networks
-  author    : Aditya Mahajan
+  authors   : 
+    - Aditya Mahajan
   conference: IEEE Vehicular Technology Conference (VTC), Networked Vehicles for Intelligent Transportation and Smart Grids (NetV) Workshop
   location  : Toronto, Canada
-  date      : Sep 24–27, 2017
+  date      : Sep 2017
   pdf       : projects/real-time/conference/2017-vtc.pdf
   slides    : projects/real-time/slides/2017-vtc.pdf
 
@@ -354,7 +355,7 @@
     - Aditya Mahajan
   conference: IFAC World Congress
   location  : Toulouse, France
-  date      : July 9–14, 2017
+  date      : July 2017
   pdf       : projects/info-structures/conference/2017-ifac.pdf
   slides    : projects/info-structures/slides/2017-ifac.pdf
 
@@ -365,7 +366,7 @@
     - Aditya Mahajan
   conference: IEEE International Symposium on Information Theory (ISIT)
   location  : Aachen, Germany
-  date      : June 25–30, 2017
+  date      : June 2017
   pdf       : projects/real-time/conference/2017-isit.pdf
   slides    : projects/real-time/slides/2017-isit.pdf
 
@@ -377,7 +378,7 @@
     - Aditya Mahajan
   conference: American Control Conference (ACC)
   location  : Seattle, WA
-  date      : May 24–26, 2017
+  date      : May 2017
   pdf       : projects/real-time/conference/2017-acc.pdf
   slides    : projects/real-time/slides/2017-acc.pdf
 
@@ -389,7 +390,7 @@
     - Brett Meyer
   conference: Design, Automation and Test in Europe (DATE)
   location  : Laussane, Switzerland
-  date      : March 27–31, 2017
+  date      : March 2017
   pdf       : projects/bandits/conference/2017-date.pdf
   slides    : projects/bandits/slides/2017-date.pdf
 
@@ -400,7 +401,7 @@
     - Aditya Mahajan
   conference: IFAC Workshop on Distributed Estimation and Control in Networked Systems
   location  : Tokyo, Japan
-  date      : Sep 8–9, 2016
+  date      : Sep 2016
   pdf       : projects/real-time/conference/2016-ifac.pdf
   poster    : projects/real-time/posters/2016-ifac.pdf
   award     : Best Student Paper Award
@@ -412,7 +413,7 @@
     - Aditya Mahajan
   conference: IEEE International Symposium on Information Theory (ISIT)
   location  : Barcelona, Spain
-  date      : July 10–15, 2016
+  date      : July 2016
   pdf       : projects/real-time/conference/2016-isit.pdf
   slides    : projects/real-time/slides/2016-isit.pdf
 
@@ -424,7 +425,7 @@
     - Aditya Mahajan
   conference: American Control Conference (ACC)
   location  : Boston, MA
-  date      : July 6–8, 2016
+  date      : July 2016
   pdf       : projects/privacy/conference/2016-acc.pdf
   slides    : projects/privacy/slides/2016-acc.pdf
 
@@ -436,7 +437,7 @@
     - Aditya Mahajan
   conference: International Zurich Seminar on Communications
   location  : Zurich, Switzerland
-  date      : March 2–4, 2016
+  date      : March 2016
   pdf       : projects/privacy/conference/2016-izs.pdf
   slides    : projects/privacy/slides/2016-izs.pdf
 
@@ -447,7 +448,7 @@
     - Aditya Mahajan
   location  : Osaka, Japan
   conference: IEEE Conference on Decision and Control (CDC)
-  date      : Dec 15-18, 2015
+  date      : Dec 2015
   pdf       : projects/info-structures/conference/2015-cdc.pdf
 
 - index     : 31 
@@ -457,7 +458,7 @@
     - Aditya Mahajan
   location  : Osaka, Japan
   conference: IEEE Conference on Decision and Control (CDC)
-  date      : Dec 15-18, 2015
+  date      : Dec 2015
   pdf       : projects/decentralized-detection/conference/2015-cdc.pdf
   slides    : projects/decentralized-detection/slides/2015-cdc.pdf
 
@@ -468,7 +469,7 @@
     - Aditya Mahajan
   location  : Chicago, IL
   conference: American Control Conference (ACC)
-  date      : Jul 1–3, 2015
+  date      : Jul 2015
   pages     : 5449–5456 
   pdf       : projects/reinforcement-learning/conference/2015-acc.pdf
   slides    : projects/reinforcement-learning/slides/2015-acc.pdf
@@ -481,8 +482,8 @@
     - Aditya Mahajan
   conference: IEEE International Workshop on Signal Processing Advances in Wireless Communications (SPAWC)
   location  : Stockholm, Sweden
-  pages     : 375--379
-  date      : June 28–July 1, 2015
+  pages     : 375–379
+  date      : June 2015
   pdf       : projects/privacy/conference/2015-spawc.pdf
   poster    : projects/privacy/posters/2015-spawc.pdf
 
@@ -493,7 +494,7 @@
     - Aditya Mahajan
   conference: IEEE International Symposium on Information Theory (ISIT)
   location  : Hong Kong, China
-  date      : June 14-19, 2015
+  date      : June 2015
   pdf       : projects/real-time/conference/2015-isit.pdf
   slides    : projects/real-time/slides/2015-isit.pdf
 
@@ -504,7 +505,7 @@
     - Aditya Mahajan
   location  : Edmonton, AL
   conference: Reinforcement Learning and Decision Making (RLDM)
-  date      : Jun 7-10, 2015
+  date      : Jun 2015
   pdf       : projects/reinforcement-learning/conference/2015-rldm.pdf
 
 - index     : 26
@@ -516,7 +517,7 @@
   location  : Halifax, NS
   conference: Canadian Conference on Elecrtical and Computer Engineering (CCECE)
   pages     : 1299–1306
-  date      : May 3-6, 2015
+  date      : May 2015
   pdf       : projects/bandits/conference/2015-ccece.pdf
   slides    : projects/bandits/slides/2015-ccece.pdf
 
@@ -527,8 +528,8 @@
     - Aditya Mahajan
   conference: Information Theory Workshop (ITW)
   location  : Jerusleum, Israel
-  pages     : 1--5
-  date      : Apr 26–May 1, 2015
+  pages     : 1–5
+  date      : Apr 2015
   pdf       : projects/real-time/conference/2015-itw.pdf
   slides    : projects/real-time/slides/2015-itw.pdf
 
@@ -538,7 +539,7 @@
     - Jalal Arabneydi
     - Aditya Mahajan
   conference: Indian Control Conference
-  date      : Jan 6-7, 2015
+  date      : Jan 2015
   location  : Chennai, India
   pages     : 95-100
   slides    : projects/info-structures/slides/2015-icc.pdf
@@ -552,7 +553,7 @@
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Los Angeles, CA
   pages     : 1041–1046
-  date      : Dec 15-17, 2014
+  date      : Dec 2014
   slides    : projects/real-time/slides/2014-cdc.pdf
   pdf       : projects/real-time/conference/2014-cdc.pdf
 
@@ -562,7 +563,7 @@
     - Jalal Arabneydi
     - Aditya Mahajan
   conference: IEEE Conference on Decision and Control (CDC)
-  date      : Dec 15-17, 2014
+  date      : Dec 2014
   pages     : 1669–1674
   location  : Los Angeles, CA
   slides    : projects/info-structures/slides/2014-cdc.pdf
@@ -575,7 +576,7 @@
     - Jhelum Chakravorty
     - Aditya Mahajan
   conference: Allerton conference on communication, control, and computing
-  date      : Oct 1-3, 2014
+  date      : Oct 2014
   location  : Monticello, IL
   pdf       : projects/real-time/conference/2014-allerton.pdf
   slides    : projects/real-time/slides/2014-allerton.pdf
@@ -599,17 +600,18 @@
     - Nuno C. Martins
     - Serdar Yüksel
   conference: IEEE Conference on Decision and Control (CDC)
-  date      : Dec 10-13, 2013
+  date      : Dec 2013
   location  : Florence, Italy
   pdf       : projects/info-structures/conference/2013-cdc.pdf
 
 - index     : 18
   title     : Structure of optimal policies in active sensing
-  author    : Aditya Mahajan
+  authors   : 
+    - Aditya Mahajan
   conference: IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)
   number    : 37th
   pages     : 5265-5268
-  date      : March 25-30, 2012
+  date      : March 2012
   location  : Kyoto, Japan
   pdf       : projects/active-sensing/conference/2012-icassp.pdf
   slides    : projects/active-sensing/slides/2012-icassp.pdf
@@ -617,10 +619,11 @@
 - index     : 17
   title     : >-
     Optimal decentralized control of coupled subsystems with control sharing
-  author    : Aditya Mahajan
+  authors   : 
+    - Aditya Mahajan
   conference: IEEE Conference on Decision and Control (CDC)
   number    : 50th
-  date      : Dec 12-15, 2011
+  date      : Dec 2011
   location  : Orlando, FL
   pages     : 5726-5731
   slides    : projects/info-structures/slides/2011-cdc.pdf
@@ -628,7 +631,8 @@
 
 - index     : 16
   title     : Optimal transmission policies for two-user multiple access broadcast using dynamic team theory
-  author    : Aditya Mahajan
+  authors   :
+    - Aditya Mahajan
   conference: Allerton conference on communication, control, and computing
   number    : 48th
   pages     : 806-813
@@ -673,7 +677,7 @@
   conference: IEEE International Symposium on Information Theory (ISIT)
   pages     : 236-240
   location  : Austin, TX
-  date      : June 13-18, 2010
+  date      : June 2010
   pdf       : projects/compound-channel/conference/2010-isit.pdf
   slides    : projects/compound-channel/slides/2010-isit.pdf
 
@@ -688,13 +692,14 @@
   number    : 44th
   location  : Princeton, NJ
   pages     : 1–6
-  date      : March 17-19, 2010
+  date      : March 2010
   pdf       : projects/compound-channel/conference/2010-ciss.pdf
   slides    : projects/compound-channel/slides/2010-ciss.pdf
 
 - index     : 11
   title     : Optimal sequential transmission over degraded broadcast channels with nested feedback 
-  author    : Aditya Mahajan
+  authors   :
+    - Aditya Mahajan
   conference: Allerton conference on communication, control, and computing
   number    : 47th
   pages     : 795-802
@@ -740,7 +745,7 @@
   note      : Control over Communication Channels (ConCom) Workshop
   location  : Seoul, South Korea
   pages     : 1–8
-  date      : June 27, 2009
+  date      : June 2009
   pdf       : projects/graphical-models/conference/2009-concom.pdf
   slides    : projects/graphical-models/slides/2009-concom.pdf
 
@@ -755,7 +760,7 @@
   number    : 46th
   pages     : 1440-1449
   location  : Monticello, IL
-  date      : Sep 23-26, 2008
+  date      : Sep 2008
   pdf       : projects/info-structures/conference/2008-allerton.pdf
   slides    : projects/info-structures/slides/2008-allerton.pdf
 
@@ -775,7 +780,7 @@
   conference: Earth Science Technology Conference (ESTC)
   location  : East Alephi, MD
   pages     : 1–8
-  date      : June 24-26, 2008
+  date      : June 2008
   pdf       : projects/soil-moisture/conference/2008-estc.pdf
 
 - index     : 5
@@ -787,7 +792,7 @@
   number    : 9th
   pages     : 382-387
   location  : Gothenburg, Sweden
-  date      : May 28-30, 2008
+  date      : May 2008
   pdf       : projects/diagnostics/conference/2008-wodes.pdf
   slides    : projects/diagnostics/slides/2008-wodes.pdf
 
@@ -799,7 +804,7 @@
   conference: IEEE Information Theory Workshop (ITW)
   pages     : 283-287
   location  : Lake Tahoe, CA
-  date      : Sep 13-15, 2007
+  date      : Sep 2007
   pdf       : projects/real-time/conference/2007-itw.pdf
   slides    : projects/real-time/slides/2007-itw.pdf
 
@@ -814,7 +819,7 @@
   number    : 45th
   location  : San Diego, CA
   pages     : 3228-3235
-  date      : Dec 13-15, 2006
+  date      : Dec 2006
   pdf       : projects/networked-control/conference/2006-cdc.pdf
   slides    : projects/networked-control/slides/2006-cdc.pdf
 
@@ -826,7 +831,7 @@
   conference: IEEE International Symposium on Information Theory (ISIT)
   pages     : 2319-2323
   location  : Seattle, WA
-  date      : July 9-14, 2006
+  date      : July 2006
   pdf       : projects/real-time/conference/2006-isit.pdf
   slides    : projects/real-time/slides/2006-isit.pdf
 
@@ -839,6 +844,6 @@
   number    : 43rd
   location  : Monticello, IL
   pages     : 1–10
-  date      : Sep 28-30, 2005
+  date      : Sep 2005
   pdf       : projects/real-time/conference/2005-allerton.pdf
   slides    : projects/real-time/slides/2005-allerton.pdf

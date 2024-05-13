@@ -1,0 +1,43 @@
+<% 
+function joinWithCommasAnd(array) {
+    if (array.length === 0) return '';
+    if (array.length === 1) return array[0];
+    if (array.length === 2) return array.join(' and ');
+
+    const lastItem = array.pop();
+    return `${array.join(', ')}, and ${lastItem}`;
+}
+%>
+
+```{=html}
+<ol>
+<% for (const item of items) { %>
+    <li value="<%- item.index %>"><p>
+      <strong><%- item.title %></strong>
+      <% if (item.pdf) { %>
+        (<a href="files/<%- item.pdf %>">pdf</a>)
+      <% } %>
+      <% if (item.slides) { %>
+        (<a href="files/<%- item.slides %>">slides</a>)
+      <% } %>
+      <% if (item.code) { %>
+        (<a href="<%- item.code %>">code</a>)
+      <% } %>
+      <br />
+      <%- joinWithCommasAnd(item.authors) %>
+      <br />
+      <% if (item.conference) { %> 
+        <em><%- item.conference %></em>, 
+      <% } %>
+      <% if (item.location) { %> 
+        <%- item.location %>,
+      <% } %>
+      <%- item.date %>.
+      <% if (item.award) { %>
+      Receipient of <strong><%- item.award %></strong>
+      <br />
+      <% } %>
+    </p></li>
+<% } %>
+</ol>
+```

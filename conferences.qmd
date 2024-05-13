@@ -1,1 +1,14 @@
+---
+date-format: "MMM YYYY"
+
+listing:
+  - id: conferences
+    template: ejs/conferences.ejs
+    contents: data/conferences.yaml
+
+---
+
 ## Conference Publications
+
+:::{conferences}
+:::
