@@ -57,10 +57,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-id','listing-title','listing-seminar','listing-slides','listing-video','listing-date','listing-city','listing-note',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-id','listing-title','listing-seminar','listing-slides','listing-date','listing-video','listing-city','listing-note',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       page: 25,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-id","listing-title","listing-seminar","listing-slides","listing-video","listing-date","listing-city","listing-note"],
+      searchColumns: ["listing-id","listing-title","listing-seminar","listing-slides","listing-date","listing-video","listing-city","listing-note"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -183,10 +183,36 @@ window.Quarto = {
 <div id="listing-seminars" class="quarto-listing quarto-listing-container-custom">
 <ul>
 
+    <li value="rmab-23"><p>
+      <strong>Reinforcement learning in restless bandits</strong>
+      
+        (<a href="files/talks/23-rmab.html">slides</a>)
+      
+      
+      <br>
+       
+        <em>Workshop on restless bandits, Grenoble</em>, 
+      
+      Nov 2023.
+    </p></li>
+
+    <li value="mila-23"><p>
+      <strong>Planning (and learning) in multi-agent systems</strong>
+      
+        (<a href="files/talks/23-mila-rl.pdf">slides</a>)
+      
+      
+      <br>
+       
+        <em>MILA RL Workshop, Mt Tremblant</em>, 
+      
+      Jun 2023.
+    </p></li>
+
     <li value="tamu-22"><p>
       <strong>Approximate planning and learning for partially observed systems</strong>
       
-        (<a href="files/talks/22-tamu.pdf">pdf</a>)
+        (<a href="files/talks/22-tamu.pdf">slides</a>)
       
       
         (<a href="">video</a>)
@@ -201,7 +227,7 @@ window.Quarto = {
     <li value="mfg-21"><p>
       <strong>Reinforcement Learning in Stationary Mean-Field Games</strong>
       
-        (<a href="files/talks/21-mean-field-seminar.pdf">pdf</a>)
+        (<a href="files/talks/21-mean-field-seminar.pdf">slides</a>)
       
       
         (<a href="">video</a>)
@@ -216,7 +242,7 @@ window.Quarto = {
     <li value="approx-mpe-21"><p>
       <strong>Robustness and sample complexity of model-based MARL for general-sum Markov games</strong>
       
-        (<a href="files/talks/21-combinatorial-games.pdf">pdf</a>)
+        (<a href="files/talks/21-combinatorial-games.pdf">slides</a>)
       
       
       <br>
@@ -229,7 +255,7 @@ window.Quarto = {
     <li value="rl-network-teams-21"><p>
       <strong>Learning to control network-coupled subsystems with unknown dynamics</strong>
       
-        (<a href="files/talks/21-pims.pdf">pdf</a>)
+        (<a href="files/talks/21-pims.pdf">slides</a>)
       
       
         (<a href="">video</a>)
@@ -244,7 +270,7 @@ window.Quarto = {
     <li value="restoq-21"><p>
       <strong>Approximate planning and learning for partially observed systems</strong>
       
-        (<a href="files/talks/21-restoq.pdf">pdf</a>)
+        (<a href="files/talks/21-restoq.pdf">slides</a>)
       
       
         (<a href="">video</a>)
@@ -259,7 +285,7 @@ window.Quarto = {
     <li value="umich-20"><p>
       <strong>Approximate planning and learning for partially observed systems</strong>
       
-        (<a href="files/talks/20-umich.pdf">pdf</a>)
+        (<a href="files/talks/20-umich.pdf">slides</a>)
       
       
         (<a href="">video</a>)
@@ -274,7 +300,7 @@ window.Quarto = {
     <li value="mila-20"><p>
       <strong>Approximate planning and learning for partially observed systems</strong>
       
-        (<a href="files/talks/mila-2020.pdf">pdf</a>)
+        (<a href="files/talks/mila-2020.pdf">slides</a>)
       
       
       <br>
@@ -287,7 +313,7 @@ window.Quarto = {
     <li value="cmo-19"><p>
       <strong>Information state (and its approximations) for stochastic control</strong>
       
-        (<a href="files/talks/19-cmo.pdf">pdf</a>)
+        (<a href="files/talks/19-cmo.pdf">slides</a>)
       
       
       <br>
@@ -300,7 +326,7 @@ window.Quarto = {
     <li value="fields-2017"><p>
       <strong>Decentralized Kalman Filtering</strong>
       
-        (<a href="files/talks/17-fields.pdf">pdf</a>)
+        (<a href="files/talks/17-fields.pdf">slides</a>)
       
       
       <br>
@@ -324,7 +350,7 @@ window.Quarto = {
     <li value="bliss-2017"><p>
       <strong>Fundamental limits of remote estimation</strong>
       
-        (<a href="files/talks/17-bliss.pdf">pdf</a>)
+        (<a href="files/talks/17-bliss.pdf">slides</a>)
       
       
       <br>
@@ -337,7 +363,7 @@ window.Quarto = {
     <li value="it-forum-2016"><p>
       <strong>Remote state estimation over erasure channels: structure of optimal strategies and fundamental limits</strong>
       
-        (<a href="files/talks/2016-it-forum.pdf">pdf</a>)
+        (<a href="files/talks/2016-it-forum.pdf">slides</a>)
       
       
       <br>
@@ -350,7 +376,7 @@ window.Quarto = {
     <li value="allerton-2016"><p>
       <strong>Optimal decentralized control of systems with partially exchangeable agents</strong>
       
-        (<a href="files/projects/info-structures/slides/2016-allerton.pdf">pdf</a>)
+        (<a href="files/projects/info-structures/slides/2016-allerton.pdf">slides</a>)
       
       
       <br>
@@ -363,7 +389,7 @@ window.Quarto = {
     <li value="wiopt-2016"><p>
       <strong>Fundamental limits of remote estimation under communication constraints</strong>
       
-        (<a href="files/projects/real-time/slides/2016-wiopt.pdf">pdf</a>)
+        (<a href="files/projects/real-time/slides/2016-wiopt.pdf">slides</a>)
       
       
       <br>
@@ -376,7 +402,7 @@ window.Quarto = {
     <li value="rutgers-2015"><p>
       <strong>Remote estimation of Markov processes under communication constraints</strong>
       
-        (<a href="files/talks/rutgers-2015.pdf">pdf</a>)
+        (<a href="files/talks/rutgers-2015.pdf">slides</a>)
       
       
       <br>
@@ -400,7 +426,7 @@ window.Quarto = {
     <li value="cybernetics-2015"><p>
       <strong>Fundamental limits of remote-estimation under communication constraints</strong>
       
-        (<a href="files/talks/cybernetics-2015.pdf">pdf</a>)
+        (<a href="files/talks/cybernetics-2015.pdf">slides</a>)
       
       
       <br>
@@ -413,7 +439,7 @@ window.Quarto = {
     <li value="toronto-2014"><p>
       <strong>Optimal real-time transmission of Markov sources under constraints on the number of transmissions</strong>
       
-        (<a href="files/talks/toronto-2014.pdf">pdf</a>)
+        (<a href="files/talks/toronto-2014.pdf">slides</a>)
       
       
       <br>
@@ -426,7 +452,7 @@ window.Quarto = {
     <li value="banff-2014"><p>
       <strong>Decentralized stochastic control: The person-by-person and common information approaches</strong>
       
-        (<a href="files/talks/banff-2014.pdf">pdf</a>)
+        (<a href="files/talks/banff-2014.pdf">slides</a>)
       
       
         (<a href="">video</a>)
@@ -441,7 +467,7 @@ window.Quarto = {
     <li value="reparti-2014"><p>
       <strong>Decentralized stochastic control</strong>
       
-        (<a href="files/talks/reparti-2014.pdf">pdf</a>)
+        (<a href="files/talks/reparti-2014.pdf">slides</a>)
       
       
       <br>
@@ -465,7 +491,7 @@ window.Quarto = {
     <li value="common-info-2012"><p>
       <strong>Optimal decentralized stochastic control: A common information approach</strong>
       
-        (<a href="files/talks/gerad-2012.pdf">pdf</a>)
+        (<a href="files/talks/gerad-2012.pdf">slides</a>)
       
       
       <br>
@@ -489,7 +515,7 @@ window.Quarto = {
     <li value="common-info-2012"><p>
       <strong>Optimal decentralized stochastic control: A common information approach</strong>
       
-        (<a href="files/talks/gerad-2012.pdf">pdf</a>)
+        (<a href="files/talks/gerad-2012.pdf">slides</a>)
       
       
       <br>
@@ -502,7 +528,7 @@ window.Quarto = {
     <li value="birs-2012"><p>
       <strong>An overview of structural results in real-time communication</strong>
       
-        (<a href="files/talks/birs-2012.pdf">pdf</a>)
+        (<a href="files/talks/birs-2012.pdf">slides</a>)
       
       
       <br>
@@ -515,7 +541,7 @@ window.Quarto = {
     <li value="queens-2011"><p>
       <strong>Separation results for decentralized stochastic control under delayed sharing of information</strong>
       
-        (<a href="files/talks/queens-2011.pdf">pdf</a>)
+        (<a href="files/talks/queens-2011.pdf">slides</a>)
       
       
       <br>
@@ -528,7 +554,7 @@ window.Quarto = {
     <li value="bellairs-2011"><p>
       <strong>Introduction to sequential teams</strong>
       
-        (<a href="files/talks/bellairs-2011.pdf">pdf</a>)
+        (<a href="files/talks/bellairs-2011.pdf">slides</a>)
       
       
       <br>
@@ -541,7 +567,7 @@ window.Quarto = {
     <li value="job-2010"><p>
       <strong>Decentralized decision making under uncertainty</strong>
       
-        (<a href="files/talks/mcgill-2010.pdf">pdf</a>)
+        (<a href="files/talks/mcgill-2010.pdf">slides</a>)
       
       
       <br>
@@ -554,7 +580,7 @@ window.Quarto = {
     <li value="job-2010"><p>
       <strong>Decentralized decision making under uncertainty</strong>
       
-        (<a href="files/talks/mcgill-2010.pdf">pdf</a>)
+        (<a href="files/talks/mcgill-2010.pdf">slides</a>)
       
       
       <br>
@@ -600,7 +626,7 @@ window.Quarto = {
     <li value="notre-dame-2010"><p>
       <strong>Structure of optimal decentralized control policies: an axiomatic approach </strong>
       
-        (<a href="files/talks/notre-dame-2010.pdf">pdf</a>)
+        (<a href="files/talks/notre-dame-2010.pdf">slides</a>)
       
       
       <br>
@@ -613,7 +639,7 @@ window.Quarto = {
     <li value="ucla-2010"><p>
       <strong>Role of information structures in decentralized decision making</strong>
       
-        (<a href="files/talks/ucla-2010.pdf">pdf</a>)
+        (<a href="files/talks/ucla-2010.pdf">slides</a>)
       
       
       <br>
@@ -626,7 +652,7 @@ window.Quarto = {
     <li value="michigan-2009"><p>
       <strong>Graphical reasoning for decentralized systems</strong>
       
-        (<a href="files/talks/michigan-2009.pdf">pdf</a>)
+        (<a href="files/talks/michigan-2009.pdf">slides</a>)
       
       
       <br>
@@ -639,7 +665,7 @@ window.Quarto = {
     <li value="canada-2009"><p>
       <strong>Optimal design of sequential teams</strong>
       
-        (<a href="files/talks/canada-2009.pdf">pdf</a>)
+        (<a href="files/talks/canada-2009.pdf">slides</a>)
       
       
       <br>
@@ -652,7 +678,7 @@ window.Quarto = {
     <li value="canada-2009"><p>
       <strong>Optimal design of sequential teams</strong>
       
-        (<a href="files/talks/canada-2009.pdf">pdf</a>)
+        (<a href="files/talks/canada-2009.pdf">slides</a>)
       
       
       <br>
