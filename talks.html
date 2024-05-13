@@ -25,6 +25,8 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -45,7 +47,66 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-seminars .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-id','listing-title','listing-seminar','listing-slides','listing-video','listing-date','listing-city','listing-note',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-id","listing-title","listing-seminar","listing-slides","listing-video","listing-date","listing-city","listing-note"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-seminars'] = new List('listing-seminars', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -119,6 +180,497 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="talks-and-seminars" class="level2">
 <h2 data-anchor-id="talks-and-seminars">Talks and Seminars</h2>
+<div id="listing-seminars" class="quarto-listing quarto-listing-container-custom">
+<ul>
+
+    <li value="tamu-22"><p>
+      <strong>Approximate planning and learning for partially observed systems</strong>
+      
+        (<a href="files/talks/22-tamu.pdf">pdf</a>)
+      
+      
+        (<a href="">video</a>)
+      
+      <br>
+       
+        <em>University of Texas, A&amp;M</em>, 
+      
+      Oct 2022.
+    </p></li>
+
+    <li value="mfg-21"><p>
+      <strong>Reinforcement Learning in Stationary Mean-Field Games</strong>
+      
+        (<a href="files/talks/21-mean-field-seminar.pdf">pdf</a>)
+      
+      
+        (<a href="">video</a>)
+      
+      <br>
+       
+        <em>Machine Learning and Mean-Field Games</em>, 
+      
+      Nov 2021.
+    </p></li>
+
+    <li value="approx-mpe-21"><p>
+      <strong>Robustness and sample complexity of model-based MARL for general-sum Markov games</strong>
+      
+        (<a href="files/talks/21-combinatorial-games.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>Workshop on Agent behavior in combinatorial game theory</em>, 
+      
+      Nov 2021.
+    </p></li>
+
+    <li value="rl-network-teams-21"><p>
+      <strong>Learning to control network-coupled subsystems with unknown dynamics</strong>
+      
+        (<a href="files/talks/21-pims.pdf">pdf</a>)
+      
+      
+        (<a href="">video</a>)
+      
+      <br>
+       
+        <em>Workshop on Mean-field games on Networks</em>, 
+      
+      Nov 2021.
+    </p></li>
+
+    <li value="restoq-21"><p>
+      <strong>Approximate planning and learning for partially observed systems</strong>
+      
+        (<a href="files/talks/21-restoq.pdf">pdf</a>)
+      
+      
+        (<a href="">video</a>)
+      
+      <br>
+       
+        <em>Reinforcement learning and sotchastic control in queues and networks (ReStoq) Workshop, WiOpt</em>, 
+      
+      Oct 2021.
+    </p></li>
+
+    <li value="umich-20"><p>
+      <strong>Approximate planning and learning for partially observed systems</strong>
+      
+        (<a href="files/talks/20-umich.pdf">pdf</a>)
+      
+      
+        (<a href="">video</a>)
+      
+      <br>
+       
+        <em>Communication and Signal Processing Seminar, University of Michigan</em>, 
+      
+      Feb 2020.
+    </p></li>
+
+    <li value="mila-20"><p>
+      <strong>Approximate planning and learning for partially observed systems</strong>
+      
+        (<a href="files/talks/mila-2020.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>Mila RL Reading Group</em>, 
+      
+      Feb 2020.
+    </p></li>
+
+    <li value="cmo-19"><p>
+      <strong>Information state (and its approximations) for stochastic control</strong>
+      
+        (<a href="files/talks/19-cmo.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>BIRS-CMO Workshop on Multi-Stage Stochastic Optimization for Clean Energy Transition</em>, 
+      
+      Sep 2019.
+    </p></li>
+
+    <li value="fields-2017"><p>
+      <strong>Decentralized Kalman Filtering</strong>
+      
+        (<a href="files/talks/17-fields.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>Fields Workshop on Stochastic Processes and their Applications, Ottawa</em>, 
+      
+      Aug 2017.
+    </p></li>
+
+    <li value="michigan-2017"><p>
+      <strong>Mean-field teams</strong>
+      
+      
+      <br>
+       
+        <em>Systems Science Seminar, University of Michigan</em>, 
+      
+      Jul 2017.
+    </p></li>
+
+    <li value="bliss-2017"><p>
+      <strong>Fundamental limits of remote estimation</strong>
+      
+        (<a href="files/talks/17-bliss.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>BLISS Seminar, UC Berkeley</em>, 
+      
+      Mar 2017.
+    </p></li>
+
+    <li value="it-forum-2016"><p>
+      <strong>Remote state estimation over erasure channels: structure of optimal strategies and fundamental limits</strong>
+      
+        (<a href="files/talks/2016-it-forum.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>IT Forum, Stanford</em>, 
+      
+      Nov 2016.
+    </p></li>
+
+    <li value="allerton-2016"><p>
+      <strong>Optimal decentralized control of systems with partially exchangeable agents</strong>
+      
+        (<a href="files/projects/info-structures/slides/2016-allerton.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>Allerton Conference on Communication, Control, and Computing</em>, 
+      
+      Sep 2016.
+    </p></li>
+
+    <li value="wiopt-2016"><p>
+      <strong>Fundamental limits of remote estimation under communication constraints</strong>
+      
+        (<a href="files/projects/real-time/slides/2016-wiopt.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>Modeling and Optimization in Mobile, Ad-Hoc Wireless Networks (WiOpt)</em>, 
+      
+      May 2016.
+    </p></li>
+
+    <li value="rutgers-2015"><p>
+      <strong>Remote estimation of Markov processes under communication constraints</strong>
+      
+        (<a href="files/talks/rutgers-2015.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>Applied Probability Conference, Rutgers</em>, 
+      
+      Oct 2015.
+    </p></li>
+
+    <li value="usc-2015"><p>
+      <strong>Mean-field teams</strong>
+      
+      
+      <br>
+       
+        <em>CommNets Seminar, USC</em>, 
+      
+      Aug 2015.
+    </p></li>
+
+    <li value="cybernetics-2015"><p>
+      <strong>Fundamental limits of remote-estimation under communication constraints</strong>
+      
+        (<a href="files/talks/cybernetics-2015.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>Mathematical Cybernetics: Hybrid, Stochastic and Decentralized Systems</em>, 
+      
+      May 2015.
+    </p></li>
+
+    <li value="toronto-2014"><p>
+      <strong>Optimal real-time transmission of Markov sources under constraints on the number of transmissions</strong>
+      
+        (<a href="files/talks/toronto-2014.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>University of Toronto</em>, 
+      
+      Nov 2014.
+    </p></li>
+
+    <li value="banff-2014"><p>
+      <strong>Decentralized stochastic control: The person-by-person and common information approaches</strong>
+      
+        (<a href="files/talks/banff-2014.pdf">pdf</a>)
+      
+      
+        (<a href="">video</a>)
+      
+      <br>
+       
+        <em>BIRS Workshop on Optimal Cooperation, Communication, and Learning in Decentralized Systems</em>, 
+      
+      Oct 2014.
+    </p></li>
+
+    <li value="reparti-2014"><p>
+      <strong>Decentralized stochastic control</strong>
+      
+        (<a href="files/talks/reparti-2014.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>REPARTI (Regroupement pour l'étude des environnements partagés intelligents répartis) Workshop</em>, 
+      
+      May 2014.
+    </p></li>
+
+    <li value="gerad-2012"><p>
+      <strong>Dynamic Programming in Decentralized Stochastic Control</strong>
+      
+      
+      <br>
+       
+        <em>GERAD (Group d'Etudes et de Recherche en Analyse des Décisions) Seminar</em>, 
+      
+      Oct 2012.
+    </p></li>
+
+    <li value="common-info-2012"><p>
+      <strong>Optimal decentralized stochastic control: A common information approach</strong>
+      
+        (<a href="files/talks/gerad-2012.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>Concordia University</em>, 
+      
+      Oct 2012.
+    </p></li>
+
+    <li value="cadarache-2012"><p>
+      <strong>Optimal decentralized stochastic control: The designer and common information approaches</strong>
+      
+      
+      <br>
+       
+        <em>CEA-EDF-INRIA Summer School on Stochastic Optimization</em>, 
+      
+      Jul 2012.
+    </p></li>
+
+    <li value="common-info-2012"><p>
+      <strong>Optimal decentralized stochastic control: A common information approach</strong>
+      
+        (<a href="files/talks/gerad-2012.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>GERAD (Group d'Etudes et de Recherche en Analyse des Décisions) Seminar</em>, 
+      
+      Apr 2012.
+    </p></li>
+
+    <li value="birs-2012"><p>
+      <strong>An overview of structural results in real-time communication</strong>
+      
+        (<a href="files/talks/birs-2012.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>BIRS workshop on interactive information theory</em>, 
+      
+      Jan 2012.
+    </p></li>
+
+    <li value="queens-2011"><p>
+      <strong>Separation results for decentralized stochastic control under delayed sharing of information</strong>
+      
+        (<a href="files/talks/queens-2011.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>Queen's University</em>, 
+      
+      Jul 2011.
+    </p></li>
+
+    <li value="bellairs-2011"><p>
+      <strong>Introduction to sequential teams</strong>
+      
+        (<a href="files/talks/bellairs-2011.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>MITACS workshop on fusion and inference in networks, Bellairs Insitute</em>, 
+      
+      Mar 2011.
+    </p></li>
+
+    <li value="job-2010"><p>
+      <strong>Decentralized decision making under uncertainty</strong>
+      
+        (<a href="files/talks/mcgill-2010.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>Ecole des Pont</em>, 
+      
+      Jun 2010.
+    </p></li>
+
+    <li value="job-2010"><p>
+      <strong>Decentralized decision making under uncertainty</strong>
+      
+        (<a href="files/talks/mcgill-2010.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>McGill University</em>, 
+      
+      May 2010.
+    </p></li>
+
+    <li value="mac-feedback-2010"><p>
+      <strong>Auxiliary random variables in multi-terminal communication with feedback: a decentralized control perspective</strong>
+      
+      
+      <br>
+       
+        <em>University of California</em>, 
+      
+      Apr 2010.
+    </p></li>
+
+    <li value="mac-feedback-2010"><p>
+      <strong>Auxiliary random variables in multi-terminal communication with feedback: a decentralized control perspective</strong>
+      
+      
+      <br>
+       
+        <em>Stanford University</em>, 
+      
+      Apr 2010.
+    </p></li>
+
+    <li value="uiuc-2010"><p>
+      <strong>Interconnections between information theory and decentralized stochastic control</strong>
+      
+      
+      <br>
+       
+        <em>University of Illinois</em>, 
+      
+      Mar 2010.
+    </p></li>
+
+    <li value="notre-dame-2010"><p>
+      <strong>Structure of optimal decentralized control policies: an axiomatic approach </strong>
+      
+        (<a href="files/talks/notre-dame-2010.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>University of Notre Dame</em>, 
+      
+      Mar 2010.
+    </p></li>
+
+    <li value="ucla-2010"><p>
+      <strong>Role of information structures in decentralized decision making</strong>
+      
+        (<a href="files/talks/ucla-2010.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>University of California</em>, 
+      
+      Feb 2010.
+    </p></li>
+
+    <li value="michigan-2009"><p>
+      <strong>Graphical reasoning for decentralized systems</strong>
+      
+        (<a href="files/talks/michigan-2009.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>University of Michigan</em>, 
+      
+      Oct 2009.
+    </p></li>
+
+    <li value="canada-2009"><p>
+      <strong>Optimal design of sequential teams</strong>
+      
+        (<a href="files/talks/canada-2009.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>Queen's University</em>, 
+      
+      May 2009.
+    </p></li>
+
+    <li value="canada-2009"><p>
+      <strong>Optimal design of sequential teams</strong>
+      
+        (<a href="files/talks/canada-2009.pdf">pdf</a>)
+      
+      
+      <br>
+       
+        <em>McGill University</em>, 
+      
+      May 2009.
+    </p></li>
+
+</ul>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="seminars-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div>
+
 
 
 </section>
