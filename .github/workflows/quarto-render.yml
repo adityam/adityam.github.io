@@ -13,8 +13,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.PERSONAL_FILES }}
-          submodules: recursive
         
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
