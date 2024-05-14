@@ -10,7 +10,6 @@ website:
 
   navbar:
     background: primary
-    title: false
 
     right:
       - text: Home
