@@ -1,5 +1,13 @@
+- index     : 42
+  title     : "Agent-state based policies in POMDPs: Beyond belief-state MDPs"
+  authors   :
+    - Amit Sinha
+    - Aditya Mahajan
+  date      : May 2024
+  pdfs      : projects/reinforcement-learning/conference/2024-pomdp-tutorial.pdf
+
 - index     : 41
-  title     : "Model approximation in MDPs with unbounded per-step cost 	"
+  title     : "Model approximation in MDPs with unbounded per-step cost"
   authors   :
     - Berk Bozkurt
     - Aditya Mahajan
