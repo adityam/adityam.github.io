@@ -57,9 +57,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-index','listing-title','listing-authors','listing-status','listing-date','listing-arxiv','listing-pdf',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-index','listing-title','listing-authors','listing-date','listing-pdfs','listing-arxiv','listing-pdf',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       
-      searchColumns: ["listing-index","listing-title","listing-authors","listing-status","listing-date","listing-arxiv","listing-pdf"],
+      searchColumns: ["listing-index","listing-title","listing-authors","listing-date","listing-pdfs","listing-arxiv","listing-pdf"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -85,10 +85,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-index','listing-title','listing-authors','listing-journal','listing-date','listing-pdf','listing-doi','listing-location','listing-arxiv','listing-code','listing-pages','listing-volume','listing-number','listing-url','listing-slides','listing-poster','listing-acmid','listing-status','listing-award','listing-note',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-index','listing-title','listing-authors','listing-journal','listing-date','listing-pdf','listing-doi','listing-location','listing-arxiv','listing-code','listing-url','listing-pages','listing-volume','listing-number','listing-slides','listing-poster','listing-acmid','listing-status','listing-award','listing-note',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       page: 25,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-index","listing-title","listing-authors","listing-journal","listing-date","listing-pdf","listing-doi","listing-location","listing-arxiv","listing-code","listing-pages","listing-volume","listing-number","listing-url","listing-slides","listing-poster","listing-acmid","listing-status","listing-award","listing-note"],
+      searchColumns: ["listing-index","listing-title","listing-authors","listing-journal","listing-date","listing-pdf","listing-doi","listing-location","listing-arxiv","listing-code","listing-url","listing-pages","listing-volume","listing-number","listing-slides","listing-poster","listing-acmid","listing-status","listing-award","listing-note"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -284,8 +284,26 @@ window.Quarto = {
 <div id="listing-preprints" class="quarto-listing quarto-listing-container-custom">
 <ol>
 
+    <li value="42"><p>
+      <strong>Agent-state based policies in POMDPs: Beyond belief-state MDPs</strong>
+      
+      
+      
+      <br>
+      Amit Sinha and Aditya Mahajan
+      <br>
+      
+      
+      
+      
+      May 2024.
+      <br>
+      
+      
+    </p></li>
+
     <li value="41"><p>
-      <strong>Model approximation in MDPs with unbounded per-step cost  </strong>
+      <strong>Model approximation in MDPs with unbounded per-step cost</strong>
       
         (<a href="http://arxiv.org/abs/2402.08813">arxiv</a>)
       
@@ -395,7 +413,7 @@ No matching items
       
       
       
-      Jul 2023.
+      Jul 2024.
       <br>
       
         DOI: <a href="http://doi.org/10.1109/TCNS.2023.3333402">10.1109/TCNS.2023.3333402</a>)
@@ -425,6 +443,8 @@ No matching items
       <br>
       
       
+        URL: <a href="">https://openreview.net/forum?id=ms0VgzSGF2</a>)
+      
     </p></li>
 
     <li value="35"><p>
@@ -446,6 +466,8 @@ No matching items
       May 2024.
       <br>
       
+      
+        URL: <a href="">https://proceedings.mlr.press/v238/patil24b.html</a>)
       
     </p></li>
 

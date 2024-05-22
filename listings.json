@@ -1,14 +1,14 @@
 [
   {
-    "listing": "/activities.html",
-    "items": []
-  },
-  {
     "listing": "/journals.html",
     "items": []
   },
   {
     "listing": "/conferences.html",
+    "items": []
+  },
+  {
+    "listing": "/activities.html",
     "items": []
   },
   {
