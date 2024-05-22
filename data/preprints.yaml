@@ -4,7 +4,7 @@
     - Amit Sinha
     - Aditya Mahajan
   date      : May 2024
-  pdfs      : projects/reinforcement-learning/conference/2024-pomdp-tutorial.pdf
+  pdf       : projects/reinforcement-learning/conference/2024-pomdp-tutorial.pdf
 
 - index     : 41
   title     : "Model approximation in MDPs with unbounded per-step cost"
