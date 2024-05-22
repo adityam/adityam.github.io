@@ -35,6 +35,7 @@
   date    : May 2024
   arxiv   : 2401.08898
   code    : https://github.com/twni2016/self-predictive-rl
+  url     : "https://openreview.net/forum?id=ms0VgzSGF2"
 
 - index     : 35
   title     : "On learning history-based policies for controlling Markov decision processes"
@@ -46,6 +47,7 @@
   location  : Valencia, Spain
   date    : May 2024
   arxiv   : 2211.03011
+  url     : https://proceedings.mlr.press/v238/patil24b.html
 
 - index     : 34
   title     : "Two families of indexable partially observable restless bandits and Whittle index computation"
