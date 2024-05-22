@@ -13,7 +13,6 @@
     - Aditya Mahajan
     - Ashutosh Nayyar
     - Yi Ouyang
-  status  : submitted
   date    : Feb 2024
   arxiv   : "2402.08813"
 
@@ -23,7 +22,6 @@
     - Jayakumar Subramanian
     - Akshat Kumar
     - Aditya Mahajan
-  status  : submitted
   date    : Oct 2023
   arxiv   : "2310.12282"
 
@@ -32,7 +30,6 @@
   authors   : 
     - Amit Sinha
     - Aditya Mahajan
-  status    : submitted
   date      : March 2022
   pdf       : projects/bandits/preprint/approx-Whittle.pdf
 
