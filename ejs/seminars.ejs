@@ -13,6 +13,9 @@
       <% if (item.seminar) { %> 
         <em><%- item.seminar %></em>, 
       <% } %>
+      <% if (item.city) { %> 
+        <%- item.city %>, 
+      <% } %>
       <%- item.date %>.
     </p></li>
 <% } %>
