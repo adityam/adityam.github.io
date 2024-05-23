@@ -1,12 +1,14 @@
 - id        : rmab-23
   title     : Reinforcement learning in restless bandits
-  seminar   : "Workshop on restless bandits, Grenoble"
+  seminar   : "Workshop on restless bandits"
+  city      : "Grenoble"
   slides    : talks/23-rmab.html
   date      : Nov 2023
 
 - id        : mila-23
   title     : "Planning (and learning) in multi-agent systems"
-  seminar   : "MILA RL Workshop, Mt Tremblant"
+  seminar   : "MILA RL Workshop"
+  city      : "Mt Tremblant"
   slides    : talks/23-mila-rl.pdf
   date      : Jun 2023
 
@@ -60,18 +62,21 @@
 - id        : cmo-19
   title     : "Information state (and its approximations) for stochastic control"
   seminar   : "BIRS-CMO Workshop on Multi-Stage Stochastic Optimization for Clean Energy Transition"
+  city      : "Oaxaca, Mexico"
   slides    : talks/19-cmo.pdf
   date      : Sep 2019
 
 - id        : fields-2017
   title     : "Decentralized Kalman Filtering"
-  seminar   : "Fields Workshop on Stochastic Processes and their Applications, Ottawa"
+  seminar   : "Fields Workshop on Stochastic Processes and their Applications"
+  city      : "Ottawa, ON"
   slides    : talks/17-fields.pdf
   date      : Aug 2017
 
 - id        : michigan-2017
   title     : "Mean-field teams"
   seminar   : "Systems Science Seminar, University of Michigan"
+  city      : "Ann Arbor, MI"
 # slides    : talks/17-umich.pdf
   date      : July 2017
 
@@ -101,13 +106,15 @@
 
 - id        : rutgers-2015
   title     : "Remote estimation of Markov processes under communication constraints"
-  seminar   : "Applied Probability Conference, Rutgers"
+  seminar   : "Applied Probability Conference"
+  city      : "Rutgers"
   slides    : talks/rutgers-2015.pdf
   date      : Oct 2015
 
 - id        : usc-2015
   title     : "Mean-field teams"
   seminar   : "CommNets Seminar, USC"
+  city      : "Los Angeles"
 # slides    : talks/usc-2015.pdf
   date      : Aug 2015
 
