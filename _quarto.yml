@@ -3,6 +3,7 @@ project:
   resources:
     - 'images/*'
     - 'files/*'
+    - 'BingSiteAuth.xml'
 
 website:
   title: "Aditya Mahajan"
