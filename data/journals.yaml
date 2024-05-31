@@ -1,16 +1,4 @@
 - index     : 38
-  title     : "Strong consistency and rate of convergence of switched least squares system identification for autonomous switched Markov jump linear systems"
-  authors   : 
-    - Borna Sayedana
-    - Mohammad Afshari
-    - Peter E. Caines
-    - Aditya Mahajan
-  journal   : IEEE Transcations on Automatic Control
-  date      : July 2024
-  pdf       : projects/switched-systems/preprint/estimating-MJLS.pdf
-  doi       : 10.1109/TAC.2024.3351806
-
-- index     : 37
   title     : "On learning Whittle index policy for restless bandits with scalable regret"
   authors   : 
     - Nima Akbarzadeh
@@ -19,6 +7,22 @@
   date      : July 2024
   pdf       : projects/bandits/preprint/rb-tsde.pdf
   doi       : 10.1109/TCNS.2023.3333402
+
+- index     : 37
+  title     : "Strong consistency and rate of convergence of switched least squares system identification for autonomous switched Markov jump linear systems"
+  authors   : 
+    - Borna Sayedana
+    - Mohammad Afshari
+    - Peter E. Caines
+    - Aditya Mahajan
+  journal   : IEEE Transcations on Automatic Control
+  volume    : 69
+  number    : 6
+  pages     : 3952–3959
+  date      : June 2024
+  pdf       : projects/switched-systems/journal/estimating-MJLS.pdf
+  doi       : 10.1109/TAC.2024.3351806
+
 
 - index     : 36
   title     : "Briding State and History Representations: Understanding self-predictive RL"
