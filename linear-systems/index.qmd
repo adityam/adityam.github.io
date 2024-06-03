@@ -125,7 +125,7 @@ Right to submit in English or French written work that is to be graded.
 : In accord with McGill University’s [Charter of Students’ Rights][charter], students in this course have the right to submit in English or in French any written work that is to be graded.
 
 Academic Integrity
-: McGill University values academic integrity. Therefore all students must understand the meaning and consequences of cheating, plagiarism and other academic offences under the [Code of Student Conduct and Disciplinary Procedures][coden] (see McGill’s [guide to academic honesty][guide] for more information).
+: McGill University values academic integrity. Therefore all students must understand the meaning and consequences of cheating, plagiarism and other academic offences under the [Code of Student Conduct and Disciplinary Procedures][code] (see McGill’s [guide to academic honesty][guide] for more information).
 
     L’université McGill attache une haute importance à l’honnêteté académique. Il incombe par conséquent à tous les étudiants de comprendre ce que l’on entend par tricherie, plagiat et autres infractions académiques, ainsi que les conséquences que peuvent avoir de telles actions, selon le [Code de conduite de l’étudiant et des procédures disciplinaires][code] (pour de plus amples renseignements, veuillez consulter le [guide pour l’honnêteté académique][guide] de McGill.)
 
