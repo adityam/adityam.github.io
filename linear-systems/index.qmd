@@ -151,7 +151,7 @@ The course is taught in a “chalk and board” style; there will be no power po
 
 ## Additional Notes
 
-- As the instructor of this course I endeavor to provide an inclusive learning environment. However, if you experience barriers to learning in this course, do not hesitate to discuss them with me and the Office for Students with Disabilities, 514-398-6009.
+- As the instructor of this course I endeavor to provide an inclusive learning environment. However, if you experience barriers to learning in this course, do not hesitate to discuss them with me or contact the office of [Student Accessibility and Achievement][OSD].
 
 - [End-of-course evaluations][evaluations] are one of the ways that McGill works towards maintaining and improving the quality of courses and the student’s learning experience. You will be notified by e-mail when the evaluations are available. Please note that a minimum number of responses must be received for results to be available to students.
 
@@ -165,3 +165,5 @@ The course is taught in a “chalk and board” style; there will be no power po
 [guide]: http://www.mcgill.ca/students/srr/honest/
 
 [evaluations]: http://www.mcgill.ca/mercury/
+
+[OSD]: https://www.mcgill.ca/access-achieve/
