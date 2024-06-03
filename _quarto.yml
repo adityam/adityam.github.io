@@ -34,7 +34,7 @@ website:
         href: students.qmd
 
       - text: Teaching
-        href: courses.qmd
+        href: teaching.qmd
 
       - text: Activities
         href: activities.qmd
