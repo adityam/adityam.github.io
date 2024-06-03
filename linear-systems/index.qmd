@@ -3,31 +3,47 @@ title : "ECSE 307: Linear Systems and Control"
 format:
   html:
     toc: true
+
+course:
+  term: "Fall 2024"
+  office-hours: "TBD"
+  teaching-assistants: "TBD"
+  mid-term: "Oct 10"
+  lectures:
+    - "10:05am–11:25am Tuesday, Thursday (ENGMC 11)"
+  tutorials:
+    - "8:35am–10:25am Friday, (ENGMC 11)"
+  labs:
+    - "1:35pm-3:25pm Monday (TR 4090)"
+    - "3:35pm–5:25pm Monday (TR 4090)"
+    - "1:35pm–3:25pm Tuesday (TR 4090)"
+    - "1:35pm–3:25pm Wednesday (TR 4090)"
+    - "1:35pm–3:25pm Friday (TR 4090)"
 ---
 
-## General Information (Fall 2024)
+## General Information ({{< meta course.term >}})
 
 Instructor
 : -  Aditya Mahajan 
-- *Office Hours*: TBD
+- *Office Hours*: {{< meta course.office-hours >}}
 
 Teaching Assistants
-: - TBD 
+: - {{< meta course.teaching-assistants >}} 
 
 Lectures
-: -  10:05am–11:25am Tuesday, Thursday (ENGMC 11)
+: - {{< meta course.lectures >}} 
 
 Tutorials
-: -  8:35am–10:25am Friday, (ENGMC 11)
+: - {{< meta course.tutorials >}} 
 
 Everyone **must** be registered for the tutorial. Tutorials start from the **second** week of classes.
 
-Laboratories
-: - 1:35pm-3:25pm Monday (TR 4090) <br />
-- 3:35pm–5:25pm Monday (TR 4090) <br />
-- 1:35pm–3:25pm Tuesday (TR 4090) <br />
-- 1:35pm–3:25pm Wednesday (TR 4090) <br />
-- 1:35pm–3:25pm Friday (TR 4090) <br />
+Labs
+: - {{< meta course.labs.1 >}} 
+: - {{< meta course.labs.2 >}} 
+: - {{< meta course.labs.3 >}} 
+: - {{< meta course.labs.4 >}} 
+: - {{< meta course.labs.5 >}} 
 
 Everyone **must** be registered for one lab. Labs start from the **second** week of classes.
 
@@ -38,10 +54,8 @@ Prerequisites
 - ECSE 210 (Electrical Circuits 2)
 
 
-
-**Use the discussion board on myCourses for all questions related to the
-course. Only personal emails related to medical exceptions for missing a
-deliverable will be answered.**
+Communication
+: [Use the discussion board on myCourses]{.text-info} for all questions related to the course. Only personal emails related to medical exceptions for missing a deliverable will be answered.
 
 ## Graduate Attributes and Learning Outcomes
 
@@ -96,7 +110,7 @@ Reference Books
 - **Laboratory (20%)** In-person weekly labs, to be conducted in groups of two. At the end of each lab, each group has to submit a lab report by filling in a Matlab Livescript template provided as part of the lab assignment.
 
 - **Mid Term (20%)** Closed book in-class exam.
-  [**Oct 10**]{.text-danger} (during class time)
+  [**{{< meta course.mid-term >}}**]{.text-danger} (during class time)
 
 - **Final Exam (40%)** Closed book, in-person exam. Will be scheduled by the exam office and the dates will be announced later.
 
