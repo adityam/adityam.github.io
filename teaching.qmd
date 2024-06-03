@@ -1,11 +1,11 @@
-<div class="container shadow-lg p-3 mb-5 bg-body rounded">
-
 ## Undergraduate Courses
 
 - **ECSE 393: Signals and Systems I** <br />
   From Fall 2012 to Winter 2016.
 
-- **ECSE 307: Linear Systems and Control** <br />
+- **ECSE 307: Linear Systems and Control** 
+  ([website](linear-systems)) 
+  <br />
   From Fall 2017 to present.
 
 - **ECSE 321: Introduction to Software Engineering** <br />
@@ -22,7 +22,3 @@
 
 - **ECSE 509: Probability and Random Signals** <br />
   Fall 2022 to present.
-
-</div>
-
-
