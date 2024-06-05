@@ -74,7 +74,7 @@ Upon the successful completion of this course, the student students will have de
 
 ## Course Content
 
-| Week | Material Covered |
+| Week | Material Covered | 
 |------|:-----------------|
 | 1    | Review of LTI Systems and Laplace Transforms |
 | 2    | Pole Zero Plot Step response of first and second order systems, dominant pole approximation |
@@ -91,6 +91,28 @@ Upon the successful completion of this course, the student students will have de
 | 13   | Lead-Lag compensators
 
 : {tbl-colwidths="[10,90]" .striped}
+
+## Lab Schedule 
+
+| Week | Lab | 
+|------|:-----------------|
+| 1    | No Labs | 
+| 2    | Lab 1 : Introduction to Matlab |
+| 3    | Lab 2 : Transfer functions and step response | 
+| 4    | Lab 3 : System identification via Step Response | 
+| 5    | Lab 4 : Eigenvalues and eigenvectors
+| 6    | Lab 5 : State-Feedback Control (in simulation) | 
+| 7    | Lab 6 : State-Feedback Control (in hardware) | 
+| 8    | Lab 7 : Luenberger Observer for State Estimation | 
+| 9    | Lab 8 : Output-Feedback Control | 
+| 10   | Lab 9 : Block Diagram Reduction using Matlab |
+| 11   | Lab 10 : System identification via Bode Plots | 
+| 12   | Lab 11 : Nyquist stability criterion |
+| 13   | Lab 12 : Lead-Lag compensator design |
+
+: {tbl-colwidths="[10,90]" .striped}
+
+
 
 ## Course Material
 
