@@ -14,7 +14,8 @@
 ## Graduate Courses
 
 - **ECSE 506: Stochastic control and decision theory** 
-  ([website](https://adityam.github.io/stochastic-control/)) <br />
+  ([website](stochastic-control)) 
+  <br />
   Winter 2012 to present (every even year)
 
 - **ECSE 508: Multi-agent systems** <br />
