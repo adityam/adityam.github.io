@@ -1,0 +1,4 @@
+<iframe
+src="https://outlook.office365.com/calendar/published/c155c1a3bfa54a5198e78631f4511993@mcgill.ca/05330a5b8ced42599208bc17737a80031298570876159338539/calendar.html"
+width="1100" height="700" frameborder="0" scrolling="no"></iframe>
+
