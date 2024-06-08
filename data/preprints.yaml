@@ -1,3 +1,12 @@
+- index     : 43
+  title     : "Dynamic estimation of mental workload and operator accuracy in human automation teams"
+  authors   :
+    - Raihan Seraj
+    - Aditya Mahajan
+    - Jerome Le Ny
+  date      : June 2024
+  pdf       : projects/human-automation/preprint/dynamic-estimation.pdf
+
 - index     : 42
   title     : "Agent-state based policies in POMDPs: Beyond belief-state MDPs"
   authors   :
