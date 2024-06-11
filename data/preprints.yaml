@@ -35,7 +35,7 @@
   arxiv   : "2310.12282"
 
 - index     : 39
-  title     : "On the sensitivity of restless bandit solutions to model mismatch"
+  title     : "On the sensitivity of restless bandit solutions to uncertainty in the model of the arms"
   authors   : 
     - Amit Sinha
     - Aditya Mahajan
