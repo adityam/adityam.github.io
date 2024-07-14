@@ -1,3 +1,12 @@
+- index     : 44
+  title     : "Periodic agent-state based Q-learning for POMDPs"
+  authors   :
+    - Amit Sinha
+    - Mathieu Geist
+    - Aditya Mahajan
+  date      : July 2024
+  arxiv     : "2407.06121"
+
 - index     : 43
   title     : "Dynamic estimation of mental workload and operator accuracy in human automation teams"
   authors   :
