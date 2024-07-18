@@ -1,3 +1,9 @@
+- label   : 2024-teams
+  title   : "Large population teams: control, equilibrium, and learning"
+  url     : "https://dcslgatech.github.io/cdc24-large-teams-workshop/"
+  location: CDC, Milano
+  dates   : "16 Dec, 2024"
+
 - label   : 2023-bandits
   title   : "Restless bandits, index policies and applications in reinforcement learning"
   url     : "https://gast.gitlabpages.inria.fr/restlessbandit-workshop"
