@@ -22,6 +22,9 @@ Raihan Seraj (co-supervisor: Prof. Jerome Le Ny)
 <div class="tight">
 <ul>
 <li>
+Phuc Nguyen (supervisor: Pierre L'Ecuyer)
+</li>
+<li>
 Edwin Meriaux
 </li>
 <li>
