@@ -21,6 +21,7 @@
 - **ECSE 508: Multi-agent systems** <br />
   Winter 2011 to present (every odd year)
 
-- **ECSE 509: Probability and Random Signals** <br />
+- **ECSE 509: Probability and Random Signals** 
   ([website](probability-and-random-signals)) 
+  <br />
   Fall 2022 to present.
