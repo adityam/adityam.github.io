@@ -4,8 +4,11 @@
     - Nima Akbarzadeh
     - Aditya Mahajan
   journal   : IEEE Transactions on Control of Networked Systems
-  date      : July 2024
-  pdf       : projects/bandits/preprint/rb-tsde.pdf
+  volumne   : 11
+  number    : 3
+  pages     : 1190-1202
+  date      : Sep 2024
+  pdf       : projects/bandits/journal/rb-tsde.pdf
   doi       : 10.1109/TCNS.2023.3333402
 
 - index     : 37
