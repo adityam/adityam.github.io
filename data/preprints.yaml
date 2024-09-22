@@ -2,7 +2,7 @@
   title     : "Periodic agent-state based Q-learning for POMDPs"
   authors   :
     - Amit Sinha
-    - Mathieu Geist
+    - Matthieu Geist
     - Aditya Mahajan
   date      : July 2024
   arxiv     : "2407.06121"
