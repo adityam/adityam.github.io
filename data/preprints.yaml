@@ -1,13 +1,4 @@
 - index     : 44
-  title     : "Periodic agent-state based Q-learning for POMDPs"
-  authors   :
-    - Amit Sinha
-    - Matthieu Geist
-    - Aditya Mahajan
-  date      : July 2024
-  arxiv     : "2407.06121"
-
-- index     : 43
   title     : "Dynamic estimation of mental workload and operator accuracy in human automation teams"
   authors   :
     - Raihan Seraj
@@ -16,15 +7,7 @@
   date      : June 2024
   pdf       : projects/human-automation/preprint/dynamic-estimation.pdf
 
-- index     : 42
-  title     : "Agent-state based policies in POMDPs: Beyond belief-state MDPs"
-  authors   :
-    - Amit Sinha
-    - Aditya Mahajan
-  date      : May 2024
-  pdf       : projects/reinforcement-learning/conference/2024-pomdp-tutorial.pdf
-
-- index     : 41
+- index     : 43
   title     : "Model approximation in MDPs with unbounded per-step cost"
   authors   :
     - Berk Bozkurt
@@ -34,7 +17,7 @@
   date    : Feb 2024
   arxiv   : "2402.08813"
 
-- index     : 40
+- index     : 42
   title     : "Mean-field games among teams"
   authors   :
     - Jayakumar Subramanian
@@ -43,7 +26,7 @@
   date    : Oct 2023
   arxiv   : "2310.12282"
 
-- index     : 39
+- index     : 41
   title     : "On the sensitivity of restless bandit solutions to uncertainty in the model of the arms"
   authors   : 
     - Amit Sinha

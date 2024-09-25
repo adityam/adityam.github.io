@@ -1,3 +1,23 @@
+- index     : 40
+  title     : "Agent-state based policies in POMDPs: Beyond belief-state MDPs"
+  authors   :
+    - Amit Sinha
+    - Aditya Mahajan
+  journal: IEEE Conference on Decision and Control (CDC)
+  date      : Dec 2024
+  pdf       : projects/reinforcement-learning/conference/2024-pomdp-tutorial.pdf
+
+- index     : 39
+  title     : "Periodic agent-state based Q-learning for POMDPs"
+  authors   :
+    - Amit Sinha
+    - Matthieu Geist
+    - Aditya Mahajan
+  date      : Dec 2024
+  journal   : Conference on Neural Information Processing Systems (Neurips)
+  location  : Vancouver, Canada
+  arxiv     : "2407.06121"
+
 - index     : 38
   title     : "On learning Whittle index policy for restless bandits with scalable regret"
   authors   : 
