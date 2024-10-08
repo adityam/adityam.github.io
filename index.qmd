@@ -10,8 +10,7 @@
   </p>
 
   <p>
-    <strong>email:</strong> aditya [dot] mahajan [at] mcgill [dot] ca <br />
-    <strong>Phone:</strong> (514) 398-8088
+    <strong>email:</strong> aditya [dot] mahajan [at] mcgill [dot] ca 
   </p>
 
   <!-- Clearfix to clear floating effects -->
