@@ -162,7 +162,7 @@
   doi       : 10.1109/TCCN.2022.3195503
 
 - index     : 28
-  title     : "Conditions for indexability of restless bandits and an O(K<sup>3</sup>) algorithm to compute Whittle index"
+  title     : "Conditions for indexability of restless bandits and an O(K^3^) algorithm to compute Whittle index"
   authors   :
     - Nima Akbarzadeh
     - Aditya Mahajan
