@@ -1,3 +1,12 @@
+- index     : 45
+  title     : "Concentration of Cumulative Reward in Markov Decision Processes"
+  authors   :
+    - Borna Sayedana
+    - Peter E. Caines
+    - Aditya Mahajan
+  date      : Nov 2024
+  pdf       : projects/mdp/preprint/reward-concentration.pdf
+
 - index     : 44
   title     : "Dynamic estimation of mental workload and operator accuracy in human automation teams"
   authors   :
