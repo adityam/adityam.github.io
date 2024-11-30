@@ -24,9 +24,6 @@ Raihan Seraj (co-supervisor: Prof. Jerome Le Ny)
 <li>
 Phuc Nguyen (supervisor: Pierre L'Ecuyer)
 </li>
-<li>
-Reihaneh Ghoroghchian (supervisor: Peter Caines)
-</li>
 </ul>
 </div>
 <div class="figure">
@@ -62,7 +59,10 @@ Chuangshen Dong (supervisor: Prof. Haibo Zeng), Apr 2016. <em>Greener Cyber Phys
 <div class="tight">
 <ul>
 <li>
-Edwin Meriaux, nil. <em>Robust shortest path with local information revelation</em>.
+Edwin Meriaux, Sep 2024. <em>Robust shortest path with local information revelation</em>.
+</li>
+<li>
+Reihaneh Ghoroghchian (supervisor: Peter Caines), Dec 2024. <em>Neo-Classical Optimal Control for LTI Systems in Partially Observed Environments</em>.
 </li>
 <li>
 Annavaleria Ardito (supervisor: Prof. Luca de Cicco), March 2024. <em>Study and implementation of multiple mobile robots control</em>.
