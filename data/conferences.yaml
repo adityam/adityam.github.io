@@ -1,3 +1,14 @@
+- index     : 71
+  title     : "Asymptotic normality of cumulative cost in linear quadratic regulators"
+  authors   :
+    - Borna Sayedana
+    - Aditya Mahajan
+    - Peter Caines
+  conference: IEEE Conference on Decision and Control (CDC)
+  location  : Milan, Italy
+  date      : Dec 2024
+  pdf       : projects/linear-systems/conference/2024-cdc.pdf
+
 - index     : 70
   title     : "Relative almost sure regret bounds for certainty equivalence control of Markov Jump Systems"
   authors   :
