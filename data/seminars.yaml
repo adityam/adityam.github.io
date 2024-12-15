@@ -1,3 +1,24 @@
+- id        : games-among-teams-24
+  title     : Mean-field games among teams
+  seminar   : "CDC Workshop on Large Population Teams"
+  city      : "Milan, Italy"
+  slides    : talks/24-cdc-workshop.pdf
+  date      : Dec 2024
+
+- id        : dec-info-24
+  title     : The common-information approach to multi-agent teams
+  seminar   : "ACC Workshop on Learning and Control of Multi-Agent Systems"
+  city      : "Toronto, Canada"
+  slides    : talks/24-acc-dec-control.pdf
+  date      : Dec 2024
+
+- id        : rmab-23
+  title     : Reinforcement learning in restless bandits
+  seminar   : "Workshop on restless bandits"
+  city      : "Grenoble"
+  slides    : talks/23-rmab.html
+  date      : Nov 2023
+
 - id        : rmab-23
   title     : Reinforcement learning in restless bandits
   seminar   : "Workshop on restless bandits"
