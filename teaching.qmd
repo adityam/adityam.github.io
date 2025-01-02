@@ -1,6 +1,6 @@
 ## Undergraduate Courses
 
-- **ECSE 393: Signals and Systems I** <br />
+- **ECSE 303: Signals and Systems I** <br />
   From Fall 2012 to Winter 2016.
 
 - **ECSE 307: Linear Systems and Control** 
@@ -18,7 +18,9 @@
   <br />
   Winter 2012 to present (every even year)
 
-- **ECSE 508: Multi-agent systems** <br />
+- **ECSE 508: Multi-agent systems** 
+  ([website](multi-agent-systems)) 
+ <br />
   Winter 2011 to present (every odd year)
 
 - **ECSE 509: Probability and Random Signals** 
