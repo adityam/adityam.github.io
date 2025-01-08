@@ -19,13 +19,6 @@
   slides    : talks/23-rmab.html
   date      : Nov 2023
 
-- id        : rmab-23
-  title     : Reinforcement learning in restless bandits
-  seminar   : "Workshop on restless bandits"
-  city      : "Grenoble"
-  slides    : talks/23-rmab.html
-  date      : Nov 2023
-
 - id        : mila-23
   title     : "Planning (and learning) in multi-agent systems"
   seminar   : "MILA RL Workshop"
