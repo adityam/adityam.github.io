@@ -1,4 +1,4 @@
-- index     : 41
+- index     : 43
   title     : "Model approximation in MDPs with unbounded per-step cost"
   authors   :
     - Berk Bozkurt
@@ -8,6 +8,15 @@
   journal   : IEEE Transcations on Automatic Control
   date    : "Jan 2025 (in print)"
   arxiv   : "2402.08813"
+
+- index     : 42
+  title     : "Best linear controllers for decentralized linear quadratic systems"
+  authors   :
+    - Mohammad Afshari
+    - Aditya Mahajan
+  journal   : Journal of Systems Science & Complexity
+  date    : "Jan 2025 (in print)"
+
 
 - index     : 40
   title     : "Agent-state based policies in POMDPs: Beyond belief-state MDPs"

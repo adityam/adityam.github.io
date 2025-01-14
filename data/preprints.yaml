@@ -17,16 +17,6 @@
   pdf       : projects/human-automation/preprint/dynamic-estimation.pdf
 
 - index     : 43
-  title     : "Model approximation in MDPs with unbounded per-step cost"
-  authors   :
-    - Berk Bozkurt
-    - Aditya Mahajan
-    - Ashutosh Nayyar
-    - Yi Ouyang
-  date    : Feb 2024
-  arxiv   : "2402.08813"
-
-- index     : 42
   title     : "Mean-field games among teams"
   authors   :
     - Jayakumar Subramanian
@@ -35,7 +25,7 @@
   date    : Oct 2023
   arxiv   : "2310.12282"
 
-- index     : 41
+- index     : 42
   title     : "On the sensitivity of restless bandit solutions to uncertainty in the model of the arms"
   authors   : 
     - Amit Sinha
