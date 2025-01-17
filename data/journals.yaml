@@ -6,8 +6,9 @@
     - Ashutosh Nayyar
     - Yi Ouyang
   journal   : IEEE Transcations on Automatic Control
-  date    : "Jan 2025 (in print)"
-  arxiv   : "2402.08813"
+  date      : "Jan 2025 (in print)"
+  doi       : 10.1109/TAC.2025.3532181
+  pdf       : projects/mdp/journal/weighted-norm-approximation.pdf
 
 - index     : 42
   title     : "Best linear controllers for decentralized linear quadratic systems"
