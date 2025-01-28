@@ -1,3 +1,10 @@
+- id        : cornell-25
+  title     : "Agent-state based policies in POMDPs: Beyond belief-state MDPs"
+  seminar   : "Data-driven Learning and Control, Cornell University"
+  slides    : talks/25-cornell.pdf
+  date      : Jan 2025
+  video     : "https://www.youtube.com/live/5C71Nl6Qj_U"
+
 - id        : games-among-teams-24
   title     : Mean-field games among teams
   seminar   : "CDC Workshop on Large Population Teams"
