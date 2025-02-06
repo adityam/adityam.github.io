@@ -3,7 +3,7 @@
   seminar   : "Data-driven Learning and Control, Cornell University"
   slides    : talks/25-cornell.pdf
   date      : Jan 2025
-  video     : "https://youtu.be/5C71Nl6Qj_U?t=1106"
+  video     : "https://youtu.be/5C71Nl6Qj_U"
 
 - id        : games-among-teams-24
   title     : Mean-field games among teams
