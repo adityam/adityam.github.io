@@ -42,7 +42,8 @@ listing:
 ## Thesis
 
 - **Sequential decomposition of sequential teams: applications to real-time communication and networked control systems**
-  ([pdf](projects/thesis/mahajan-thesis.pdf))
+  ([pdf](files/projects/thesis/mahajan-thesis.pdf))
+
   <br />
   Aditya Mahajan
   <br />

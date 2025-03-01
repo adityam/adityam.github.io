@@ -5,7 +5,6 @@ project:
   resources:
     - 'images/*'
     - 'files/*'
-    - 'files/projects/thesis/mahajan-thesis.pdf'
     - 'BingSiteAuth.xml'
 
 website:

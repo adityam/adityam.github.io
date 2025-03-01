@@ -64,7 +64,7 @@
   title     : Approximate planning and learning for partially observed systems
   seminar   : "Reinforcement learning and sotchastic control in queues and networks (ReStoq) Workshop, WiOpt"
   slides    : talks/21-restoq.pdf
-  video     : keynotes/21-iscon.mp4
+  video     : files/keynotes/21-iscon.mp4
   date      : Oct 2021
 
 - id        : umich-20
