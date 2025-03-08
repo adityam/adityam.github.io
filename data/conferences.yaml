@@ -1,3 +1,12 @@
+- index     : 72
+  title     : "Robust shortest path With incremental information revelation"
+  authors   :
+    - Edwin Meriaux
+    - Aditya Mahajan
+  conference: European Control Conference
+  location  : Thessaloniki, Greece
+  date      : June 2025
+
 - index     : 71
   title     : "Asymptotic normality of cumulative cost in linear quadratic regulators"
   authors   :
