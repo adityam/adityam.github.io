@@ -1,4 +1,4 @@
-- index     : 72
+- index     : 74
   title     : "Robust shortest path With incremental information revelation"
   authors   :
     - Edwin Meriaux
@@ -6,6 +6,27 @@
   conference: European Control Conference
   location  : Thessaloniki, Greece
   date      : June 2025
+
+- index     : 73
+  title     : "A vector almost-supermartingale convergence theorem and its applications"
+  authors   :
+    - Aditya Mahajan
+    - Silviu I. Niculescu
+    - M. Vidyasagar
+  conference: IEEE Conference on Decision and Control (CDC)
+  location  : Milan, Italy
+  date      : Dec 2024
+
+- index     : 72
+  title     : "Constant step-size stochastic approximation with delayed updates"
+  authors   :
+    - Aditya Mahajan
+    - Silviu I. Niculescu
+    - M. Vidyasagar
+  conference: IEEE Conference on Decision and Control (CDC)
+  location  : Milan, Italy
+  date      : Dec 2024
+
 
 - index     : 71
   title     : "Asymptotic normality of cumulative cost in linear quadratic regulators"
