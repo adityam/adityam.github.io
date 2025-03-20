@@ -1,3 +1,11 @@
+- index     : 44
+  title     : "On the sensitivity of restless bandit solutions to uncertainty in the model of the arms"
+  authors   : 
+    - Amit Sinha
+    - Aditya Mahajan
+  date      : March 2022
+  pdf       : projects/bandits/preprint/approx-Whittle.pdf
+
 - index     : 43
   title     : "Model approximation in MDPs with unbounded per-step cost"
   authors   :
@@ -16,7 +24,7 @@
     - Mohammad Afshari
     - Aditya Mahajan
   journal   : Journal of Systems Science & Complexity
-  date    : "Jan 2025"
+  date    : "March 2025"
   volume  : 38
   number  : 1
   pages   : 210–237
