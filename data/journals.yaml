@@ -40,6 +40,7 @@
   journal: IEEE Conference on Decision and Control (CDC)
   date      : Dec 2024
   pdf       : projects/reinforcement-learning/conference/2024-pomdp-tutorial.pdf
+  doi       : 10.1109/CDC56724.2024.10886046
 
 - index     : 39
   title     : "Periodic agent-state based Q-learning for POMDPs"
