@@ -6,6 +6,7 @@
   conference: European Control Conference
   location  : Thessaloniki, Greece
   date      : June 2025
+  pdf       : projects/mdp/conference/2025-ecc.pdf
 
 - index     : 73
   title     : "A vector almost-supermartingale convergence theorem and its applications"
