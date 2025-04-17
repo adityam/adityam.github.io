@@ -10,12 +10,6 @@ Samin Nili-Ahmadabadi
 <li>
 Amit Sinha
 </li>
-<li>
-Borna Sayedana (co-supervisor: Prof. Peter Caines)
-</li>
-<li>
-Raihan Seraj (co-supervisor: Prof. Jerome Le Ny)
-</li>
 </ul>
 </div>
 <h2>Current Master's Students</h2>
@@ -43,13 +37,19 @@ Phuc Nguyen (supervisor: Pierre L'Ecuyer)
 <h2>Graduated PhD Students</h2>
 <ul>
 <li>
+Borna Sayedana (co-supervisor: Prof. Peter Caines), Apr 2025. <em>Learning, Control and Concentration of Cumulative Rewards in MDPs and  Markov Jump Systems</em>.
+</li>
+<li>
+Raihan Seraj (co-supervisor: Prof. Jerome Le Ny), Apr 2024. <em>Dynamic modeling of mental workload and fatigue-aware decision referals in human-automation teams</em>.
+</li>
+<li>
 Nima Akbarzadeh, Aug 2022. <em>Restless multi-armed bandits: Indexability, Whittle Index Computation, and Learning</em>.
 </li>
 <li>
 Mohammad Afshari, March 2021. <em>Team optimal decentralized estimation and control of networked linear quadratic systems</em>.
 </li>
 <li>
-Jayakumar Subramanian, April 2020. <em>Reinforcement learning in partially observed and multi-agent systems</em>.
+Jayakumar Subramanian, Apr 2020. <em>Reinforcement learning in partially observed and multi-agent systems</em>.
 </li>
 <li>
 Jhelum Chakravorty, Aug 2017. <em>Fundamental limits of remote estimation</em>.
@@ -86,10 +86,10 @@ Sharareh Younesian (co-supervisor: Prof. Peter Caines), Dec 2022. <em>Structure-
 Chenyu Liu, June 2022. <em>Optimism in $Q$-learning: Unified overview and comparison</em>.
 </li>
 <li>
-Alper Öker (co-supervisor: Prof. Peter Caines), April 2021. <em>Distributed Kalman Filtering and Estimation</em>.
+Alper Öker (co-supervisor: Prof. Peter Caines), Apr 2021. <em>Distributed Kalman Filtering and Estimation</em>.
 </li>
 <li>
-Anirudha Jitani (co-supervisor: Prof. Doina Precup), April 2021. <em>Intelligent node-overload protection in mobile edge computing using reinforcement learning</em>.
+Anirudha Jitani (co-supervisor: Prof. Doina Precup), Apr 2021. <em>Intelligent node-overload protection in mobile edge computing using reinforcement learning</em>.
 </li>
 <li>
 Amit Sinha, Dec 2020. <em>Reinforcement learning in POMDPs</em>.
@@ -101,7 +101,7 @@ Samin Yeasar Arnob, May 2020. <em>Improving Robustness in Inverse Reinforcement 
 Borna Sayedana, Aug 2019. <em>Monotonicity of value function and optimal policy in cross-layer design of communication systems</em>.
 </li>
 <li>
-Raihan Seraj, April 2019. <em>Learning in the presence of partial observability and concept drifts</em>.
+Raihan Seraj, Apr 2019. <em>Learning in the presence of partial observability and concept drifts</em>.
 </li>
 <li>
 Romina Hassani (supervisor: Prof. Peter Caines), Dec 2018. <em>Social learning and distributed hypothesis testing</em>.
