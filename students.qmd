@@ -40,7 +40,7 @@ Phuc Nguyen (supervisor: Pierre L'Ecuyer)
 Borna Sayedana (co-supervisor: Prof. Peter Caines), Apr 2025. <em>Learning, Control and Concentration of Cumulative Rewards in MDPs and  Markov Jump Systems</em>.
 </li>
 <li>
-Raihan Seraj (co-supervisor: Prof. Jerome Le Ny), Apr 2024. <em>Dynamic modeling of mental workload and fatigue-aware decision referals in human-automation teams</em>.
+Raihan Seraj (co-supervisor: Prof. Jerome Le Ny), Apr 2025. <em>Dynamic modeling of mental workload and fatigue-aware decision referals in human-automation teams</em>.
 </li>
 <li>
 Nima Akbarzadeh, Aug 2022. <em>Restless multi-armed bandits: Indexability, Whittle Index Computation, and Learning</em>.
