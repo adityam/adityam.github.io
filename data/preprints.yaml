@@ -1,4 +1,4 @@
-- index     : 48
+- index     : 49
   title     : "Task load dependent decision referrals for joint
 binary classification in human-automation teams"
   authors   :
@@ -8,7 +8,7 @@ binary classification in human-automation teams"
   date      : Apr 2025
   arxiv     : "2504.04248"
 
-- index     : 47
+- index     : 48
   title     : "Concentration of Cumulative Reward in Markov Decision Processes"
   authors   :
     - Borna Sayedana
@@ -17,7 +17,7 @@ binary classification in human-automation teams"
   date      : Nov 2024
   pdf       : projects/mdp/preprint/reward-concentration.pdf
 
-- index     : 46
+- index     : 47
   title     : "Dynamic estimation of mental workload and operator accuracy for time-constrained binary classification tasks"
   authors   :
     - Raihan Seraj
@@ -26,7 +26,7 @@ binary classification in human-automation teams"
   date      : June 2024
   pdf       : projects/human-automation/preprint/dynamic-estimation.pdf
 
-- index     : 45
+- index     : 46
   title     : "Mean-field games among teams"
   authors   :
     - Jayakumar Subramanian

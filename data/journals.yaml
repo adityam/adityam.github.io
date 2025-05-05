@@ -1,12 +1,13 @@
-- index     : 44
+- index     : 45
   title     : "On the sensitivity of restless bandit solutions to uncertainty in the model of the arms"
   authors   : 
     - Amit Sinha
     - Aditya Mahajan
-  date      : March 2022
+  journal   : Annals of Operations Research
+  date      : March 2025
   pdf       : projects/bandits/preprint/approx-Whittle.pdf
 
-- index     : 43
+- index     : 44
   title     : "Model approximation in MDPs with unbounded per-step cost"
   authors   :
     - Berk Bozkurt
@@ -17,6 +18,17 @@
   date      : "Jan 2025 (in print)"
   doi       : 10.1109/TAC.2025.3532181
   pdf       : projects/mdp/journal/weighted-norm-approximation.pdf
+
+- index     : 43
+  title     : "A theoretical justification for asymmetric actor-critic algorithms"
+  authors   : 
+    - Gaspard Lambrechts
+    - Damien Ernst
+    - Aditya Mahajan
+  journal   : International Confernece on Machine Learning (ICML)
+  location  : Vancouver, Canada
+  date      : July 2025
+  arxiv     : 2501.19116
 
 - index     : 42
   title     : "Best linear controllers for decentralized linear quadratic systems"
