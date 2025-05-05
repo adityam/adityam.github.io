@@ -1,3 +1,15 @@
+- label   : 2025-peterfest
+  title   : "Stochastic, Mean-Field and Network Systems, and Beyond"
+  url     : "https://people.math.carleton.ca/~mhuang/Workshop25/Stomns25a.html"
+  location: Montreal
+  dates   : "10 May, 2025"
+
+- label   : 2025-MSCT
+  title   : "10th Meeting on System and Control Theory"
+  url     : "https://symposia.gerad.ca/MSCT2025/en/home"
+  location: Montreal
+  dates   : "7–9 May, 2025"
+
 - label   : 2024-teams
   title   : "Large population teams: control, equilibrium, and learning"
   url     : "https://dcslgatech.github.io/cdc24-large-teams-workshop/"
