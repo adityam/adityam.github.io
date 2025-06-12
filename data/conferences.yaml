@@ -17,6 +17,7 @@
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Milan, Italy
   date      : Dec 2024
+  pdf       : projects/stochastic-approximation/conference/2024-cdc-1.pdf
 
 - index     : 72
   title     : "Constant step-size stochastic approximation with delayed updates"
@@ -27,6 +28,7 @@
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Milan, Italy
   date      : Dec 2024
+  pdf       : projects/stochastic-approximation/conference/2024-cdc-2.pdf
 
 
 - index     : 71
