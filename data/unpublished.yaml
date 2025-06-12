@@ -1,3 +1,12 @@
+- index     : 7
+  title     : "Mean-field games among teams"
+  authors   :
+    - Jayakumar Subramanian
+    - Akshat Kumar
+    - Aditya Mahajan
+  date    : Oct 2023
+  arxiv   : "2310.12282"
+
 - index     : 6
   title     : "Approximate information state based convergence analysis of recurrent Q-learning"
   authors   :
