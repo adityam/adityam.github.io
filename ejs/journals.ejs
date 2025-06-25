@@ -39,6 +39,9 @@ function joinWithCommasAnd(array) {
         pp.&nbsp;<%- item.pages %>,
       <% } %>
       <%- item.date %>.
+      <% if (item.status) { %>
+         (<%- item.status %>)
+      <% } %>
       <br />
       <% if (item.doi) { %>
         DOI: <a href="http://doi.org/<%- item.doi %>"><%- item.doi %></a>

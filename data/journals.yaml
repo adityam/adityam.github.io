@@ -14,7 +14,8 @@
     - Jerôme Le Ny
     - Aditya Mahajan
   journal   : IEEE Control Systems Letters
-  date      : "June 2025 (in print)"
+  date      : "June 2025"
+  status    : "in print"
   pdf       : projects/human-automation/preprint/fatigue-aware-referrals.pdf
   doi       : 10.1109/LCSYS.2025.3581647
 
@@ -26,7 +27,8 @@
     - Ashutosh Nayyar
     - Yi Ouyang
   journal   : IEEE Transcations on Automatic Control
-  date      : "Jan 2025 (in print)"
+  date      : "Jan 2025"
+  status    : "in print"
   doi       : 10.1109/TAC.2025.3532181
   pdf       : projects/mdp/journal/weighted-norm-approximation.pdf
 
