@@ -16,7 +16,7 @@
   journal   : IEEE Control Systems Letters
   date      : "June 2025 (in print)"
   pdf       : projects/human-automation/preprint/fatigue-aware-referrals.pdf
-
+  doi       : 10.1109/LCSYS.2025.3581647
 
 - index     : 44
   title     : "Model approximation in MDPs with unbounded per-step cost"
