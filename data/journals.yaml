@@ -1,21 +1,23 @@
 - index     : 47
-  title     : "Dynamic estimation of mental workload and operator accuracy for time-constrained binary classification tasks"
-  authors   :
-    - Raihan Seraj
-    - Aditya Mahajan
-    - Jerome Le Ny
-  date      : July 2024
-  status    : accepted
-  pdf       : projects/human-automation/preprint/dynamic-estimation.pdf
-
-- index     : 46
   title     : "On the sensitivity of restless bandit solutions to uncertainty in the model of the arms"
   authors   : 
     - Amit Sinha
     - Aditya Mahajan
   journal   : Annals of Operations Research
+  status    : accepted
   date      : March 2025
   pdf       : projects/bandits/preprint/approx-Whittle.pdf
+
+- index     : 46
+  title     : "Dynamic estimation of mental workload and operator accuracy for time-constrained binary classification tasks"
+  authors   :
+    - Raihan Seraj
+    - Aditya Mahajan
+    - Jerome Le Ny
+  date      : "July 2025"
+  status    : in print
+  pdf       : projects/human-automation/preprint/dynamic-estimation.pdf
+  doi       : 10.1109/THMS.2025.3591550
 
 - index     : 45
   title     : "Fatigue and task load dependent decision referrals for joint binary classification in human-automation teams"
