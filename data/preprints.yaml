@@ -16,12 +16,3 @@ binary classification in human-automation teams"
     - Aditya Mahajan
   date      : Nov 2024
   pdf       : projects/mdp/preprint/reward-concentration.pdf
-
-- index     : 47
-  title     : "Dynamic estimation of mental workload and operator accuracy for time-constrained binary classification tasks"
-  authors   :
-    - Raihan Seraj
-    - Aditya Mahajan
-    - Jerome Le Ny
-  date      : June 2024
-  pdf       : projects/human-automation/preprint/dynamic-estimation.pdf

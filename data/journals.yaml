@@ -1,3 +1,13 @@
+- index     : 47
+  title     : "Dynamic estimation of mental workload and operator accuracy for time-constrained binary classification tasks"
+  authors   :
+    - Raihan Seraj
+    - Aditya Mahajan
+    - Jerome Le Ny
+  date      : July 2024
+  status    : accepted
+  pdf       : projects/human-automation/preprint/dynamic-estimation.pdf
+
 - index     : 46
   title     : "On the sensitivity of restless bandit solutions to uncertainty in the model of the arms"
   authors   : 
