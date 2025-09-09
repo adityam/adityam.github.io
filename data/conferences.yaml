@@ -1,3 +1,38 @@
+- index     : 77
+  title     : "Low-dimensional solutions for optimal control of network-coupled subsystems over a directed graph"
+  authors   :
+    - Mohamed-Amine Azzouz
+    - Shuang Gao
+    - Aditya Mahajan
+  conference: IEEE Conference on Decision and Control (CDC)
+  location  : Rio de Janeiro, Brazil
+  date      : Dec 2025
+  pdf       : projects/linear-systems/conference/2025-cdc.pdf
+
+- index     : 76
+  title     : "Convergence of regularized agent-state based Q-learning in POMDPs"
+  authors   :
+    - Amit Sinha
+    - Aditya Mahajan
+    - Matthieu Geist
+  conference: IEEE Conference on Decision and Control (CDC)
+  location  : Rio de Janeiro, Brazil
+  date      : Dec 2025
+  pdf       : projects/reinforcement-learning/conference/2025-cdc.pdf
+
+- index     : 75
+  title     : "Generalized certainty equivalence based policies
+in partially observable systems"
+  authors   :
+    - Berk Bozkurt 
+    - Aditya Mahajan
+    - Ashutosh Nayyar
+    - Yi Ouyang
+  conference: IEEE Conference on Decision and Control (CDC)
+  location  : Rio de Janeiro, Brazil
+  date      : Dec 2025
+  pdf       : projects/mdp/conference/2025-cdc.pdf
+
 - index     : 74
   title     : "Robust shortest path with incremental information revelation"
   authors   :

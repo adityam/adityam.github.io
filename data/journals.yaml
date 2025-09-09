@@ -4,9 +4,9 @@
     - Amit Sinha
     - Aditya Mahajan
   journal   : Annals of Operations Research
-  status    : accepted
-  date      : March 2025
-  pdf       : projects/bandits/preprint/approx-Whittle.pdf
+  date      : Sep 2025
+  pdf       : projects/bandits/journal/approx-Whittle.pdf
+  doi       : https://doi.org/10.1007/s10479-025-06821-3
 
 - index     : 46
   title     : "Dynamic estimation of mental workload and operator accuracy for time-constrained binary classification tasks"
