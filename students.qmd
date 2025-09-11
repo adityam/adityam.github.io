@@ -16,6 +16,12 @@ Amit Sinha
 <div class="tight">
 <ul>
 <li>
+Mohamed-Amine Azzouz (co-supervisor: Silviu I Niculescu)
+</li>
+<li>
+Arka Ian Goswami
+</li>
+<li>
 Reza Pourmohammadi Najafabadi (supervisor: Peter Caines)
 </li>
 <li>
