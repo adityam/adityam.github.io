@@ -13,8 +13,8 @@
   title     : "Convergence of regularized agent-state based Q-learning in POMDPs"
   authors   :
     - Amit Sinha
-    - Aditya Mahajan
     - Matthieu Geist
+    - Aditya Mahajan
   conference: IEEE Conference on Decision and Control (CDC)
   location  : Rio de Janeiro, Brazil
   date      : Dec 2025
