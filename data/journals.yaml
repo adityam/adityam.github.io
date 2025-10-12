@@ -6,7 +6,7 @@
   journal   : Annals of Operations Research
   date      : Sep 2025
   pdf       : projects/bandits/journal/approx-Whittle.pdf
-  doi       : https://doi.org/10.1007/s10479-025-06821-3
+  doi       : 10.1007/s10479-025-06821-3
 
 - index     : 46
   title     : "Dynamic estimation of mental workload and operator accuracy for time-constrained binary classification tasks"
