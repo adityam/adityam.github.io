@@ -6,6 +6,7 @@ project:
     - 'images/*'
     - 'files/*'
     - 'BingSiteAuth.xml'
+    - 'googleb721a429e0570127.html'
 
 website:
   title: "Aditya Mahajan"
