@@ -32,6 +32,7 @@ in partially observable systems"
   location  : Rio de Janeiro, Brazil
   date      : Dec 2025
   pdf       : projects/mdp/conference/2025-cdc.pdf
+  slides    : projects/mdp/slides/25-cdc.pdf
 
 - index     : 74
   title     : "Robust shortest path with incremental information revelation"
