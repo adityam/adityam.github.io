@@ -1,3 +1,9 @@
+- id        : cdc-25
+  title     : "Sub-optimality bounds for certainty equivalence policies in POMDPs"
+  seminar   : "CDC Workshop on Decentralization in Teams and Games"
+  slides    : talks/25-cdc-workshop.pdf
+  date      : Dec 2025
+
 - id        : cornell-25
   title     : "Agent-state based policies in POMDPs: Beyond belief-state MDPs"
   seminar   : "Data-driven Learning and Control, Cornell University"
