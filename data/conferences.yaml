@@ -8,6 +8,7 @@
   location  : Rio de Janeiro, Brazil
   date      : Dec 2025
   pdf       : projects/linear-systems/conference/2025-cdc.pdf
+  slides    : projectslinear-systems/slides/25-cdc.pdf
 
 - index     : 76
   title     : "Convergence of regularized agent-state based Q-learning in POMDPs"
