@@ -20,6 +20,7 @@
   location  : Rio de Janeiro, Brazil
   date      : Dec 2025
   pdf       : projects/reinforcement-learning/conference/2025-cdc.pdf
+  slides    : projects/reinforcement-learning/slides/25-cdc.pdf
 
 - index     : 75
   title     : "Generalized certainty equivalence based policies
