@@ -1,3 +1,14 @@
+- index     : 50
+  title     : "Sub-optimality bounds for certainty equivalent policies in partially observed systems"
+  authors   :
+    - Berk Bozkurt
+    - Aditya Mahajan
+    - Ashutosh Nayyar
+    - Yi Ouyang
+  date      : "Jan 2026"
+  pdf       : projects/mdp/preprint/certainty-equivalence-bounds.pdf
+
+
 - index     : 49
   title     : "Task load dependent decision referrals for joint
 binary classification in human-automation teams"
