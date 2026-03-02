@@ -18,12 +18,3 @@ binary classification in human-automation teams"
     - Jerome Le Ny
   date      : Apr 2025
   arxiv     : "2504.04248"
-
-- index     : 48
-  title     : "Concentration of Cumulative Reward in Markov Decision Processes"
-  authors   :
-    - Borna Sayedana
-    - Peter E. Caines
-    - Aditya Mahajan
-  date      : Nov 2024
-  pdf       : projects/mdp/preprint/reward-concentration.pdf
