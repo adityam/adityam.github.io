@@ -1,3 +1,11 @@
+- index     : 51
+  title     : "Operator-Theoretic Foundations and Policy Gradient Methods for General MDPs with Unbounded Costs"
+  authors   :
+    - Abhishek Gupta
+    - Aditya Mahajan
+  date      : Apr 2026
+  arxiv     : "2603.17875"
+
 - index     : 50
   title     : "Sub-optimality bounds for certainty equivalent policies in partially observed systems"
   authors   :
