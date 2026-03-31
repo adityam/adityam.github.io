@@ -7,9 +7,6 @@ Tao Zhang (supervisor: Prof. Peter Caines)
 <li>
 Samin Nili-Ahmadabadi
 </li>
-<li>
-Amit Sinha
-</li>
 </ul>
 </div>
 <h2>Current Master's Students</h2>
@@ -42,6 +39,9 @@ Phuc Nguyen (supervisor: Pierre L'Ecuyer)
 </div>
 <h2>Graduated PhD Students</h2>
 <ul>
+<li>
+Amit Sinha, Apr 2026. <em>Planning and learning for agent-state based policies in POMDPs</em>.
+</li>
 <li>
 Borna Sayedana (co-supervisor: Prof. Peter Caines), Apr 2025. <em>Learning, Control and Concentration of Cumulative Rewards in MDPs and  Markov Jump Systems</em>.
 </li>
