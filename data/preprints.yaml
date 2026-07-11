@@ -1,5 +1,5 @@
 - index     : 52
-  title     : "Vector generalizations of the Robbins-Siegmun Theorem and Stochastic Gradient with Delays"
+  title     : "Vector generalizations of the Robbins-Siegmun theorem and stochastic gradient descent with delays"
   authors   :
     - Aditya Mahajan
     - Silviu I Niculescu
@@ -8,7 +8,7 @@
   gerad     : "G2627"
 
 - index     : 51
-  title     : "Operator-Theoretic Foundations and Policy Gradient Methods for General MDPs with Unbounded Costs"
+  title     : "Operator-theoretic foundations and policy gradient methods for general MDPs with unbounded costs"
   authors   :
     - Abhishek Gupta
     - Aditya Mahajan
