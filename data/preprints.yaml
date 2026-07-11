@@ -1,3 +1,12 @@
+- index     : 52
+  title     : "Vector generalizations of the Robbins-Siegmun Theorem and Stochastic Gradient with Delays"
+  authors   :
+    - Aditya Mahajan
+    - Silviu I Niculescu
+    - Mathukumalli Vidyasagar
+  date      : May 2026
+  gerad     : "G2627"
+
 - index     : 51
   title     : "Operator-Theoretic Foundations and Policy Gradient Methods for General MDPs with Unbounded Costs"
   authors   :

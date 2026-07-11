@@ -7,6 +7,14 @@ function joinWithCommasAnd(array) {
     const lastItem = array.pop();
     return `${array.join(', ')}, and ${lastItem}`;
 }
+
+// Gerad filenames GABCD.pdf map to URLs G-20AB-CD.pdf
+function geradUrl(gerad) {
+    const id = String(gerad).replace(/\.pdf$/i, '').replace(/^G/i, '');
+    const ab = id.slice(0, 2);
+    const cd = id.slice(2, 4);
+    return `https://www.gerad.ca/papers/G-20${ab}-${cd}.pdf`;
+}
 %>
 
 ```{=html}
@@ -16,6 +24,9 @@ function joinWithCommasAnd(array) {
       <strong><%- item.title %></strong>
       <% if (item.arxiv) { %>
         (<a href="http://arxiv.org/abs/<%- item.arxiv %>">arxiv</a>)
+      <% } %>
+      <% if (item.gerad) { %>
+        (<a href="<%- geradUrl(item.gerad) %>">pdf</a>)
       <% } %>
       <% if (item.pdf) { %>
         (<a href="files/<%- item.pdf %>">pdf</a>)
