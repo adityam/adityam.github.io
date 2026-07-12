@@ -16,10 +16,9 @@ href="https://www.youtube.com/playlist?list=PLV_P5YiB-jctghMJoFasHo2Hhs4MUQHhc">
 :::
 ## Editorial board
 
-- Associal Editor, IEEE Transactions on Automatic Control,
-    (2022–present).
+- Associal Editor, IEEE Transactions on Automatic Control, (2022–2025).
 
-- Associal Editor, IEEE Control Systems Letters (2022–present).
+- Associal Editor, IEEE Control Systems Letters (2022–2025).
 
 - Associal Editor, Mathematics of Control, Signals, and Systems, (2016–present).
 
