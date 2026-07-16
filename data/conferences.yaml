@@ -1,3 +1,24 @@
+- index     : 79
+  title     : "Sample path dependent bounds for approximate information state"
+  authors   :
+    - Berk Bozkurt 
+    - Aditya Mahajan
+    - Ashutosh Nayyar
+    - Yi Ouyang
+  conference: IEEE Conference on Decision and Control (CDC)
+  location  : Honolulu, USA
+  date      : Dec 2026
+
+- index     : 78
+  title     : "Stochastic approximation with delayed updates: Asynchronous Machine Learning Algorithms study"
+  authors   :
+    - Phuc Nyugen
+    - Silviu I. Niculescu
+    - Aditya Mahajan
+  conference: Modeling, Estimation and Control Conference (MECC)
+  location  : Phoenix, USA
+  date      : Oct 2025
+
 - index     : 77
   title     : "Low-dimensional solutions for optimal control of network-coupled subsystems over a directed graph"
   authors   :
