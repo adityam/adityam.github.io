@@ -18,6 +18,7 @@
   conference: Modeling, Estimation and Control Conference (MECC)
   location  : Phoenix, USA
   date      : Oct 2025
+  pdf       : projects/stochastic-approximation/conference/2026-mecc.pdf
 
 - index     : 77
   title     : "Low-dimensional solutions for optimal control of network-coupled subsystems over a directed graph"
